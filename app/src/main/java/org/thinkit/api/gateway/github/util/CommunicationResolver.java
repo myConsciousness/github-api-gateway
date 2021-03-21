@@ -57,25 +57,20 @@ public final class CommunicationResolver implements Serializable {
     private static final JsonObjectParser JSON_OBJECT_PARSER = new JsonObjectParser(GsonFactory.getDefaultInstance());
 
     public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl) {
-        return this.parseAsList(this.sendGetRequest(genericUrl));
-    }
-
-    private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) {
-
         try {
-            final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
-            return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
+            return this.parseAsList(this.sendGetRequest(genericUrl));
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
+    }
+
+    private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
+        final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
+        return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
     }
 
     @SuppressWarnings("unchecked")
-    private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse) {
-        try {
-            return (List<T>) httpResponse.parseAs(TypeTokenResolver.getListToken());
-        } catch (IOException e) {
-            throw new IllegalStateException(e);
-        }
+    private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse) throws IOException {
+        return (List<T>) httpResponse.parseAs(TypeTokenResolver.getListToken());
     }
 }
