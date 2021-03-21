@@ -14,11 +14,21 @@
 
 package org.thinkit.api.gateway.github.util;
 
+import java.io.IOException;
 import java.io.Serializable;
 
-import org.thinkit.api.gateway.github.response.GithubApiResponse;
+import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpRequest;
+import com.google.api.client.http.HttpRequestFactory;
+import com.google.api.client.http.HttpResponse;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.JsonObjectParser;
+import com.google.api.client.json.gson.GsonFactory;
 
+import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.ToString;
 
 /**
@@ -28,11 +38,28 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public final class CommunicationResolver<T extends GithubApiResponse> implements Serializable {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class CommunicationResolver implements Serializable {
 
     /**
      * The serial version UID
      */
     private static final long serialVersionUID = 294272078327803469L;
 
+    /**
+     * The http request factory
+     */
+    private static final HttpRequestFactory HTTP_REQUEST_FACTORY = (new NetHttpTransport()).createRequestFactory();
+
+    public static <T> T get(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
+
+        try {
+            final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
+            HttpResponse httpResponse = httpRequest.setParser(new JsonObjectParser(GsonFactory.getDefaultInstance()))
+                    .execute();
+            return httpResponse.parseAs(responseClass);
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+    }
 }

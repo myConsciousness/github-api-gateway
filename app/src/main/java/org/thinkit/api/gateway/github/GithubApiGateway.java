@@ -14,21 +14,16 @@
 
 package org.thinkit.api.gateway.github;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpRequest;
-import com.google.api.client.http.HttpRequestFactory;
-import com.google.api.client.http.javanet.NetHttpTransport;
-import com.google.api.client.json.JsonObjectParser;
-import com.google.api.client.json.gson.GsonFactory;
 
 import org.thinkit.api.gateway.github.catalog.GithubApiUri;
 import org.thinkit.api.gateway.github.response.UserFollower;
 import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -49,11 +44,6 @@ public final class GithubApiGateway implements Serializable {
     private static final long serialVersionUID = -585767869852520568L;
 
     /**
-     * The http request factory
-     */
-    private static final HttpRequestFactory HTTP_REQUEST_FACTORY = (new NetHttpTransport()).createRequestFactory();
-
-    /**
      * The GitHub User
      */
     @NonNull
@@ -61,15 +51,9 @@ public final class GithubApiGateway implements Serializable {
 
     public List<UserFollower> getFollowers() {
 
-        HttpRequest httpRequest;
+        final GenericUrl genericUrl = new GenericUrl(
+                String.format(GithubApiUri.FOLLOWERS.getTag(), githubUser.getUserName()));
 
-        try {
-            httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(
-                    new GenericUrl(String.format(GithubApiUri.FOLLOWERS.getTag(), githubUser.getUserName())));
-            httpRequest.setParser(new JsonObjectParser(GsonFactory.getDefaultInstance()));
-            return Arrays.asList(httpRequest.execute().parseAs(UserFollower[].class));
-        } catch (IOException e) {
-            throw new IllegalStateException(e);
-        }
+        return Arrays.asList(CommunicationResolver.get(genericUrl, UserFollower[].class));
     }
 }
