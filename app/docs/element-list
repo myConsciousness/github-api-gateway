@@ -1,0 +1,5 @@
+org.thinkit.api.gateway.github
+org.thinkit.api.gateway.github.catalog
+org.thinkit.api.gateway.github.response
+org.thinkit.api.gateway.github.user
+org.thinkit.api.gateway.github.util
