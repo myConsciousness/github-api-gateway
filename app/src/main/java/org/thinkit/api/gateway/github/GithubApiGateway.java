@@ -48,6 +48,6 @@ public final class GithubApiGateway extends ApiGateway {
     private GithubUser githubUser;
 
     public List<UserFollower> getUserFollowers() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWERS));
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));
     }
 }

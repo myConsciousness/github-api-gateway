@@ -51,9 +51,9 @@ public abstract class ApiGateway implements Gateway, Serializable {
     protected GenericUrl createUrl(@NonNull final GithubApi githubApiUri, @NonNull final Map<String, String> queries) {
 
         return switch (githubApiUri) {
-        case USERS -> new GenericUrl();
-        case FOLLOWERS -> new GenericUrl(String.format(githubApiUri.getTag(), this.getGithubUser().getUserName()));
-        case FOLLOWING -> new GenericUrl();
+        case USER -> new GenericUrl();
+        case USER_FOLLOWERS -> new GenericUrl(String.format(githubApiUri.getTag(), this.getGithubUser().getUserName()));
+        case FOLLOWING_USER -> new GenericUrl();
         };
     }
 }

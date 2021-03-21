@@ -31,17 +31,17 @@ public enum GithubApi implements BiCatalog<GithubApi, String> {
     /**
      * The API that retrieves specific user information
      */
-    USERS(0, "https://api.github.com/users/%s"),
+    USER(0, "https://api.github.com/users/%s"),
 
     /**
      * The API that retrieves specific user's following information
      */
-    FOLLOWING(1, "https://api.github.com/users/%s/following"),
+    FOLLOWING_USER(1, "https://api.github.com/users/%s/following"),
 
     /**
      * The API that retrieves specific user's followers information
      */
-    FOLLOWERS(2, "https://api.github.com/users/%s/followers");
+    USER_FOLLOWERS(2, "https://api.github.com/users/%s/followers");
 
     /**
      * The code
