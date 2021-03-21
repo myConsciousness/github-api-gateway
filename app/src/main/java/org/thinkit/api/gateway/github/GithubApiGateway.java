@@ -16,9 +16,7 @@ package org.thinkit.api.gateway.github;
 
 import java.util.List;
 
-import com.google.api.client.http.GenericUrl;
-
-import org.thinkit.api.gateway.github.catalog.GithubApiUri;
+import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.response.UserFollower;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
@@ -26,6 +24,7 @@ import org.thinkit.api.gateway.github.util.CommunicationResolver;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
@@ -45,13 +44,10 @@ public final class GithubApiGateway extends ApiGateway {
      * The GitHub User
      */
     @NonNull
+    @Getter(AccessLevel.PROTECTED)
     private GithubUser githubUser;
 
     public List<UserFollower> getUserFollowers() {
-
-        final GenericUrl genericUrl = new GenericUrl(
-                String.format(GithubApiUri.FOLLOWERS.getTag(), githubUser.getUserName()));
-
-        return CommunicationResolver.newInstance().getAsList(genericUrl);
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWERS));
     }
 }

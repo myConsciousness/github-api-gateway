@@ -15,8 +15,17 @@
 package org.thinkit.api.gateway.github;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.api.client.http.GenericUrl;
+
+import org.thinkit.api.gateway.Gateway;
+import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.user.GithubUser;
 
 import lombok.EqualsAndHashCode;
+import lombok.NonNull;
 import lombok.ToString;
 
 /**
@@ -26,11 +35,25 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public abstract class ApiGateway implements Serializable {
+public abstract class ApiGateway implements Gateway, Serializable {
 
     /**
      * The serial version UID
      */
     private static final long serialVersionUID = 5408959112740655553L;
 
+    protected abstract GithubUser getGithubUser();
+
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApiUri) {
+        return this.createUrl(githubApiUri, new HashMap<>(0));
+    }
+
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApiUri, @NonNull final Map<String, String> queries) {
+
+        return switch (githubApiUri) {
+        case USERS -> new GenericUrl();
+        case FOLLOWERS -> new GenericUrl(String.format(githubApiUri.getTag(), this.getGithubUser().getUserName()));
+        case FOLLOWING -> new GenericUrl();
+        };
+    }
 }

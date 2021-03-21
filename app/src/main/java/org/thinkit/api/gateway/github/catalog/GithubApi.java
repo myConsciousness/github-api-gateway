@@ -20,13 +20,13 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * The catalog that manages API URI of GitHub.
+ * The catalog that manages API of GitHub.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @RequiredArgsConstructor
-public enum GithubApiUri implements BiCatalog<GithubApiUri, String> {
+public enum GithubApi implements BiCatalog<GithubApi, String> {
 
     /**
      * The API that retrieves specific user information
