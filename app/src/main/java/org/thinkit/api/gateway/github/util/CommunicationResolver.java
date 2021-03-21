@@ -16,6 +16,7 @@ package org.thinkit.api.gateway.github.util;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
 import com.google.api.client.http.HttpRequest;
@@ -25,7 +26,6 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 
-import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -38,7 +38,7 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@NoArgsConstructor(staticName = "newInstance")
 public final class CommunicationResolver implements Serializable {
 
     /**
@@ -51,13 +51,29 @@ public final class CommunicationResolver implements Serializable {
      */
     private static final HttpRequestFactory HTTP_REQUEST_FACTORY = (new NetHttpTransport()).createRequestFactory();
 
-    public static <T> T get(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
+    /**
+     * The JSON object parser
+     */
+    private static final JsonObjectParser JSON_OBJECT_PARSER = new JsonObjectParser(GsonFactory.getDefaultInstance());
+
+    public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl) {
+        return this.parseAsList(this.sendGetRequest(genericUrl));
+    }
+
+    private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) {
 
         try {
             final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
-            HttpResponse httpResponse = httpRequest.setParser(new JsonObjectParser(GsonFactory.getDefaultInstance()))
-                    .execute();
-            return httpResponse.parseAs(responseClass);
+            return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse) {
+        try {
+            return (List<T>) httpResponse.parseAs(TypeTokenResolver.getListToken());
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }

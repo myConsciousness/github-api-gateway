@@ -14,8 +14,6 @@
 
 package org.thinkit.api.gateway.github;
 
-import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
@@ -33,15 +31,15 @@ import lombok.NonNull;
 import lombok.ToString;
 
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(staticName = "from")
-public final class GithubApiGateway implements Serializable {
+public final class GithubApiGateway extends ApiGateway {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -585767869852520568L;
+    private static final long serialVersionUID = -2391992718333265549L;
 
     /**
      * The GitHub User
@@ -49,11 +47,11 @@ public final class GithubApiGateway implements Serializable {
     @NonNull
     private GithubUser githubUser;
 
-    public List<UserFollower> getFollowers() {
+    public List<UserFollower> getUserFollowers() {
 
         final GenericUrl genericUrl = new GenericUrl(
                 String.format(GithubApiUri.FOLLOWERS.getTag(), githubUser.getUserName()));
 
-        return Arrays.asList(CommunicationResolver.get(genericUrl, UserFollower[].class));
+        return CommunicationResolver.newInstance().getAsList(genericUrl);
     }
 }

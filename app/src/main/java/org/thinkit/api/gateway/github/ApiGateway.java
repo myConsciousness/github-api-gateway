@@ -14,21 +14,23 @@
 
 package org.thinkit.api.gateway.github;
 
-import org.junit.jupiter.api.Test;
-import org.thinkit.api.gateway.github.user.GithubUser;
+import java.io.Serializable;
+
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 /**
- * The class that manages test case of {@link GithubApiGateway} .
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
-public final class GithubApiGatewayTest {
+@ToString
+@EqualsAndHashCode
+public abstract class ApiGateway implements Serializable {
 
-    @Test
-    void test() {
-        GithubApiGateway githubApiGateway = GithubApiGateway
-                .from(GithubUser.builder().userName("myConsciousness").build());
-        githubApiGateway.getUserFollowers();
-    }
+    /**
+     * The serial version UID
+     */
+    private static final long serialVersionUID = 5408959112740655553L;
+
 }
