@@ -17,6 +17,8 @@ package org.thinkit.api.gateway.github;
 import java.util.List;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.response.FollowingUser;
+import org.thinkit.api.gateway.github.response.User;
 import org.thinkit.api.gateway.github.response.UserFollower;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
@@ -46,6 +48,18 @@ public final class GithubApiGateway extends ApiGateway {
     @NonNull
     @Getter(AccessLevel.PROTECTED)
     private GithubUser githubUser;
+
+    public User getUser() {
+        return CommunicationResolver.newInstance().get(super.createUrl(GithubApi.USER));
+    }
+
+    public List<FollowingUser> getFollowingUsers() {
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER));
+    }
+
+    public List<FollowingUser> getFollowingUsers(final int perPage) {
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER));
+    }
 
     public List<UserFollower> getUserFollowers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));

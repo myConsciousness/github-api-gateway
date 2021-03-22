@@ -28,12 +28,12 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public final class UserFollower implements Serializable {
+public final class User implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 2510321939698218285L;
+    private static final long serialVersionUID = 987094486199214324L;
 
     /**
      * The login name
@@ -63,22 +63,22 @@ public final class UserFollower implements Serializable {
      * The gravater id
      */
     @Key("gravater_id")
-    private String gravaterId;
+    private String gravatarId;
 
     /**
-     * The user url
+     * The url
      */
-    @Key
+    @Key("url")
     private String url;
 
     /**
-     * The user url (html)
+     * The html url
      */
     @Key("html_url")
-    private String htmlUrl;
+    private String hrmlUrl;
 
     /**
-     * The follower url
+     * The followers url
      */
     @Key("followers_url")
     private String followersUrl;
@@ -90,7 +90,7 @@ public final class UserFollower implements Serializable {
     private String followingUrl;
 
     /**
-     * The gist url
+     * The gists url
      */
     @Key("gists_url")
     private String gistsUrl;
@@ -102,37 +102,37 @@ public final class UserFollower implements Serializable {
     private String starredUrl;
 
     /**
-     * The subscription url
+     * The sbscriptions url
      */
     @Key("subscriptions_url")
     private String subscriptionsUrl;
 
     /**
-     * The organization url
+     * The organizations url
      */
     @Key("organizations_url")
     private String organizationsUrl;
 
     /**
-     * The repository url
+     * The repos url
      */
     @Key("repos_url")
     private String reposUrl;
 
     /**
-     * The event url
+     * The events url
      */
     @Key("events_url")
     private String eventsUrl;
 
     /**
-     * The received event url
+     * The received events url
      */
-    @Key("received_event_url")
+    @Key("received_events_url")
     private String receivedEventsUrl;
 
     /**
-     * The user type
+     * The type
      */
     @Key
     private String type;
@@ -142,4 +142,88 @@ public final class UserFollower implements Serializable {
      */
     @Key("site_admin")
     private boolean siteAdmin;
+
+    /**
+     * The user name
+     */
+    @Key
+    private String name;
+
+    /**
+     * The company
+     */
+    @Key
+    private String company;
+
+    /**
+     * The blog
+     */
+    @Key
+    private String blog;
+
+    /**
+     * The location
+     */
+    @Key
+    private String location;
+
+    /**
+     * The email
+     */
+    @Key
+    private String email;
+
+    /**
+     * The hireable
+     */
+    @Key
+    private boolean hireable;
+
+    /**
+     * The bio
+     */
+    @Key
+    private String bio;
+
+    /**
+     * The twitter user name
+     */
+    @Key("twitter_username")
+    private String twitterUsername;
+
+    /**
+     * The count of public repos
+     */
+    @Key("public_repos")
+    private int publicRepos;
+
+    /**
+     * The count of public gists
+     */
+    @Key("public_gists")
+    private int publicGists;
+
+    /**
+     * The count of followers
+     */
+    @Key
+    private int followers;
+
+    /**
+     * The count of following
+     */
+    @Key
+    private int following;
+
+    /**
+     * The created datetime
+     */
+    @Key("created_at")
+    private String createdAt;
+
+    /**
+     * The updated datetime
+     */
+    @Key("updatedAt")
+    private String updatedAt;
 }

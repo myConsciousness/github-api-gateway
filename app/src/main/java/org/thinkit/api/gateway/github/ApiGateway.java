@@ -60,7 +60,7 @@ public abstract class ApiGateway implements Gateway, Serializable {
         return switch (githubApi) {
         case USER -> new GenericUrl();
         case USER_FOLLOWERS -> UrlResolver.createUrl(githubApi, queries, List.of(this.getGithubUser().getUserName()));
-        case FOLLOWING_USER -> new GenericUrl();
+        case FOLLOWING_USER -> UrlResolver.createUrl(githubApi, queries, List.of(this.getGithubUser().getUserName()));
         };
     }
 }

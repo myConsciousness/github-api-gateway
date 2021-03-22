@@ -28,12 +28,12 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public final class UserFollower implements Serializable {
+public final class FollowingUser implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 2510321939698218285L;
+    private static final long serialVersionUID = -4563127151074973279L;
 
     /**
      * The login name
