@@ -50,4 +50,8 @@ public final class GithubApiGateway extends ApiGateway {
     public List<UserFollower> getUserFollowers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));
     }
+
+    public List<UserFollower> getUserFollowers(final int perPage) {
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));
+    }
 }

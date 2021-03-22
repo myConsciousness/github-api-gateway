@@ -16,12 +16,15 @@ package org.thinkit.api.gateway.github;
 
 import java.io.Serializable;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.util.UrlResolver;
 
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
@@ -41,17 +44,22 @@ public abstract class ApiGateway implements Gateway, Serializable {
      */
     private static final long serialVersionUID = 5408959112740655553L;
 
+    /**
+     * Returns the GitHub user object.
+     *
+     * @return The GitHub user object
+     */
     protected abstract GithubUser getGithubUser();
 
-    protected GenericUrl createUrl(@NonNull final GithubApi githubApiUri) {
-        return this.createUrl(githubApiUri, new HashMap<>(0));
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi) {
+        return this.createUrl(githubApi, new HashMap<>(0));
     }
 
-    protected GenericUrl createUrl(@NonNull final GithubApi githubApiUri, @NonNull final Map<String, String> queries) {
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries) {
 
-        return switch (githubApiUri) {
+        return switch (githubApi) {
         case USER -> new GenericUrl();
-        case USER_FOLLOWERS -> new GenericUrl(String.format(githubApiUri.getTag(), this.getGithubUser().getUserName()));
+        case USER_FOLLOWERS -> UrlResolver.createUrl(githubApi, queries, List.of(this.getGithubUser().getUserName()));
         case FOLLOWING_USER -> new GenericUrl();
         };
     }
