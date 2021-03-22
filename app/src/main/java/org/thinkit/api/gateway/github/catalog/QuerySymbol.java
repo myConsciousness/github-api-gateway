@@ -20,18 +20,28 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * The catalog that manages query key.
+ * The catalog that manages query symbol.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @RequiredArgsConstructor
-public enum QueryKey implements BiCatalog<QueryKey, String> {
+public enum QuerySymbol implements BiCatalog<QuerySymbol, String> {
 
     /**
-     * {@code "per_page=xxx"}
+     * {@code "="}
      */
-    PER_PAGE(0, "per_page");
+    EQUAL(0, "="),
+
+    /**
+     * {@code "&"}
+     */
+    AMPERSAND(1, "&"),
+
+    /**
+     * {@code "?"}
+     */
+    QUESTION(2, "?");
 
     /**
      * The code
@@ -40,7 +50,7 @@ public enum QueryKey implements BiCatalog<QueryKey, String> {
     private final int code;
 
     /**
-     * The rag
+     * The tag
      */
     @Getter
     private final String tag;

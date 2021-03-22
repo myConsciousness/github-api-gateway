@@ -24,6 +24,7 @@ import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
+import org.thinkit.api.gateway.github.catalog.QuerySymbol;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
@@ -58,15 +59,19 @@ public final class UrlResolver {
             return new GenericUrl(bind(githubApi, binds));
         }
 
-        final StringJoiner queryJoiner = new StringJoiner("&");
+        final StringJoiner queryJoiner = new StringJoiner(QuerySymbol.AMPERSAND.getTag());
+        final String equal = QuerySymbol.EQUAL.getTag();
 
         queries.forEach((key, value) -> {
             final StringBuilder query = new StringBuilder();
-            query.append(key.getTag()).append("=").append(key);
+            query.append(key.getTag()).append(equal).append(key);
             queryJoiner.add(query.toString());
         });
 
-        return new GenericUrl(new StringJoiner("?").add(bind(githubApi, binds)).add(queryJoiner.toString()).toString());
+        final StringJoiner urlJoiner = new StringJoiner(QuerySymbol.QUESTION.getTag()).add(bind(githubApi, binds))
+                .add(queryJoiner.toString());
+
+        return new GenericUrl(urlJoiner.toString());
     }
 
     private static String bind(@NonNull final GithubApi githubApi, @NonNull final List<String> binds) {
