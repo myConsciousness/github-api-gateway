@@ -20,7 +20,6 @@ import java.util.Map;
 
 import com.google.api.client.http.GenericUrl;
 
-import org.thinkit.api.gateway.Gateway;
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.user.GithubUser;
 

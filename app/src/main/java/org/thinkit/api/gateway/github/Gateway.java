@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway;
+package org.thinkit.api.gateway.github;
 
 public interface Gateway {
 }
