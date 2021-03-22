@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response;
+package org.thinkit.api.gateway.github.response.followers;
 
 import java.io.Serializable;
 
@@ -28,12 +28,12 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-public final class User implements Serializable {
+public final class UserFollower implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 987094486199214324L;
+    private static final long serialVersionUID = 2510321939698218285L;
 
     /**
      * The login name
@@ -63,22 +63,22 @@ public final class User implements Serializable {
      * The gravater id
      */
     @Key("gravater_id")
-    private String gravatarId;
+    private String gravaterId;
 
     /**
-     * The url
+     * The user url
      */
-    @Key("url")
+    @Key
     private String url;
 
     /**
-     * The html url
+     * The user url (html)
      */
     @Key("html_url")
-    private String hrmlUrl;
+    private String htmlUrl;
 
     /**
-     * The followers url
+     * The follower url
      */
     @Key("followers_url")
     private String followersUrl;
@@ -90,7 +90,7 @@ public final class User implements Serializable {
     private String followingUrl;
 
     /**
-     * The gists url
+     * The gist url
      */
     @Key("gists_url")
     private String gistsUrl;
@@ -102,37 +102,37 @@ public final class User implements Serializable {
     private String starredUrl;
 
     /**
-     * The sbscriptions url
+     * The subscription url
      */
     @Key("subscriptions_url")
     private String subscriptionsUrl;
 
     /**
-     * The organizations url
+     * The organization url
      */
     @Key("organizations_url")
     private String organizationsUrl;
 
     /**
-     * The repos url
+     * The repository url
      */
     @Key("repos_url")
     private String reposUrl;
 
     /**
-     * The events url
+     * The event url
      */
     @Key("events_url")
     private String eventsUrl;
 
     /**
-     * The received events url
+     * The received event url
      */
-    @Key("received_events_url")
+    @Key("received_event_url")
     private String receivedEventsUrl;
 
     /**
-     * The type
+     * The user type
      */
     @Key
     private String type;
@@ -142,88 +142,4 @@ public final class User implements Serializable {
      */
     @Key("site_admin")
     private boolean siteAdmin;
-
-    /**
-     * The user name
-     */
-    @Key
-    private String name;
-
-    /**
-     * The company
-     */
-    @Key
-    private String company;
-
-    /**
-     * The blog
-     */
-    @Key
-    private String blog;
-
-    /**
-     * The location
-     */
-    @Key
-    private String location;
-
-    /**
-     * The email
-     */
-    @Key
-    private String email;
-
-    /**
-     * The hireable
-     */
-    @Key
-    private boolean hireable;
-
-    /**
-     * The bio
-     */
-    @Key
-    private String bio;
-
-    /**
-     * The twitter user name
-     */
-    @Key("twitter_username")
-    private String twitterUsername;
-
-    /**
-     * The count of public repos
-     */
-    @Key("public_repos")
-    private int publicRepos;
-
-    /**
-     * The count of public gists
-     */
-    @Key("public_gists")
-    private int publicGists;
-
-    /**
-     * The count of followers
-     */
-    @Key
-    private int followers;
-
-    /**
-     * The count of following
-     */
-    @Key
-    private int following;
-
-    /**
-     * The created datetime
-     */
-    @Key("created_at")
-    private String createdAt;
-
-    /**
-     * The updated datetime
-     */
-    @Key("updatedAt")
-    private String updatedAt;
 }

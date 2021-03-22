@@ -27,10 +27,9 @@ public final class GithubApiGatewayTest {
 
     @Test
     void test() {
-        GithubApiGateway githubApiGateway = GithubApiGateway
-                .from(GithubUser.builder().userName("myConsciousness").build());
-        githubApiGateway.getUserFollowers();
-        githubApiGateway.getFollowingUsers();
-        githubApiGateway.getUser();
+        Gateway gateway = GithubApiGateway.from(GithubUser.builder().userName("myConsciousness").build());
+        gateway.getUserFollowers();
+        gateway.getFollowingUsers();
+        gateway.getUser();
     }
 }

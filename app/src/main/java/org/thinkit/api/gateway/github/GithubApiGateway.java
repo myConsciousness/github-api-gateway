@@ -19,14 +19,13 @@ import java.util.Map;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
-import org.thinkit.api.gateway.github.response.FollowingUser;
-import org.thinkit.api.gateway.github.response.User;
-import org.thinkit.api.gateway.github.response.UserFollower;
+import org.thinkit.api.gateway.github.response.followers.UserFollower;
+import org.thinkit.api.gateway.github.response.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -51,7 +50,7 @@ import lombok.ToString;
  * <pre>
  * <code>
  * final GithubUser githubUser = GithubUser.builder().userName("username").build();
- * final GithubApiGateway gateway = GithubApiGateway.from(githubUser);
+ * final Gateway gateway = GithubApiGateway.from(githubUser);
  * final List<UserFollowers> userFollowers = gateway.getUserFollowers();
  * </code>
  * </pre>
@@ -62,7 +61,6 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor(staticName = "from")
 public final class GithubApiGateway extends ApiGateway {
 
     /**
@@ -71,59 +69,56 @@ public final class GithubApiGateway extends ApiGateway {
     private static final long serialVersionUID = -2391992718333265549L;
 
     /**
-     * The GitHub User
+     * The constructor.
+     *
+     * @param githubUser The GitHub user
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
      */
-    @NonNull
+    private GithubApiGateway(@NonNull final GithubUser githubUser) {
+        this.githubUser = githubUser;
+    }
+
+    /**
+     * Returns the new instance of {@link GithubApiGateway} based on the argument.
+     *
+     * @param githubUser The GitHub user
+     * @return The new instance of {@link GithubApiGateway}
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public static Gateway from(@NonNull final GithubUser githubUser) {
+        return new GithubApiGateway(githubUser);
+    }
+
+    /**
+     * The GitHub user
+     */
     @Getter(AccessLevel.PROTECTED)
     private GithubUser githubUser;
 
-    /**
-     * Returns the specific user information through the GitHub API {@code
-     * https://api.github.com/users/username}.
-     *
-     * @return The user information
-     */
+    @Override
     public User getUser() {
         return CommunicationResolver.newInstance().get(super.createUrl(GithubApi.USER), User.class);
     }
 
-    /**
-     * Returns the specific user's following information through the GitHub API
-     * {@code https://api.github.com/users/username/following}.
-     *
-     * @return The user's following information
-     */
+    @Override
     public List<FollowingUser> getFollowingUsers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER));
     }
 
-    /**
-     * Returns the specific user's following information through the GitHub API
-     * {@code https://api.github.com/users/username/following?per_page=xxx}.
-     *
-     * @return The specified number of user's following information
-     */
+    @Override
     public List<FollowingUser> getFollowingUsers(final int perPage) {
         return CommunicationResolver.newInstance()
                 .getAsList(super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)));
     }
 
-    /**
-     * Returns the specific user's follower information through the GitHub API
-     * {@code https://api.github.com/users/username/follower}.
-     *
-     * @return The user's follower information
-     */
+    @Override
     public List<UserFollower> getUserFollowers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));
     }
 
-    /**
-     * Returns the specific user's follower information through the GitHub API
-     * {@code https://api.github.com/users/username/follower?per_page=xxx}.
-     *
-     * @return The specified number of user's follower information
-     */
+    @Override
     public List<UserFollower> getUserFollowers(final int perPage) {
         return CommunicationResolver.newInstance()
                 .getAsList(super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)));
