@@ -30,5 +30,7 @@ public final class GithubApiGatewayTest {
         GithubApiGateway githubApiGateway = GithubApiGateway
                 .from(GithubUser.builder().userName("myConsciousness").build());
         githubApiGateway.getUserFollowers();
+        githubApiGateway.getFollowingUsers();
+        githubApiGateway.getUser();
     }
 }
