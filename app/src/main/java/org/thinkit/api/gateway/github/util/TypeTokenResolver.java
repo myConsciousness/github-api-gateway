@@ -14,7 +14,6 @@
 
 package org.thinkit.api.gateway.github.util;
 
-import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.util.List;
 
@@ -25,16 +24,24 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+/**
+ * The class provides a method to return a {@link TypeToken} that has a specific
+ * type as a generic.
+ *
+ * @author Kato Shinya
+ * @since 1.0.0
+ */
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class TypeTokenResolver implements Serializable {
+final class TypeTokenResolver {
 
     /**
-     * The serial version UID
+     * Returns a {@link TypeToken} with {@link List} as a generic.
+     *
+     * @param <T> The type to specify for list generics
+     * @return The {@link TypeToken} of {@link List}
      */
-    private static final long serialVersionUID = 8851404047179416312L;
-
     public static <T> Type getListToken() {
         return new TypeToken<List<T>>() {
 

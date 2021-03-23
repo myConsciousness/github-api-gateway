@@ -25,6 +25,13 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
+/**
+ * The class that represents a GitHub user. Set the necessary user information
+ * for the parameters of the GitHub API to be called.
+ *
+ * @author Kato Shinya
+ * @since 1.0.0
+ */
 @ToString
 @EqualsAndHashCode
 @Builder(toBuilder = true)

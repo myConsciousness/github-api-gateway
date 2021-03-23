@@ -19,6 +19,7 @@ import java.io.Serializable;
 import com.google.api.client.util.Key;
 
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -28,6 +29,7 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
+@Getter
 public final class User implements Serializable {
 
     /**

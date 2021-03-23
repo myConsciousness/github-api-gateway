@@ -56,6 +56,14 @@ public final class CommunicationResolver implements Serializable {
      */
     private static final JsonObjectParser JSON_OBJECT_PARSER = new JsonObjectParser(GsonFactory.getDefaultInstance());
 
+    /**
+     *
+     *
+     * @param <T>
+     * @param genericUrl
+     * @param responseClass
+     * @return
+     */
     public <T> T get(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
             return this.parseAs(this.sendGetRequest(genericUrl), responseClass);
@@ -64,6 +72,12 @@ public final class CommunicationResolver implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param <T>
+     * @param genericUrl
+     * @return
+     */
     public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl) {
         try {
             return this.parseAsList(this.sendGetRequest(genericUrl));
@@ -72,16 +86,37 @@ public final class CommunicationResolver implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param genericUrl
+     * @return
+     * @throws IOException
+     */
     private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
         final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
         return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
     }
 
+    /**
+     *
+     * @param <T>
+     * @param httpResponse
+     * @param responseClass
+     * @return
+     * @throws IOException
+     */
     private <T> T parseAs(@NonNull final HttpResponse httpResponse, @NonNull final Class<T> responseClass)
             throws IOException {
         return (T) httpResponse.parseAs(responseClass);
     }
 
+    /**
+     *
+     * @param <T>
+     * @param httpResponse
+     * @return
+     * @throws IOException
+     */
     @SuppressWarnings("unchecked")
     private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse) throws IOException {
         return (List<T>) httpResponse.parseAs(TypeTokenResolver.getListToken());
