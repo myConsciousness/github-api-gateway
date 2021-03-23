@@ -25,10 +25,7 @@ import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
-import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
@@ -60,7 +57,6 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class GithubApiGateway extends ApiGateway {
 
     /**
@@ -76,7 +72,7 @@ public final class GithubApiGateway extends ApiGateway {
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     private GithubApiGateway(@NonNull final GithubUser githubUser) {
-        this.githubUser = githubUser;
+        super(githubUser);
     }
 
     /**
@@ -90,12 +86,6 @@ public final class GithubApiGateway extends ApiGateway {
     public static Gateway from(@NonNull final GithubUser githubUser) {
         return new GithubApiGateway(githubUser);
     }
-
-    /**
-     * The GitHub user
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private GithubUser githubUser;
 
     @Override
     public User getUser() {

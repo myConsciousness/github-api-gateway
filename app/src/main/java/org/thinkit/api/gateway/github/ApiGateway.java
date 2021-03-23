@@ -26,17 +26,35 @@ import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
 /**
+ * The abstract class that defines the generic processing for implementing the
+ * GitHub API gateway.
+ *
+ * <p>
+ * The {@link GithubUser} object must be set with the user information required
+ * to call the API; if the user information required to call the API is not set,
+ * the API call will fail or an exception will be thrown at runtime.
+ *
+ * <p>
+ * It provides {@link #createUrl(GithubApi)} and
+ * {@link #createUrl(GithubApi, Map)} methods to easily generate URLs for
+ * calling the API.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor
 public abstract class ApiGateway implements Gateway, Serializable {
 
     /**
@@ -45,16 +63,36 @@ public abstract class ApiGateway implements Gateway, Serializable {
     private static final long serialVersionUID = 5408959112740655553L;
 
     /**
-     * Returns the GitHub user object.
-     *
-     * @return The GitHub user object
+     * The GitHub user
      */
-    protected abstract GithubUser getGithubUser();
+    @Getter(AccessLevel.PRIVATE)
+    private GithubUser githubUser;
 
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} passed as
+     * an argument. To specify a query string in the API URL, use
+     * {@link #createUrl(GithubApi, Map)} .
+     *
+     * @param githubApi The GitHub API
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi) {
         return this.createUrl(githubApi, new HashMap<>(0));
     }
 
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} and
+     * queries map passed as arguments. If you do not need to specify a query string
+     * in the API URL, use {@link #createUrl(GithubApi)} .
+     *
+     * @param githubApi The GitHub API
+     * @param queries   The queries
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries) {
 
         return switch (githubApi) {
