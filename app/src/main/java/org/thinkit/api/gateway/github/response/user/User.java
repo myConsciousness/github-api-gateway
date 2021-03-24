@@ -23,6 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
+ * The entity that manages the user information.
  *
  * @author Kato Shinya
  * @since 1.0.0

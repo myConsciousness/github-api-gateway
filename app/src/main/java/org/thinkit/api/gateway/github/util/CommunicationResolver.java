@@ -32,6 +32,7 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
+ * The class that provides general-purpose processing for HTTP communication.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -87,10 +88,13 @@ public final class CommunicationResolver implements Serializable {
     }
 
     /**
+     * Sends a GET request to the URL set in the URL object passed as an argument.
      *
-     * @param genericUrl
-     * @return
-     * @throws IOException
+     * @param genericUrl The API URL
+     * @return The HTTP response
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     * @throws IOException If an error occurs during HTTP communication
      */
     private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
         final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);

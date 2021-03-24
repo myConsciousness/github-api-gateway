@@ -23,6 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
+ * The entity that manages the follower of the specific user.
  *
  * @author Kato Shinya
  * @since 1.0.0

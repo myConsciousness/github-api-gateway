@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.following;
+package org.thinkit.api.gateway.github.response.repos;
 
 import java.io.Serializable;
 
@@ -23,7 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the following user of the specific user.
+ * The entity that manages the owner information of the repository.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -31,12 +31,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Getter
-public final class FollowingUser implements Serializable {
+public final class RepositoryOwner implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -4563127151074973279L;
+    private static final long serialVersionUID = -4073046151965055062L;
 
     /**
      * The login name
@@ -63,25 +63,25 @@ public final class FollowingUser implements Serializable {
     private String avaterUrl;
 
     /**
-     * The gravater id
+     * The gravater url
      */
     @Key("gravater_id")
     private String gravaterId;
 
     /**
-     * The user url
+     * The url
      */
     @Key
     private String url;
 
     /**
-     * The user url (html)
+     * The html url
      */
     @Key("html_url")
     private String htmlUrl;
 
     /**
-     * The follower url
+     * The followers url
      */
     @Key("followers_url")
     private String followersUrl;
@@ -93,7 +93,7 @@ public final class FollowingUser implements Serializable {
     private String followingUrl;
 
     /**
-     * The gist url
+     * The gists url
      */
     @Key("gists_url")
     private String gistsUrl;
@@ -105,13 +105,13 @@ public final class FollowingUser implements Serializable {
     private String starredUrl;
 
     /**
-     * The subscription url
+     * The subscriptions url
      */
     @Key("subscriptions_url")
     private String subscriptionsUrl;
 
     /**
-     * The organization url
+     * The organizations url
      */
     @Key("organizations_url")
     private String organizationsUrl;
@@ -123,19 +123,19 @@ public final class FollowingUser implements Serializable {
     private String reposUrl;
 
     /**
-     * The event url
+     * The events url
      */
     @Key("events_url")
     private String eventsUrl;
 
     /**
-     * The received event url
+     * The received events url
      */
-    @Key("received_event_url")
+    @Key("received_events_url")
     private String receivedEventsUrl;
 
     /**
-     * The user type
+     * The type
      */
     @Key
     private String type;
