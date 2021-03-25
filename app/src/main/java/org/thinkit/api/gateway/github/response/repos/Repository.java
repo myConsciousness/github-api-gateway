@@ -16,6 +16,8 @@ package org.thinkit.api.gateway.github.response.repos;
 
 import java.io.Serializable;
 
+import com.google.api.client.util.Key;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -36,56 +38,82 @@ public final class Repository implements Serializable {
      */
     private static final long serialVersionUID = 545376925054158470L;
 
+    @Key
     private int id;
 
+    @Key("node_id")
     private String nodeId;
 
+    @Key
     private String name;
 
+    @Key("full_name")
     private String fullName;
 
+    @Key("private")
     private boolean privateRepository;
 
+    @Key
     private RepositoryOwner owner;
 
+    @Key("html_url")
     private String htmlUrl;
 
+    @Key
     private String description;
 
+    @Key
     private boolean fork;
 
+    @Key
     private String url;
 
+    @Key("forks_url")
     private String forksUrl;
 
+    @Key("keys_url")
     private String keysUrl;
 
+    @Key("collaborators_url")
     private String collaboratorsUrl;
 
+    @Key("teams_url")
     private String teamsUrl;
 
+    @Key("hooks_url")
     private String hooksUrl;
 
+    @Key("issue_events_url")
     private String issueEventsUrl;
 
+    @Key("events_url")
     private String eventsUrl;
 
+    @Key("assignees_url")
     private String assigneesUrl;
 
+    @Key("branches_url")
     private String branchesUrl;
 
+    @Key("tags_url")
     private String tagsUrl;
 
+    @Key("blogs_url")
     private String blogsUrl;
 
+    @Key("git_tags_url")
     private String gitTagsUrl;
 
-    private String gitRefssUrl;
+    @Key("git_refs_url")
+    private String gitRefsUrl;
 
+    @Key("trees_url")
     private String treesUrl;
 
+    @Key("statues_url")
     private String statusesUrl;
 
+    @Key("languages_url")
     private String languagesUrl;
 
     private String stargazersUrl;
