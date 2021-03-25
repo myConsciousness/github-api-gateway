@@ -70,6 +70,8 @@ public final class Repository implements Serializable {
 
     /**
      * The owner
+     *
+     * @see RepositoryOwner
      */
     @Key
     private RepositoryOwner owner;
@@ -448,6 +450,8 @@ public final class Repository implements Serializable {
 
     /**
      * The license
+     *
+     * @see RepositoryLicense
      */
     @Key
     private RepositoryLicense license;
