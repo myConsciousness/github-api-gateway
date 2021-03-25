@@ -213,19 +213,19 @@ public final class Repository implements Serializable {
     private String language;
 
     @Key("has_issues")
-    private boolean issues;
+    private boolean issuesCreated;
 
     @Key("has_projects")
-    private boolean projects;
+    private boolean projectsCreated;
 
     @Key("has_downloads")
-    private boolean downloads;
+    private boolean downloadsCreated;
 
     @Key("has_wiki")
-    private boolean wiki;
+    private boolean wikiCreated;
 
     @Key("has_pages")
-    private boolean pages;
+    private boolean pagesCreated;
 
     @Key("forks_count")
     private int forksCount;
