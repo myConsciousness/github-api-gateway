@@ -116,97 +116,144 @@ public final class Repository implements Serializable {
     @Key("languages_url")
     private String languagesUrl;
 
+    @Key("stargazers_url")
     private String stargazersUrl;
 
+    @Key("contributors_url")
     private String contributorsUrl;
 
+    @Key("subscribers_url")
     private String subscribersUrl;
 
+    @Key("subscription_url")
     private String subscriptionUrl;
 
+    @Key("commits_url")
     private String commitsUrl;
 
+    @Key("git_commits_url")
     private String gitCommitsUrl;
 
+    @Key("comments_url")
     private String commentsUrl;
 
+    @Key("issue_comment_url")
     private String issueCommentUrl;
 
+    @Key("contents_url")
     private String contentsUrl;
 
+    @Key("compare_url")
     private String compareUrl;
 
+    @Key("merges_url")
     private String mergesUrl;
 
+    @Key("archive_url")
     private String archiveUrl;
 
+    @Key("downloads_url")
     private String downloadsUrl;
 
+    @Key("issues_url")
     private String issuesUrl;
 
+    @Key("pulls_url")
     private String pullsUrl;
 
+    @Key("milestones_url")
     private String milestonesUrl;
 
+    @Key("notifications_url")
     private String notificationsUrl;
 
+    @Key("labels_url")
     private String labelsUrl;
 
+    @Key("releases_url")
     private String releasesUrl;
 
+    @Key("deployments_url")
     private String deploymentsUrl;
 
+    @Key("created_at")
     private String createdAt;
 
+    @Key("updated_at")
     private String updatedAt;
 
+    @Key("pushed_at")
     private String pushedAt;
 
+    @Key("git_url")
     private String gitUrl;
 
+    @Key("ssh_url")
     private String sshUrl;
 
+    @Key("clone_url")
     private String cloneUrl;
 
+    @Key("svn_url")
     private String svnUrl;
 
+    @Key
     private String homepage;
 
+    @Key
     private int size;
 
+    @Key("stargazers_count")
     private int stargazersCount;
 
+    @Key("watchers_count")
     private int watchersCount;
 
+    @Key("language")
     private String language;
 
+    @Key("has_issues")
     private boolean issues;
 
+    @Key("has_projects")
     private boolean projects;
 
+    @Key("has_downloads")
     private boolean downloads;
 
+    @Key("has_wiki")
     private boolean wiki;
 
+    @Key("has_pages")
     private boolean pages;
 
+    @Key("forks_count")
     private int forksCount;
 
+    @Key("mirror_url")
     private String mirrorUrl;
 
+    @Key
     private boolean archived;
 
+    @Key
     private boolean disabled;
 
+    @Key("open_issues_count")
     private int openIssuesCount;
 
+    @Key
     private RepositoryLicense license;
 
+    @Key
     private int forks;
 
+    @Key("open_issues")
     private int openIssues;
 
+    @Key
     private int watchers;
 
+    @Key("default_branch")
     private String defaultBranch;
 }
