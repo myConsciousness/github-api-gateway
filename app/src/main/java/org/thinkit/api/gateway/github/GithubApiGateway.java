@@ -117,10 +117,6 @@ public final class GithubApiGateway extends ApiGateway {
 
     @Override
     public List<UserRepository> getUserRepositories() {
-        System.out.print(CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY))
-                .getClass().getTypeName());
-        System.out.print(CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY))
-                .get(0).getClass().getTypeName());
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY));
     }
 }
