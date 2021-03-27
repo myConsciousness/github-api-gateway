@@ -14,8 +14,14 @@
 
 package org.thinkit.api.gateway.github;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.user.OAuthConfig;
 
 /**
  * The class that manages test case of {@link GithubApiGateway} .
@@ -25,11 +31,20 @@ import org.thinkit.api.gateway.github.user.GithubUser;
  */
 public final class GithubApiGatewayTest {
 
-    @Test
-    void test() {
-        Gateway gateway = GithubApiGateway.from(GithubUser.builder().userName("myConsciousness").build());
-        gateway.getUserFollowers();
-        gateway.getFollowingUsers();
-        gateway.getUser();
+    /**
+     * The gateway
+     */
+    private static final Gateway GATEWAY = GithubApiGateway.from(GithubUser.builder().userName("myConsciousness")
+            .oAuthConfig(OAuthConfig.builder().accessToken("467fd06a09a5caa91b19a8012209bb7593eff569").build())
+            .build());
+
+    @Nested
+    class TestGetUser {
+
+        @Test
+        void testResponseItems() {
+            final User user = assertDoesNotThrow(() -> GATEWAY.getUser());
+            assertNotNull(user);
+        }
     }
 }
