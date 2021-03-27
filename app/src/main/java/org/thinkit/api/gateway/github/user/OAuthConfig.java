@@ -20,14 +20,12 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * The class that represents a GitHub user. Set the necessary user information
- * for the parameters of the GitHub API to be called.
+ * TThis data class manages the settings for user authentication when using the
+ * GitHub API.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -37,24 +35,15 @@ import lombok.ToString;
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
-public final class GithubUser implements Serializable {
+public final class OAuthConfig implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -544038879075207045L;
+    private static final long serialVersionUID = -2587545485889639857L;
 
     /**
-     * The user name
+     * The access token
      */
-    @Getter
-    @NonNull
-    private String userName;
-
-    /**
-     * The OAuth config
-     */
-    @Getter
-    @NonNull
-    private OAuthConfig oAuthConfig;
+    private String accessToken;
 }

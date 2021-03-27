@@ -21,6 +21,7 @@ import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
@@ -112,5 +113,14 @@ public final class GithubApiGateway extends ApiGateway {
     public List<UserFollower> getUserFollowers(final int perPage) {
         return CommunicationResolver.newInstance()
                 .getAsList(super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)));
+    }
+
+    @Override
+    public List<UserRepository> getUserRepositories() {
+        System.out.print(CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY))
+                .getClass().getTypeName());
+        System.out.print(CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY))
+                .get(0).getClass().getTypeName());
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY));
     }
 }

@@ -41,7 +41,12 @@ public enum GithubApi implements BiCatalog<GithubApi, String> {
     /**
      * The API that retrieves specific user's followers information
      */
-    USER_FOLLOWERS(2, "https://api.github.com/users/%s/followers");
+    USER_FOLLOWERS(2, "https://api.github.com/users/%s/followers"),
+
+    /**
+     * The API that retrieves specific user's repository information
+     */
+    USER_REPOSITORY(3, "https://api.github.com/users/%s/repos");
 
     /**
      * The code

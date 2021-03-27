@@ -23,7 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the repository information.
+ * The entity that manages the specific user's repository information.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -31,7 +31,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @Getter
-public final class Repository implements Serializable {
+public final class UserRepository implements Serializable {
 
     /**
      * The serial version UID

@@ -29,9 +29,14 @@ import lombok.RequiredArgsConstructor;
 public enum QueryKey implements BiCatalog<QueryKey, String> {
 
     /**
+     * {@code "access_token=xxx"}
+     */
+    ACCESS_TOKEN(0, "access_token"),
+
+    /**
      * {@code "per_page=xxx"}
      */
-    PER_PAGE(0, "per_page");
+    PER_PAGE(1, "per_page");
 
     /**
      * The code

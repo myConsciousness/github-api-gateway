@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 
 /**
@@ -88,4 +89,12 @@ public interface Gateway {
      * @return The specified number of user's follower information
      */
     public List<UserFollower> getUserFollowers(final int perPage);
+
+    /**
+     * Returns the specific user's repository information through the GitHub API
+     * {@code https://api.github.com/users/username/repos}.
+     *
+     * @return The user's repository information
+     */
+    public List<UserRepository> getUserRepositories();
 }
