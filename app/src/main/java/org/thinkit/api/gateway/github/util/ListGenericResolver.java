@@ -18,8 +18,6 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-import com.google.common.reflect.TypeToken;
-
 import io.opencensus.trace.Link;
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -28,8 +26,9 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * The class provides a method to return a {@link TypeToken} that has a specific
- * type as a generic.
+ * Type information such as {@code <T>} and {@code T} and etc will be erased at
+ * build time (Type erasure). This class provides the feature to resolve the
+ * type information to be removed by its eraser.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -39,6 +38,9 @@ import lombok.ToString;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ListGenericResolver<T> implements ParameterizedType {
 
+    /**
+     * The generic type
+     */
     private Class<T> genericType;
 
     /**
