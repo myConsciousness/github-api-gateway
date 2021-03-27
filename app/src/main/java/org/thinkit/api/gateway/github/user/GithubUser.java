@@ -55,6 +55,5 @@ public final class GithubUser implements Serializable {
      * The OAuth config
      */
     @Getter
-    @NonNull
     private OAuthConfig oAuthConfig;
 }
