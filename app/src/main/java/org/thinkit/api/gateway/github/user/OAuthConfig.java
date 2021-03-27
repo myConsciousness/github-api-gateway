@@ -20,6 +20,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
@@ -45,5 +46,6 @@ public final class OAuthConfig implements Serializable {
     /**
      * The access token
      */
+    @Getter
     private String accessToken;
 }

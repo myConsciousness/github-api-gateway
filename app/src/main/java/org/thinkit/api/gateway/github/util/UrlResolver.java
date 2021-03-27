@@ -135,7 +135,7 @@ public final class UrlResolver {
 
         queries.forEach((key, value) -> {
             final StringBuilder query = new StringBuilder();
-            query.append(key.getTag()).append(equal).append(key);
+            query.append(key.getTag()).append(equal).append(value);
             queryJoiner.add(query.toString());
         });
 
