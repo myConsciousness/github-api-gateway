@@ -16,6 +16,7 @@ package org.thinkit.api.gateway.github.response.repos;
 
 import java.io.Serializable;
 
+import com.google.api.client.util.GenericData;
 import com.google.api.client.util.Key;
 
 import lombok.EqualsAndHashCode;
@@ -29,9 +30,9 @@ import lombok.ToString;
  * @since 1.0.0
  */
 @ToString
-@EqualsAndHashCode
+@EqualsAndHashCode(callSuper = false)
 @Getter
-public final class RepositoryLicense implements Serializable {
+public final class RepositoryLicense extends GenericData implements Serializable {
 
     /**
      * The serial version UID
