@@ -16,6 +16,7 @@ package org.thinkit.api.gateway.github.util;
 
 import java.io.IOException;
 import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
@@ -79,9 +80,10 @@ public final class CommunicationResolver implements Serializable {
      * @param genericUrl
      * @return
      */
-    public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl) {
+    public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl,
+            @NonNull final ParameterizedType parameterizedType) {
         try {
-            return this.parseAsList(this.sendGetRequest(genericUrl));
+            return this.parseAsList(this.sendGetRequest(genericUrl), parameterizedType);
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -122,7 +124,8 @@ public final class CommunicationResolver implements Serializable {
      * @throws IOException
      */
     @SuppressWarnings("unchecked")
-    private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse) throws IOException {
-        return (List<T>) httpResponse.parseAs(TypeTokenResolver.getListToken());
+    private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse,
+            @NonNull final ParameterizedType parameterizedType) throws IOException {
+        return (List<T>) httpResponse.parseAs(parameterizedType);
     }
 }

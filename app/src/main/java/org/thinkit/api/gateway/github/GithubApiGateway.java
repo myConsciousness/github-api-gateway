@@ -25,6 +25,7 @@ import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
+import org.thinkit.api.gateway.github.util.ListGenericResolver;
 
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
@@ -95,28 +96,33 @@ public final class GithubApiGateway extends ApiGateway {
 
     @Override
     public List<FollowingUser> getFollowingUsers() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER));
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER),
+                ListGenericResolver.of(FollowingUser.class));
     }
 
     @Override
     public List<FollowingUser> getFollowingUsers(final int perPage) {
-        return CommunicationResolver.newInstance()
-                .getAsList(super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)));
+        return CommunicationResolver.newInstance().getAsList(
+                super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)),
+                ListGenericResolver.of(FollowingUser.class));
     }
 
     @Override
     public List<UserFollower> getUserFollowers() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS));
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS),
+                ListGenericResolver.of(UserFollower.class));
     }
 
     @Override
     public List<UserFollower> getUserFollowers(final int perPage) {
-        return CommunicationResolver.newInstance()
-                .getAsList(super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)));
+        return CommunicationResolver.newInstance().getAsList(
+                super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)),
+                ListGenericResolver.of(UserFollower.class));
     }
 
     @Override
     public List<UserRepository> getUserRepositories() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY));
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY),
+                ListGenericResolver.of(UserRepository.class));
     }
 }
