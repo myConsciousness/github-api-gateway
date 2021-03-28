@@ -44,4 +44,34 @@ public final class EventPayload extends GenericData implements Serializable {
      */
     @Key
     private String action;
+
+    /**
+     * The refrence
+     */
+    @Key
+    private String ref;
+
+    /**
+     * The reference type
+     */
+    @Key("ref_type")
+    private String refType;
+
+    /**
+     * The master branch
+     */
+    @Key("master_branch")
+    private String masterBranch;
+
+    /**
+     * The description
+     */
+    @Key
+    private String description;
+
+    /**
+     * The pusher type
+     */
+    @Key("pusher_type")
+    private String pusherType;
 }

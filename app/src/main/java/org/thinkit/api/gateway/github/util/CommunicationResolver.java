@@ -20,6 +20,7 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
+import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
@@ -99,6 +100,7 @@ public final class CommunicationResolver implements Serializable {
      */
     private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
         final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
+        httpRequest.setHeaders(new HttpHeaders());
         return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
     }
 
