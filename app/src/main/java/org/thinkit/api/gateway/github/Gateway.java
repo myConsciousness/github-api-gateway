@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 
@@ -97,4 +98,12 @@ public interface Gateway {
      * @return The user's repository information
      */
     public List<UserRepository> getUserRepositories();
+
+    /**
+     * Returns the specific received events information through the GitHub API
+     * {@code https://api.github.com/users/username/received_events}.
+     *
+     * @return The received events information
+     */
+    public List<ReceivedEvent> getReceivedEvents();
 }

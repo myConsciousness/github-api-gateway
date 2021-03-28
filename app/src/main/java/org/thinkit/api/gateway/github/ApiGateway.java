@@ -96,15 +96,8 @@ public abstract class ApiGateway implements Gateway, Serializable {
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries) {
-        return switch (githubApi) {
-        case USER -> UrlResolver.createUrl(GithubApi.USER, List.of(this.getGithubUser().getUserName()));
-        case USER_FOLLOWERS -> UrlResolver.createUrl(githubApi, this.mergeQueries(queries),
+        return UrlResolver.createUrl(githubApi, this.mergeQueries(queries),
                 List.of(this.getGithubUser().getUserName()));
-        case FOLLOWING_USER -> UrlResolver.createUrl(githubApi, this.mergeQueries(queries),
-                List.of(this.getGithubUser().getUserName()));
-        case USER_REPOSITORY -> UrlResolver.createUrl(githubApi, this.mergeQueries(queries),
-                List.of(this.getGithubUser().getUserName()));
-        };
     }
 
     /**

@@ -80,10 +80,9 @@ public final class CommunicationResolver implements Serializable {
      * @param genericUrl
      * @return
      */
-    public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl,
-            @NonNull final ParameterizedType parameterizedType) {
+    public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
-            return this.parseAsList(this.sendGetRequest(genericUrl), parameterizedType);
+            return this.parseAsList(this.sendGetRequest(genericUrl), ListGenericResolver.of(responseClass));
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }

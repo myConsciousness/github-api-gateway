@@ -46,7 +46,12 @@ public enum GithubApi implements BiCatalog<GithubApi, String> {
     /**
      * The API that retrieves specific user's repository information
      */
-    USER_REPOSITORY(3, "https://api.github.com/users/%s/repos");
+    USER_REPOSITORY(3, "https://api.github.com/users/%s/repos"),
+
+    /**
+     * The API that retrieves specific received events information
+     */
+    RECEIVED_EVENTS(4, "https://api.github.com/users/%s/received_events");
 
     /**
      * The code

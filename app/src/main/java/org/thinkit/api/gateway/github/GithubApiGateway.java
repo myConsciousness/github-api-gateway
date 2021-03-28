@@ -21,11 +21,11 @@ import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
-import org.thinkit.api.gateway.github.util.ListGenericResolver;
 
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
@@ -97,32 +97,36 @@ public final class GithubApiGateway extends ApiGateway {
     @Override
     public List<FollowingUser> getFollowingUsers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER),
-                ListGenericResolver.of(FollowingUser.class));
+                FollowingUser.class);
     }
 
     @Override
     public List<FollowingUser> getFollowingUsers(final int perPage) {
         return CommunicationResolver.newInstance().getAsList(
-                super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)),
-                ListGenericResolver.of(FollowingUser.class));
+                super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)), FollowingUser.class);
     }
 
     @Override
     public List<UserFollower> getUserFollowers() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS),
-                ListGenericResolver.of(UserFollower.class));
+                UserFollower.class);
     }
 
     @Override
     public List<UserFollower> getUserFollowers(final int perPage) {
         return CommunicationResolver.newInstance().getAsList(
-                super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)),
-                ListGenericResolver.of(UserFollower.class));
+                super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)), UserFollower.class);
     }
 
     @Override
     public List<UserRepository> getUserRepositories() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY),
-                ListGenericResolver.of(UserRepository.class));
+                UserRepository.class);
+    }
+
+    @Override
+    public List<ReceivedEvent> getReceivedEvents() {
+        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS),
+                ReceivedEvent.class);
     }
 }
