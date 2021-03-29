@@ -56,7 +56,12 @@ public enum GithubApi implements BiCatalog<GithubApi, String> {
     /**
      * The API that retrieves repository information
      */
-    REPOSITORY(5, "https://api.github.com/repos/%s");
+    REPOSITORY(5, "https://api.github.com/repos/%s"),
+
+    /**
+     * The API that retrieves specific user's subscription information
+     */
+    USER_SUBSCRIPTIONS(5, "https://api.github.com/users/%s/subscriptions");
 
     /**
      * The code

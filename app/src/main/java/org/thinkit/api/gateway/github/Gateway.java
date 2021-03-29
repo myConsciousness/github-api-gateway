@@ -21,6 +21,7 @@ import org.thinkit.api.gateway.github.response.following.FollowingUser;
 import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
 import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
+import org.thinkit.api.gateway.github.response.subscriptions.UserSubscription;
 import org.thinkit.api.gateway.github.response.user.User;
 
 import lombok.NonNull;
@@ -109,6 +110,16 @@ public interface Gateway {
      * @return The received events information
      */
     public List<ReceivedEvent> getReceivedEvents();
+
+    /**
+     * Returns the specific user's subscription information through the GitHub API
+     * {@code https://api.github.com/users/username/subscriptions}.
+     *
+     * @return The specific user's subscription information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<UserSubscription> getUserSubscriptions();
 
     /**
      * Returns the repository information through the GitHub API
