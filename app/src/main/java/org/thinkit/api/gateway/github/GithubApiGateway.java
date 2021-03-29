@@ -22,6 +22,7 @@ import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
 import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
+import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
@@ -128,5 +129,11 @@ public final class GithubApiGateway extends ApiGateway {
     public List<ReceivedEvent> getReceivedEvents() {
         return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS),
                 ReceivedEvent.class);
+    }
+
+    @Override
+    public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
+        return CommunicationResolver.newInstance()
+                .getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)), Repository.class);
     }
 }

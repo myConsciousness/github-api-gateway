@@ -15,6 +15,7 @@
 package org.thinkit.api.gateway.github;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
@@ -46,8 +47,9 @@ import lombok.ToString;
  * the API call will fail or an exception will be thrown at runtime.
  *
  * <p>
- * It provides {@link #createUrl(GithubApi)} and
- * {@link #createUrl(GithubApi, Map)} methods to easily generate URLs for
+ * It provides {@link #createUrl(GithubApi)} ,
+ * {@link #createUrl(GithubApi, Map)} , {@link #createUrl(GithubApi, List)} and
+ * {@link #createUrl(GithubApi, Map, List)} methods to easily generate URLs for
  * calling the API.
  *
  * @author Kato Shinya
@@ -72,8 +74,7 @@ public abstract class ApiGateway implements Gateway, Serializable {
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as
-     * an argument. To specify a query string in the API URL, use
-     * {@link #createUrl(GithubApi, Map)} .
+     * an argument.
      *
      * @param githubApi The GitHub API
      * @return The API URL
@@ -81,23 +82,51 @@ public abstract class ApiGateway implements Gateway, Serializable {
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi) {
-        return this.createUrl(githubApi, new HashMap<>(0));
+        return this.createUrl(githubApi, new HashMap<>(0), new ArrayList<>(0));
     }
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} and
-     * queries map passed as arguments. If you do not need to specify a query string
-     * in the API URL, use {@link #createUrl(GithubApi)} .
+     * request queries passed as arguments.
      *
      * @param githubApi The GitHub API
      * @param queries   The queries
-     * @return The API URL
+     * @return The GitHub API
      *
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries) {
-        return UrlResolver.createUrl(githubApi, this.mergeQueries(queries),
-                List.of(this.getGithubUser().getUserName()));
+        return this.createUrl(githubApi, queries, new ArrayList<>(0));
+    }
+
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} and bind
+     * items passed as arguments.
+     *
+     * @param githubApi The GitHub API
+     * @param binds     The bind items
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final List<String> binds) {
+        return this.createUrl(githubApi, new HashMap<>(0), binds);
+    }
+
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} , request
+     * queries and bind items passed as arguments.
+     *
+     * @param githubApi The GitHub API
+     * @param queries   The request queries
+     * @param binds     The bind items
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries,
+            @NonNull final List<String> binds) {
+        return UrlResolver.createUrl(githubApi, this.mergeQueries(queries), this.mergeBinds(binds));
     }
 
     /**
@@ -123,5 +152,25 @@ public abstract class ApiGateway implements Gateway, Serializable {
         });
 
         return mergedQueries;
+    }
+
+    /**
+     * Merges the bind list passed as an argument with the GitHub user information.
+     *
+     * @param binds The original bind items
+     * @return The merged binds
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    private List<String> mergeBinds(@NonNull final List<String> binds) {
+
+        final List<String> mergedBinds = new ArrayList<>(0);
+        mergedBinds.add(this.githubUser.getUserName());
+
+        binds.forEach(bind -> {
+            mergedBinds.add(bind);
+        });
+
+        return mergedBinds;
     }
 }

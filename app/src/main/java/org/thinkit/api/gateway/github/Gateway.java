@@ -19,8 +19,11 @@ import java.util.List;
 import org.thinkit.api.gateway.github.response.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.following.FollowingUser;
 import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
+import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.User;
+
+import lombok.NonNull;
 
 /**
  * The interface that abstracts the gateway. It provides a gateway for intuitive
@@ -106,4 +109,16 @@ public interface Gateway {
      * @return The received events information
      */
     public List<ReceivedEvent> getReceivedEvents();
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName}.
+     *
+     * @param repositoryDomain The repository domain with the format
+     *                         {@code "loginName/repositoryName"}
+     * @return The repository information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<Repository> getRepositories(@NonNull final String repositoryDomain);
 }
