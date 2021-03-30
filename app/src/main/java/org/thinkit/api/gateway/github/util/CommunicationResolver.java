@@ -109,8 +109,7 @@ public final class CommunicationResolver implements Serializable {
      */
     private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
         final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
-        httpRequest.getHeaders()
-                .setAuthorization(SecurityTokenResolver.appendBearer(this.oAuthConfig.getAccessToken()));
+        httpRequest.getHeaders().setAuthorization(SecuritySchemeResolver.bearer(this.oAuthConfig.getAccessToken()));
         return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
     }
 

@@ -12,36 +12,31 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.catalog;
+package org.thinkit.api.gateway.github.util;
 
-import org.thinkit.api.catalog.BiCatalog;
+import java.util.StringJoiner;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import org.thinkit.api.gateway.github.catalog.Delimiter;
+import org.thinkit.api.gateway.github.catalog.SecurityScheme;
+
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
 
 /**
- * The catalog that manages security token.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
-@RequiredArgsConstructor
-public enum SecurityToken implements BiCatalog<SecurityToken, String> {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+final class SecuritySchemeResolver {
 
-    /**
-     * The {@code "bearer"} token
-     */
-    BEARER(0, "bearer");
+    public static String bearer(@NonNull final String token) {
 
-    /**
-     * The code
-     */
-    @Getter
-    private final int code;
+        final StringJoiner tokenJoiner = new StringJoiner(Delimiter.SPACE.getTag());
+        tokenJoiner.add(SecurityScheme.BEARER.getTag());
+        tokenJoiner.add(token);
 
-    /**
-     * The tag
-     */
-    @Getter
-    private final String tag;
+        return tokenJoiner.toString();
+    }
 }
