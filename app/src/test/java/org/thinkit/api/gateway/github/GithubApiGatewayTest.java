@@ -32,19 +32,27 @@ import org.thinkit.api.gateway.github.user.OAuthConfig;
 public final class GithubApiGatewayTest {
 
     /**
+     * The access token
+     */
+    private static final String ACCESS_TOKEN = System.getenv("GITHUB_ACCESS_TOKEN");
+
+    /**
      * The gateway
      */
-    private static final Gateway GATEWAY = GithubApiGateway.from(GithubUser.builder().userName("myConsciousness")
-            .oAuthConfig(OAuthConfig.builder().accessToken("467fd06a09a5caa91b19a8012209bb7593eff569").build())
-            .build());
+    private static final Gateway GATEWAY = GithubApiGateway.from(
+            GithubUser.builder().userName("myConsciousness").build(),
+            OAuthConfig.builder().accessToken(ACCESS_TOKEN).build());
 
     @Nested
     class TestGetUser {
 
         @Test
         void testResponseItems() {
+
             final User user = assertDoesNotThrow(() -> GATEWAY.getUser());
+
             assertNotNull(user);
+            assertNotNull(user.getLogin());
         }
     }
 }
