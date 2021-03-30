@@ -27,6 +27,7 @@ import org.thinkit.api.gateway.github.response.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.subscriptions.UserSubscription;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.user.OAuthConfig;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.EqualsAndHashCode;
@@ -69,7 +70,12 @@ public final class GithubApiGateway extends ApiGateway {
     private static final long serialVersionUID = -2391992718333265549L;
 
     /**
-     * The constructor.
+     * The communicate resolver
+     */
+    private CommunicationResolver communicationResolver;
+
+    /**
+     * The constructor. This constructor does not configure OAuth authentication.
      *
      * @param githubUser The GitHub user
      *
@@ -77,6 +83,7 @@ public final class GithubApiGateway extends ApiGateway {
      */
     private GithubApiGateway(@NonNull final GithubUser githubUser) {
         super(githubUser);
+        this.communicationResolver = CommunicationResolver.from(OAuthConfig.builder().build());
     }
 
     /**
@@ -91,56 +98,78 @@ public final class GithubApiGateway extends ApiGateway {
         return new GithubApiGateway(githubUser);
     }
 
+    /**
+     * The constructor. This constructor does configure OAuth authentication.
+     *
+     * @param githubUser  The GitHub user
+     * @param oAuthConfig The OAuth config
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    private GithubApiGateway(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
+        super(githubUser);
+        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
+    }
+
+    /**
+     * Returns the new instance of {@link GithubApiGateway} based on the argument.
+     *
+     * @param githubUser  The GitHub user
+     * @param oAuthConfig The OAuth config
+     * @return The new instance of {@link GithubApiGateway}
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public static Gateway from(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
+        return new GithubApiGateway(githubUser, oAuthConfig);
+    }
+
     @Override
     public User getUser() {
-        return CommunicationResolver.newInstance().get(super.createUrl(GithubApi.USER), User.class);
+        return this.communicationResolver.get(super.createUrl(GithubApi.USER), User.class);
     }
 
     @Override
     public List<FollowingUser> getFollowingUsers() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.FOLLOWING_USER),
-                FollowingUser.class);
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.FOLLOWING_USER), FollowingUser.class);
     }
 
     @Override
     public List<FollowingUser> getFollowingUsers(final int perPage) {
-        return CommunicationResolver.newInstance().getAsList(
+        return this.communicationResolver.getAsList(
                 super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)), FollowingUser.class);
     }
 
     @Override
     public List<UserFollower> getUserFollowers() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS),
-                UserFollower.class);
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_FOLLOWERS), UserFollower.class);
     }
 
     @Override
     public List<UserFollower> getUserFollowers(final int perPage) {
-        return CommunicationResolver.newInstance().getAsList(
+        return this.communicationResolver.getAsList(
                 super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)), UserFollower.class);
     }
 
     @Override
     public List<UserRepository> getUserRepositories() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_REPOSITORY),
-                UserRepository.class);
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_REPOSITORY), UserRepository.class);
     }
 
     @Override
     public List<ReceivedEvent> getReceivedEvents() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS),
-                ReceivedEvent.class);
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS), ReceivedEvent.class);
     }
 
     @Override
     public List<UserSubscription> getUserSubscriptions() {
-        return CommunicationResolver.newInstance().getAsList(super.createUrl(GithubApi.USER_SUBSCRIPTIONS),
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_SUBSCRIPTIONS),
                 UserSubscription.class);
     }
 
     @Override
     public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
-        return CommunicationResolver.newInstance()
-                .getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)), Repository.class);
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
+                Repository.class);
     }
 }

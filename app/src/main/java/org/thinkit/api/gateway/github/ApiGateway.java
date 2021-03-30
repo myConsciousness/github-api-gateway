@@ -16,7 +16,6 @@ package org.thinkit.api.gateway.github;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,7 +25,6 @@ import com.google.api.client.http.GenericUrl;
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.user.GithubUser;
-import org.thinkit.api.gateway.github.user.OAuthConfig;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
 import lombok.AccessLevel;
@@ -70,7 +68,7 @@ public abstract class ApiGateway implements Gateway, Serializable {
      * The GitHub user
      */
     @Getter(AccessLevel.PRIVATE)
-    private GithubUser githubUser;
+    protected GithubUser githubUser;
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as
@@ -126,32 +124,7 @@ public abstract class ApiGateway implements Gateway, Serializable {
      */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries,
             @NonNull final List<String> binds) {
-        return UrlResolver.createUrl(githubApi, this.mergeQueries(queries), this.mergeBinds(binds));
-    }
-
-    /**
-     * Merges the query map passed as an argument with the authorization information
-     * defined in the GitHub user information.
-     *
-     * @param queries The original queries
-     * @return The merged queries
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    private Map<QueryKey, Object> mergeQueries(@NonNull final Map<QueryKey, Object> queries) {
-
-        final Map<QueryKey, Object> mergedQueries = new EnumMap<>(QueryKey.class);
-        final OAuthConfig oAuthConfig = this.githubUser.getOAuthConfig();
-
-        if (oAuthConfig != null) {
-            mergedQueries.put(QueryKey.ACCESS_TOKEN, oAuthConfig.getAccessToken());
-        }
-
-        queries.forEach((queryKey, value) -> {
-            mergedQueries.put(queryKey, value);
-        });
-
-        return mergedQueries;
+        return UrlResolver.createUrl(githubApi, queries, this.mergeBinds(binds));
     }
 
     /**

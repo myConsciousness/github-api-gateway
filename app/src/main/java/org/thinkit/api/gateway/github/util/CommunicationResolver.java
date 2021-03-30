@@ -20,7 +20,6 @@ import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
 import com.google.api.client.http.GenericUrl;
-import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpRequest;
 import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.HttpResponse;
@@ -28,6 +27,10 @@ import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.JsonObjectParser;
 import com.google.api.client.json.gson.GsonFactory;
 
+import org.thinkit.api.gateway.github.user.OAuthConfig;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -41,7 +44,8 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode
-@NoArgsConstructor(staticName = "newInstance")
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(staticName = "from")
 public final class CommunicationResolver implements Serializable {
 
     /**
@@ -58,6 +62,11 @@ public final class CommunicationResolver implements Serializable {
      * The JSON object parser
      */
     private static final JsonObjectParser JSON_OBJECT_PARSER = new JsonObjectParser(GsonFactory.getDefaultInstance());
+
+    /**
+     * The OAuth config
+     */
+    private OAuthConfig oAuthConfig;
 
     /**
      *
@@ -100,7 +109,8 @@ public final class CommunicationResolver implements Serializable {
      */
     private HttpResponse sendGetRequest(@NonNull final GenericUrl genericUrl) throws IOException {
         final HttpRequest httpRequest = HTTP_REQUEST_FACTORY.buildGetRequest(genericUrl);
-        httpRequest.setHeaders(new HttpHeaders());
+        httpRequest.getHeaders()
+                .setAuthorization(SecurityTokenResolver.appendBearer(this.oAuthConfig.getAccessToken()));
         return httpRequest.setParser(JSON_OBJECT_PARSER).execute();
     }
 
