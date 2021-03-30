@@ -53,7 +53,7 @@ import lombok.ToString;
  * <code>
  * final GithubUser githubUser = GithubUser.builder().userName("username").build();
  * final Gateway gateway = GithubApiGateway.from(githubUser);
- * final List<UserFollowers> userFollowers = gateway.getUserFollowers();
+ * final List&lt;UserFollowers&gt; userFollowers = gateway.getUserFollowers();
  * </code>
  * </pre>
  *

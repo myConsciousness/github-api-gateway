@@ -46,7 +46,7 @@ import lombok.NonNull;
  * <code>
  * final GithubUser githubUser = GithubUser.builder().userName("username").build();
  * final Gateway gateway = GithubApiGateway.from(githubUser);
- * final List<UserFollowers> userFollowers = gateway.getUserFollowers();
+ * final List&lt;UserFollowers&gt; userFollowers = gateway.getUserFollowers();
  * </code>
  * </pre>
  *
@@ -75,6 +75,7 @@ public interface Gateway {
      * Returns the specific user's following information through the GitHub API
      * {@code https://api.github.com/users/username/following?per_page=xxx}.
      *
+     * @param perPage The page count
      * @return The specified number of user's following information
      */
     public List<FollowingUser> getFollowingUsers(final int perPage);
@@ -91,6 +92,7 @@ public interface Gateway {
      * Returns the specific user's follower information through the GitHub API
      * {@code https://api.github.com/users/username/follower?per_page=xxx}.
      *
+     * @param perPage The page count
      * @return The specified number of user's follower information
      */
     public List<UserFollower> getUserFollowers(final int perPage);

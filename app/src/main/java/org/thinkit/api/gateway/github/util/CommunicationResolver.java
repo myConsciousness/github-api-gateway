@@ -69,12 +69,18 @@ public final class CommunicationResolver implements Serializable {
     private OAuthConfig oAuthConfig;
 
     /**
+     * Sends a Get request to the request URL.
      *
+     * <p>
+     * The response will be parsed into the response type specified as the second
+     * argument and returned.
      *
-     * @param <T>
-     * @param genericUrl
-     * @param responseClass
-     * @return
+     * @param <T>           The response type
+     * @param genericUrl    The request url object
+     * @param responseClass The response class
+     * @return The JSON response
+     *
+     * @exception NullPointerException if {@code null} is passed as an argument
      */
     public <T> T get(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
@@ -85,10 +91,18 @@ public final class CommunicationResolver implements Serializable {
     }
 
     /**
+     * Sends a Get request to the request URL.
      *
-     * @param <T>
-     * @param genericUrl
-     * @return
+     * <p>
+     * The response will be parsed into the list of response type specified as the
+     * second argument and returned.
+     *
+     * @param <T>           The response type
+     * @param genericUrl    The request url object
+     * @param responseClass The response class
+     * @return The JSON responses as list
+     *
+     * @exception NullPointerException if {@code null} is passed as an argument
      */
     public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
@@ -114,12 +128,15 @@ public final class CommunicationResolver implements Serializable {
     }
 
     /**
+     * Parses the HTTP response into the type specified as an argument.
      *
-     * @param <T>
-     * @param httpResponse
-     * @param responseClass
-     * @return
-     * @throws IOException
+     * @param <T>           The response type
+     * @param httpResponse  The http response
+     * @param responseClass The response class
+     * @return The JSON response as the response type specified as the argument
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     * @throws IOException If an error occurs during parsing
      */
     private <T> T parseAs(@NonNull final HttpResponse httpResponse, @NonNull final Class<T> responseClass)
             throws IOException {
@@ -127,11 +144,16 @@ public final class CommunicationResolver implements Serializable {
     }
 
     /**
+     * Parses the HTTP response into list of the type specified as an argument.
      *
-     * @param <T>
-     * @param httpResponse
-     * @return
-     * @throws IOException
+     * @param <T>               The response type
+     * @param httpResponse      The http response
+     * @param parameterizedType The parameterized type of response class
+     * @return The JSON responses as the list of response type specified as the
+     *         argument
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     * @throws IOException If an error occurs during parsing
      */
     @SuppressWarnings("unchecked")
     private <T> List<T> parseAsList(@NonNull final HttpResponse httpResponse,

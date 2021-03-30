@@ -24,6 +24,8 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 /**
+ * The class that provides the feature to resolve the security scheme name for
+ * tokens.
  *
  * @author Kato Shinya
  * @since 1.0.0
