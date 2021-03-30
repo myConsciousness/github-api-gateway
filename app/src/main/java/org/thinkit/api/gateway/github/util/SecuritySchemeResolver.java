@@ -31,6 +31,14 @@ import lombok.NonNull;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 final class SecuritySchemeResolver {
 
+    /**
+     * Returns the token passed as an argument in the format with the bearer schema.
+     *
+     * @param token The token
+     * @return The token with bearer scheme
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     public static String bearer(@NonNull final String token) {
 
         final StringJoiner tokenJoiner = new StringJoiner(Delimiter.SPACE.getTag());

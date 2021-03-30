@@ -34,7 +34,7 @@ public final class GithubApiGatewayTest {
     /**
      * The access token
      */
-    private static final String ACCESS_TOKEN = System.getenv("GITHUB_ACCESS_TOKEN");
+    private static final String ACCESS_TOKEN = System.getenv("ACCESS_TOKEN");
 
     /**
      * The gateway
