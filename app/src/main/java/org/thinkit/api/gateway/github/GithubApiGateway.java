@@ -131,7 +131,7 @@ public final class GithubApiGateway extends ApiGateway {
 
     @Override
     public List<FollowingUser> getFollowingUsers() {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.FOLLOWING_USER), FollowingUser.class);
+        return this.getFollowingUsers(super.getDefaultPerPage());
     }
 
     @Override
@@ -142,7 +142,7 @@ public final class GithubApiGateway extends ApiGateway {
 
     @Override
     public List<UserFollower> getUserFollowers() {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_FOLLOWERS), UserFollower.class);
+        return this.getUserFollowers(super.getDefaultPerPage());
     }
 
     @Override

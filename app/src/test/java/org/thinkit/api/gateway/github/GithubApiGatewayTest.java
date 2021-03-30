@@ -48,11 +48,8 @@ public final class GithubApiGatewayTest {
 
         @Test
         void testResponseItems() {
-
             final User user = assertDoesNotThrow(() -> GATEWAY.getUser());
-
             assertNotNull(user);
-            assertNotNull(user.getLogin());
         }
     }
 }

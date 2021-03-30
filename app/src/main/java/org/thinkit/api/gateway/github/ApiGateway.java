@@ -24,11 +24,11 @@ import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
+import org.thinkit.api.gateway.github.content.DefaultPaginationMapper;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -56,7 +56,6 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-@AllArgsConstructor
 public abstract class ApiGateway implements Gateway, Serializable {
 
     /**
@@ -65,10 +64,23 @@ public abstract class ApiGateway implements Gateway, Serializable {
     private static final long serialVersionUID = 5408959112740655553L;
 
     /**
+     * The default per page
+     */
+    @Getter(AccessLevel.PROTECTED)
+    protected int defaultPerPage;
+
+    /**
      * The GitHub user
      */
-    @Getter(AccessLevel.PRIVATE)
-    protected GithubUser githubUser;
+    private GithubUser githubUser;
+
+    protected ApiGateway(@NonNull final GithubUser githubUser) {
+        this.githubUser = githubUser;
+
+        DefaultPaginationMapper.newInstance().scan().forEach(defaultPagination -> {
+            this.defaultPerPage = Integer.parseInt(defaultPagination.getPerPage());
+        });
+    }
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as

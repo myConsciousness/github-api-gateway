@@ -1,0 +1,17 @@
+{
+    "meta": {
+        "author": "Kato Shinya",
+        "encoding": "UTF-8",
+        "description": "The content that manages the default pagination.",
+        "resultType": "org.thinkit.api.gateway.github.content.entity.DefaultPagination"
+    },
+    "selectionNodes": [
+        {
+            "node": {
+                "conditionId": "",
+                "perPage": "100"
+            }
+        }
+    ],
+    "conditionNodes": []
+}
