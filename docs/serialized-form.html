@@ -58,11 +58,11 @@ loadScripts(document, 'script');</script>
 <h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github</h2>
 <ul class="block-list">
 <li>
-<section class="serialized-class-details" id="org.thinkit.api.gateway.github.GithubApiGateway">
-<h3>Class <a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.GithubApiGateway</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.ApiGateway">
+<h3>Class <a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.ApiGateway</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
 <dl class="name-value">
 <dt>serialVersionUID:</dt>
-<dd>-585767869852520568L</dd>
+<dd>5408959112740655553L</dd>
 </dl>
 <ul class="block-list">
 <li>
@@ -71,8 +71,31 @@ loadScripts(document, 'script');</script>
 <ul class="block-list">
 <li class="block-list">
 <h5>githubUser</h5>
-<pre>@NonNull <a href="org/thinkit/api/gateway/github/user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a> githubUser</pre>
-<div class="block">The GitHub User</div>
+<pre><a href="org/thinkit/api/gateway/github/user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a> githubUser</pre>
+<div class="block">The GitHub user</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.GithubApiGateway">
+<h3>Class <a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.GithubApiGateway</a> extends <a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a> implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-2391992718333265549L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>communicationResolver</h5>
+<pre><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a> communicationResolver</pre>
+<div class="block">The communicate resolver</div>
 </li>
 </ul>
 </section>
@@ -85,11 +108,11 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <section class="serialized-package-container">
-<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response</h2>
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.followers</h2>
 <ul class="block-list">
 <li>
-<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.UserFollower">
-<h3>Class <a href="org/thinkit/api/gateway/github/response/UserFollower.html" title="org.thinkit.api.gateway.github.response内のクラス">org.thinkit.api.gateway.github.response.UserFollower</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.followers.UserFollower">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">org.thinkit.api.gateway.github.response.followers.UserFollower</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
 <dl class="name-value">
 <dt>serialVersionUID:</dt>
 <dd>2510321939698218285L</dd>
@@ -200,6 +223,1986 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.following</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.following.FollowingUser">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">org.thinkit.api.gateway.github.response.following.FollowingUser</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-4563127151074973279L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>avaterUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> avaterUrl</pre>
+<div class="block">The avater url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The event url</div>
+</li>
+<li class="block-list">
+<h5>followersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followersUrl</pre>
+<div class="block">The follower url</div>
+</li>
+<li class="block-list">
+<h5>followingUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followingUrl</pre>
+<div class="block">The following url</div>
+</li>
+<li class="block-list">
+<h5>gistsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gistsUrl</pre>
+<div class="block">The gist url</div>
+</li>
+<li class="block-list">
+<h5>gravaterId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gravaterId</pre>
+<div class="block">The gravater id</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The user url (html)</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The user id</div>
+</li>
+<li class="block-list">
+<h5>login</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> login</pre>
+<div class="block">The login name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>organizationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> organizationsUrl</pre>
+<div class="block">The organization url</div>
+</li>
+<li class="block-list">
+<h5>receivedEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> receivedEventsUrl</pre>
+<div class="block">The received event url</div>
+</li>
+<li class="block-list">
+<h5>reposUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> reposUrl</pre>
+<div class="block">The repository url</div>
+</li>
+<li class="block-list">
+<h5>siteAdmin</h5>
+<pre>boolean siteAdmin</pre>
+<div class="block">The site admin</div>
+</li>
+<li class="block-list">
+<h5>starredUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> starredUrl</pre>
+<div class="block">The starred url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionsUrl</pre>
+<div class="block">The subscription url</div>
+</li>
+<li class="block-list">
+<h5>type</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> type</pre>
+<div class="block">The user type</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The user url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.receivedevents</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.receivedevents.EventActor">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/receivedevents/EventActor.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">org.thinkit.api.gateway.github.response.receivedevents.EventActor</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>5479308695952018960L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>avaterUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> avaterUrl</pre>
+<div class="block">The avater url</div>
+</li>
+<li class="block-list">
+<h5>displayLogin</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> displayLogin</pre>
+<div class="block">The display login name</div>
+</li>
+<li class="block-list">
+<h5>gravaterId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gravaterId</pre>
+<div class="block">The gravater id</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The id</div>
+</li>
+<li class="block-list">
+<h5>login</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> login</pre>
+<div class="block">The login name</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.receivedevents.EventPayload">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/receivedevents/EventPayload.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">org.thinkit.api.gateway.github.response.receivedevents.EventPayload</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-6204075867767091542L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>action</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> action</pre>
+<div class="block">The action</div>
+</li>
+<li class="block-list">
+<h5>description</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> description</pre>
+<div class="block">The description</div>
+</li>
+<li class="block-list">
+<h5>masterBranch</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> masterBranch</pre>
+<div class="block">The master branch</div>
+</li>
+<li class="block-list">
+<h5>pusherType</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pusherType</pre>
+<div class="block">The pusher type</div>
+</li>
+<li class="block-list">
+<h5>ref</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> ref</pre>
+<div class="block">The refrence</div>
+</li>
+<li class="block-list">
+<h5>refType</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> refType</pre>
+<div class="block">The reference type</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.receivedevents.EventRepository">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/receivedevents/EventRepository.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">org.thinkit.api.gateway.github.response.receivedevents.EventRepository</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>4372997224776098302L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The id</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The name</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/receivedevents/ReceivedEvent.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>858133184525397902L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>actor</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/receivedevents/EventActor.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventActor</a> actor</pre>
+<div class="block">The actor</div>
+</li>
+<li class="block-list">
+<h5>createdAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> createdAt</pre>
+<div class="block">The created datetime</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> id</pre>
+<div class="block">The id</div>
+</li>
+<li class="block-list">
+<h5>payload</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/receivedevents/EventPayload.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventPayload</a> payload</pre>
+<div class="block">The payload</div>
+</li>
+<li class="block-list">
+<h5>publicEvent</h5>
+<pre>boolean publicEvent</pre>
+<div class="block">The flag whether the event has been published</div>
+</li>
+<li class="block-list">
+<h5>repository</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/receivedevents/EventRepository.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventRepository</a> repository</pre>
+<div class="block">The repository</div>
+</li>
+<li class="block-list">
+<h5>type</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> type</pre>
+<div class="block">The type</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.repos</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.repos.Repository">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/repos/Repository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">org.thinkit.api.gateway.github.response.repos.Repository</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>5268109200498086994L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>archived</h5>
+<pre>boolean archived</pre>
+<div class="block">The archived</div>
+</li>
+<li class="block-list">
+<h5>archiveUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> archiveUrl</pre>
+<div class="block">The archive url</div>
+</li>
+<li class="block-list">
+<h5>assigneesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> assigneesUrl</pre>
+<div class="block">The assignees url</div>
+</li>
+<li class="block-list">
+<h5>blogsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> blogsUrl</pre>
+<div class="block">The blogs url</div>
+</li>
+<li class="block-list">
+<h5>branchesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> branchesUrl</pre>
+<div class="block">The branches url</div>
+</li>
+<li class="block-list">
+<h5>cloneUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> cloneUrl</pre>
+<div class="block">The clone url</div>
+</li>
+<li class="block-list">
+<h5>collaboratorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> collaboratorsUrl</pre>
+<div class="block">The collaborators url</div>
+</li>
+<li class="block-list">
+<h5>commentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commentsUrl</pre>
+<div class="block">The comments url</div>
+</li>
+<li class="block-list">
+<h5>commitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commitsUrl</pre>
+<div class="block">The commits url</div>
+</li>
+<li class="block-list">
+<h5>compareUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> compareUrl</pre>
+<div class="block">The compare url</div>
+</li>
+<li class="block-list">
+<h5>contentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contentsUrl</pre>
+<div class="block">The contents url</div>
+</li>
+<li class="block-list">
+<h5>contributorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contributorsUrl</pre>
+<div class="block">The contributors url</div>
+</li>
+<li class="block-list">
+<h5>createdAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> createdAt</pre>
+<div class="block">The created datetime</div>
+</li>
+<li class="block-list">
+<h5>defaultBranch</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> defaultBranch</pre>
+<div class="block">The default branch</div>
+</li>
+<li class="block-list">
+<h5>deploymentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> deploymentsUrl</pre>
+<div class="block">The deployment url</div>
+</li>
+<li class="block-list">
+<h5>description</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> description</pre>
+<div class="block">The description</div>
+</li>
+<li class="block-list">
+<h5>disabled</h5>
+<pre>boolean disabled</pre>
+<div class="block">The disabled</div>
+</li>
+<li class="block-list">
+<h5>downloadsCreated</h5>
+<pre>boolean downloadsCreated</pre>
+<div class="block">The flag of downloads existence</div>
+</li>
+<li class="block-list">
+<h5>downloadsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> downloadsUrl</pre>
+<div class="block">The downloads url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>fork</h5>
+<pre>boolean fork</pre>
+<div class="block">The fork</div>
+</li>
+<li class="block-list">
+<h5>forks</h5>
+<pre>int forks</pre>
+<div class="block">The forks</div>
+</li>
+<li class="block-list">
+<h5>forksCount</h5>
+<pre>int forksCount</pre>
+<div class="block">The forks count</div>
+</li>
+<li class="block-list">
+<h5>forksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> forksUrl</pre>
+<div class="block">The forks url</div>
+</li>
+<li class="block-list">
+<h5>fullName</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> fullName</pre>
+<div class="block">The repository full name</div>
+</li>
+<li class="block-list">
+<h5>gitCommitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitCommitsUrl</pre>
+<div class="block">The git commits url</div>
+</li>
+<li class="block-list">
+<h5>gitRefsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitRefsUrl</pre>
+<div class="block">The git refs url</div>
+</li>
+<li class="block-list">
+<h5>gitTagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitTagsUrl</pre>
+<div class="block">The git tags url</div>
+</li>
+<li class="block-list">
+<h5>gitUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitUrl</pre>
+<div class="block">The git url</div>
+</li>
+<li class="block-list">
+<h5>homepage</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> homepage</pre>
+<div class="block">The home page</div>
+</li>
+<li class="block-list">
+<h5>hooksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> hooksUrl</pre>
+<div class="block">The hooks url</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The repository id</div>
+</li>
+<li class="block-list">
+<h5>issueCommentUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueCommentUrl</pre>
+<div class="block">The issue comment url</div>
+</li>
+<li class="block-list">
+<h5>issueEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueEventsUrl</pre>
+<div class="block">The issue events url</div>
+</li>
+<li class="block-list">
+<h5>issuesCreated</h5>
+<pre>boolean issuesCreated</pre>
+<div class="block">The flag of issues existence</div>
+</li>
+<li class="block-list">
+<h5>issuesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issuesUrl</pre>
+<div class="block">The issues url</div>
+</li>
+<li class="block-list">
+<h5>keysUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> keysUrl</pre>
+<div class="block">The keys url</div>
+</li>
+<li class="block-list">
+<h5>labelsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> labelsUrl</pre>
+<div class="block">The labels url</div>
+</li>
+<li class="block-list">
+<h5>language</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> language</pre>
+<div class="block">The language</div>
+</li>
+<li class="block-list">
+<h5>languagesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> languagesUrl</pre>
+<div class="block">The languages url</div>
+</li>
+<li class="block-list">
+<h5>license</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryLicense</a> license</pre>
+<div class="block">The license</div>
+<dl class="notes">
+<dt>関連項目:</dt>
+<dd><a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス"><code>RepositoryLicense</code></a></dd>
+</dl>
+</li>
+<li class="block-list">
+<h5>mergesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mergesUrl</pre>
+<div class="block">The merges url</div>
+</li>
+<li class="block-list">
+<h5>milestonesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> milestonesUrl</pre>
+<div class="block">The milestones url</div>
+</li>
+<li class="block-list">
+<h5>mirrorUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mirrorUrl</pre>
+<div class="block">The mirror count</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The repository name</div>
+</li>
+<li class="block-list">
+<h5>networkCount</h5>
+<pre>int networkCount</pre>
+<div class="block">The network count</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>notificationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> notificationsUrl</pre>
+<div class="block">The notifications url</div>
+</li>
+<li class="block-list">
+<h5>openIssues</h5>
+<pre>int openIssues</pre>
+<div class="block">The open issues</div>
+</li>
+<li class="block-list">
+<h5>openIssuesCount</h5>
+<pre>int openIssuesCount</pre>
+<div class="block">The open issues count</div>
+</li>
+<li class="block-list">
+<h5>owner</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryOwner</a> owner</pre>
+<div class="block">The owner</div>
+<dl class="notes">
+<dt>関連項目:</dt>
+<dd><a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス"><code>RepositoryOwner</code></a></dd>
+</dl>
+</li>
+<li class="block-list">
+<h5>pagesCreated</h5>
+<pre>boolean pagesCreated</pre>
+<div class="block">The flag of pages existence</div>
+</li>
+<li class="block-list">
+<h5>privateRepository</h5>
+<pre>boolean privateRepository</pre>
+<div class="block">The private repository</div>
+</li>
+<li class="block-list">
+<h5>projectsCreated</h5>
+<pre>boolean projectsCreated</pre>
+<div class="block">The flag of projects existence</div>
+</li>
+<li class="block-list">
+<h5>pullsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pullsUrl</pre>
+<div class="block">The pulls url</div>
+</li>
+<li class="block-list">
+<h5>pushedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pushedAt</pre>
+<div class="block">The pushed datetime</div>
+</li>
+<li class="block-list">
+<h5>releasesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> releasesUrl</pre>
+<div class="block">The releases url</div>
+</li>
+<li class="block-list">
+<h5>size</h5>
+<pre>int size</pre>
+<div class="block">The size</div>
+</li>
+<li class="block-list">
+<h5>sshUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> sshUrl</pre>
+<div class="block">The ssh url</div>
+</li>
+<li class="block-list">
+<h5>stargazersCount</h5>
+<pre>int stargazersCount</pre>
+<div class="block">The stargazers count</div>
+</li>
+<li class="block-list">
+<h5>stargazersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> stargazersUrl</pre>
+<div class="block">The stargazers url</div>
+</li>
+<li class="block-list">
+<h5>statusesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> statusesUrl</pre>
+<div class="block">The statues url</div>
+</li>
+<li class="block-list">
+<h5>subscribersCount</h5>
+<pre>int subscribersCount</pre>
+<div class="block">The subscribers count</div>
+</li>
+<li class="block-list">
+<h5>subscribersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscribersUrl</pre>
+<div class="block">The subscribers url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionUrl</pre>
+<div class="block">The subscription url</div>
+</li>
+<li class="block-list">
+<h5>svnUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> svnUrl</pre>
+<div class="block">The svn url</div>
+</li>
+<li class="block-list">
+<h5>tagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> tagsUrl</pre>
+<div class="block">The tags url</div>
+</li>
+<li class="block-list">
+<h5>teamsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> teamsUrl</pre>
+<div class="block">The teams url</div>
+</li>
+<li class="block-list">
+<h5>tempCloneToken</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> tempCloneToken</pre>
+<div class="block">The temp clone token</div>
+</li>
+<li class="block-list">
+<h5>treesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> treesUrl</pre>
+<div class="block">The trees url</div>
+</li>
+<li class="block-list">
+<h5>updatedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> updatedAt</pre>
+<div class="block">The updated datetime</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+<li class="block-list">
+<h5>watchers</h5>
+<pre>int watchers</pre>
+<div class="block">The watchers</div>
+</li>
+<li class="block-list">
+<h5>watchersCount</h5>
+<pre>int watchersCount</pre>
+<div class="block">The watchers count</div>
+</li>
+<li class="block-list">
+<h5>wikiCreated</h5>
+<pre>boolean wikiCreated</pre>
+<div class="block">The flag of wiki existence</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.repos.RepositoryLicense">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">org.thinkit.api.gateway.github.response.repos.RepositoryLicense</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>2433936177852665041L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>key</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> key</pre>
+<div class="block">The key</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>spdxId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> spdxId</pre>
+<div class="block">The spdx (software package data exchange) id</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.repos.RepositoryOwner">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">org.thinkit.api.gateway.github.response.repos.RepositoryOwner</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-4073046151965055062L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>avaterUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> avaterUrl</pre>
+<div class="block">The avater url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>followersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followersUrl</pre>
+<div class="block">The followers url</div>
+</li>
+<li class="block-list">
+<h5>followingUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followingUrl</pre>
+<div class="block">The following url</div>
+</li>
+<li class="block-list">
+<h5>gistsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gistsUrl</pre>
+<div class="block">The gists url</div>
+</li>
+<li class="block-list">
+<h5>gravaterId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gravaterId</pre>
+<div class="block">The gravater url</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The user id</div>
+</li>
+<li class="block-list">
+<h5>login</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> login</pre>
+<div class="block">The login name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>organizationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> organizationsUrl</pre>
+<div class="block">The organizations url</div>
+</li>
+<li class="block-list">
+<h5>receivedEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> receivedEventsUrl</pre>
+<div class="block">The received events url</div>
+</li>
+<li class="block-list">
+<h5>reposUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> reposUrl</pre>
+<div class="block">The repository url</div>
+</li>
+<li class="block-list">
+<h5>siteAdmin</h5>
+<pre>boolean siteAdmin</pre>
+<div class="block">The site admin</div>
+</li>
+<li class="block-list">
+<h5>starredUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> starredUrl</pre>
+<div class="block">The starred url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionsUrl</pre>
+<div class="block">The subscriptions url</div>
+</li>
+<li class="block-list">
+<h5>type</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> type</pre>
+<div class="block">The type</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.repos.UserRepository">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/repos/UserRepository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">org.thinkit.api.gateway.github.response.repos.UserRepository</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>545376925054158470L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>archived</h5>
+<pre>boolean archived</pre>
+<div class="block">The archived</div>
+</li>
+<li class="block-list">
+<h5>archiveUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> archiveUrl</pre>
+<div class="block">The archive url</div>
+</li>
+<li class="block-list">
+<h5>assigneesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> assigneesUrl</pre>
+<div class="block">The assignees url</div>
+</li>
+<li class="block-list">
+<h5>blogsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> blogsUrl</pre>
+<div class="block">The blogs url</div>
+</li>
+<li class="block-list">
+<h5>branchesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> branchesUrl</pre>
+<div class="block">The branches url</div>
+</li>
+<li class="block-list">
+<h5>cloneUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> cloneUrl</pre>
+<div class="block">The clone url</div>
+</li>
+<li class="block-list">
+<h5>collaboratorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> collaboratorsUrl</pre>
+<div class="block">The collaborators url</div>
+</li>
+<li class="block-list">
+<h5>commentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commentsUrl</pre>
+<div class="block">The comments url</div>
+</li>
+<li class="block-list">
+<h5>commitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commitsUrl</pre>
+<div class="block">The commits url</div>
+</li>
+<li class="block-list">
+<h5>compareUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> compareUrl</pre>
+<div class="block">The compare url</div>
+</li>
+<li class="block-list">
+<h5>contentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contentsUrl</pre>
+<div class="block">The contents url</div>
+</li>
+<li class="block-list">
+<h5>contributorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contributorsUrl</pre>
+<div class="block">The contributors url</div>
+</li>
+<li class="block-list">
+<h5>createdAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> createdAt</pre>
+<div class="block">The created datetime</div>
+</li>
+<li class="block-list">
+<h5>defaultBranch</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> defaultBranch</pre>
+<div class="block">The default branch</div>
+</li>
+<li class="block-list">
+<h5>deploymentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> deploymentsUrl</pre>
+<div class="block">The deployment url</div>
+</li>
+<li class="block-list">
+<h5>description</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> description</pre>
+<div class="block">The description</div>
+</li>
+<li class="block-list">
+<h5>disabled</h5>
+<pre>boolean disabled</pre>
+<div class="block">The disabled</div>
+</li>
+<li class="block-list">
+<h5>downloadsCreated</h5>
+<pre>boolean downloadsCreated</pre>
+<div class="block">The flag of downloads existence</div>
+</li>
+<li class="block-list">
+<h5>downloadsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> downloadsUrl</pre>
+<div class="block">The downloads url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>fork</h5>
+<pre>boolean fork</pre>
+<div class="block">The fork</div>
+</li>
+<li class="block-list">
+<h5>forks</h5>
+<pre>int forks</pre>
+<div class="block">The forks</div>
+</li>
+<li class="block-list">
+<h5>forksCount</h5>
+<pre>int forksCount</pre>
+<div class="block">The forks count</div>
+</li>
+<li class="block-list">
+<h5>forksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> forksUrl</pre>
+<div class="block">The forks url</div>
+</li>
+<li class="block-list">
+<h5>fullName</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> fullName</pre>
+<div class="block">The repository full name</div>
+</li>
+<li class="block-list">
+<h5>gitCommitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitCommitsUrl</pre>
+<div class="block">The git commits url</div>
+</li>
+<li class="block-list">
+<h5>gitRefsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitRefsUrl</pre>
+<div class="block">The git refs url</div>
+</li>
+<li class="block-list">
+<h5>gitTagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitTagsUrl</pre>
+<div class="block">The git tags url</div>
+</li>
+<li class="block-list">
+<h5>gitUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitUrl</pre>
+<div class="block">The git url</div>
+</li>
+<li class="block-list">
+<h5>homepage</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> homepage</pre>
+<div class="block">The home page</div>
+</li>
+<li class="block-list">
+<h5>hooksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> hooksUrl</pre>
+<div class="block">The hooks url</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The repository id</div>
+</li>
+<li class="block-list">
+<h5>issueCommentUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueCommentUrl</pre>
+<div class="block">The issue comment url</div>
+</li>
+<li class="block-list">
+<h5>issueEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueEventsUrl</pre>
+<div class="block">The issue events url</div>
+</li>
+<li class="block-list">
+<h5>issuesCreated</h5>
+<pre>boolean issuesCreated</pre>
+<div class="block">The flag of issues existence</div>
+</li>
+<li class="block-list">
+<h5>issuesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issuesUrl</pre>
+<div class="block">The issues url</div>
+</li>
+<li class="block-list">
+<h5>keysUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> keysUrl</pre>
+<div class="block">The keys url</div>
+</li>
+<li class="block-list">
+<h5>labelsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> labelsUrl</pre>
+<div class="block">The labels url</div>
+</li>
+<li class="block-list">
+<h5>language</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> language</pre>
+<div class="block">The language</div>
+</li>
+<li class="block-list">
+<h5>languagesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> languagesUrl</pre>
+<div class="block">The languages url</div>
+</li>
+<li class="block-list">
+<h5>license</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryLicense</a> license</pre>
+<div class="block">The license</div>
+<dl class="notes">
+<dt>関連項目:</dt>
+<dd><a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス"><code>RepositoryLicense</code></a></dd>
+</dl>
+</li>
+<li class="block-list">
+<h5>mergesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mergesUrl</pre>
+<div class="block">The merges url</div>
+</li>
+<li class="block-list">
+<h5>milestonesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> milestonesUrl</pre>
+<div class="block">The milestones url</div>
+</li>
+<li class="block-list">
+<h5>mirrorUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mirrorUrl</pre>
+<div class="block">The mirror count</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The repository name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>notificationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> notificationsUrl</pre>
+<div class="block">The notifications url</div>
+</li>
+<li class="block-list">
+<h5>openIssues</h5>
+<pre>int openIssues</pre>
+<div class="block">The open issues</div>
+</li>
+<li class="block-list">
+<h5>openIssuesCount</h5>
+<pre>int openIssuesCount</pre>
+<div class="block">The open issues count</div>
+</li>
+<li class="block-list">
+<h5>owner</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryOwner</a> owner</pre>
+<div class="block">The owner</div>
+<dl class="notes">
+<dt>関連項目:</dt>
+<dd><a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス"><code>RepositoryOwner</code></a></dd>
+</dl>
+</li>
+<li class="block-list">
+<h5>pagesCreated</h5>
+<pre>boolean pagesCreated</pre>
+<div class="block">The flag of pages existence</div>
+</li>
+<li class="block-list">
+<h5>privateRepository</h5>
+<pre>boolean privateRepository</pre>
+<div class="block">The private repository</div>
+</li>
+<li class="block-list">
+<h5>projectsCreated</h5>
+<pre>boolean projectsCreated</pre>
+<div class="block">The flag of projects existence</div>
+</li>
+<li class="block-list">
+<h5>pullsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pullsUrl</pre>
+<div class="block">The pulls url</div>
+</li>
+<li class="block-list">
+<h5>pushedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pushedAt</pre>
+<div class="block">The pushed datetime</div>
+</li>
+<li class="block-list">
+<h5>releasesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> releasesUrl</pre>
+<div class="block">The releases url</div>
+</li>
+<li class="block-list">
+<h5>size</h5>
+<pre>int size</pre>
+<div class="block">The size</div>
+</li>
+<li class="block-list">
+<h5>sshUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> sshUrl</pre>
+<div class="block">The ssh url</div>
+</li>
+<li class="block-list">
+<h5>stargazersCount</h5>
+<pre>int stargazersCount</pre>
+<div class="block">The stargazers count</div>
+</li>
+<li class="block-list">
+<h5>stargazersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> stargazersUrl</pre>
+<div class="block">The stargazers url</div>
+</li>
+<li class="block-list">
+<h5>statusesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> statusesUrl</pre>
+<div class="block">The statues url</div>
+</li>
+<li class="block-list">
+<h5>subscribersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscribersUrl</pre>
+<div class="block">The subscribers url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionUrl</pre>
+<div class="block">The subscription url</div>
+</li>
+<li class="block-list">
+<h5>svnUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> svnUrl</pre>
+<div class="block">The svn url</div>
+</li>
+<li class="block-list">
+<h5>tagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> tagsUrl</pre>
+<div class="block">The tags url</div>
+</li>
+<li class="block-list">
+<h5>teamsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> teamsUrl</pre>
+<div class="block">The teams url</div>
+</li>
+<li class="block-list">
+<h5>treesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> treesUrl</pre>
+<div class="block">The trees url</div>
+</li>
+<li class="block-list">
+<h5>updatedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> updatedAt</pre>
+<div class="block">The updated datetime</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+<li class="block-list">
+<h5>watchers</h5>
+<pre>int watchers</pre>
+<div class="block">The watchers</div>
+</li>
+<li class="block-list">
+<h5>watchersCount</h5>
+<pre>int watchersCount</pre>
+<div class="block">The watchers count</div>
+</li>
+<li class="block-list">
+<h5>wikiCreated</h5>
+<pre>boolean wikiCreated</pre>
+<div class="block">The flag of wiki existence</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.subscriptions</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.subscriptions.SubscriptionLicense">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionLicense.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">org.thinkit.api.gateway.github.response.subscriptions.SubscriptionLicense</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-585816998664202969L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>key</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> key</pre>
+<div class="block">The key</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>spdxId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> spdxId</pre>
+<div class="block">The spdx (software package data exchange) id</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.subscriptions.SubscriptionOwner">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionOwner.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">org.thinkit.api.gateway.github.response.subscriptions.SubscriptionOwner</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-2048632843464762864L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>avaterUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> avaterUrl</pre>
+<div class="block">The avater url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>followersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followersUrl</pre>
+<div class="block">The followers url</div>
+</li>
+<li class="block-list">
+<h5>followingUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followingUrl</pre>
+<div class="block">The following url</div>
+</li>
+<li class="block-list">
+<h5>gistsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gistsUrl</pre>
+<div class="block">The gists url</div>
+</li>
+<li class="block-list">
+<h5>gravaterId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gravaterId</pre>
+<div class="block">The gravater url</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The user id</div>
+</li>
+<li class="block-list">
+<h5>login</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> login</pre>
+<div class="block">The login name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>organizationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> organizationsUrl</pre>
+<div class="block">The organizations url</div>
+</li>
+<li class="block-list">
+<h5>receivedEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> receivedEventsUrl</pre>
+<div class="block">The received events url</div>
+</li>
+<li class="block-list">
+<h5>reposUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> reposUrl</pre>
+<div class="block">The repository url</div>
+</li>
+<li class="block-list">
+<h5>siteAdmin</h5>
+<pre>boolean siteAdmin</pre>
+<div class="block">The site admin</div>
+</li>
+<li class="block-list">
+<h5>starredUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> starredUrl</pre>
+<div class="block">The starred url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionsUrl</pre>
+<div class="block">The subscriptions url</div>
+</li>
+<li class="block-list">
+<h5>type</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> type</pre>
+<div class="block">The type</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.subscriptions.UserSubscription">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/subscriptions/UserSubscription.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">org.thinkit.api.gateway.github.response.subscriptions.UserSubscription</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-3762093057130467610L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>archived</h5>
+<pre>boolean archived</pre>
+<div class="block">The archived</div>
+</li>
+<li class="block-list">
+<h5>archiveUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> archiveUrl</pre>
+<div class="block">The archive url</div>
+</li>
+<li class="block-list">
+<h5>assigneesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> assigneesUrl</pre>
+<div class="block">The asignees url</div>
+</li>
+<li class="block-list">
+<h5>blobsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> blobsUrl</pre>
+<div class="block">The blobs url</div>
+</li>
+<li class="block-list">
+<h5>branchesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> branchesUrl</pre>
+<div class="block">The branches url</div>
+</li>
+<li class="block-list">
+<h5>cloneUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> cloneUrl</pre>
+<div class="block">The clone url</div>
+</li>
+<li class="block-list">
+<h5>collaboratorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> collaboratorsUrl</pre>
+<div class="block">The collaborators url</div>
+</li>
+<li class="block-list">
+<h5>commentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commentsUrl</pre>
+<div class="block">The comments url</div>
+</li>
+<li class="block-list">
+<h5>commitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> commitsUrl</pre>
+<div class="block">The commits url</div>
+</li>
+<li class="block-list">
+<h5>compareUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> compareUrl</pre>
+<div class="block">The compare url</div>
+</li>
+<li class="block-list">
+<h5>contentUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contentUrl</pre>
+<div class="block">The content url</div>
+</li>
+<li class="block-list">
+<h5>contributorsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> contributorsUrl</pre>
+<div class="block">The contributors url</div>
+</li>
+<li class="block-list">
+<h5>createdAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> createdAt</pre>
+<div class="block">The created datetime</div>
+</li>
+<li class="block-list">
+<h5>defaultBranch</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> defaultBranch</pre>
+<div class="block">The default branch</div>
+</li>
+<li class="block-list">
+<h5>deploymentsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> deploymentsUrl</pre>
+<div class="block">The deployment url</div>
+</li>
+<li class="block-list">
+<h5>description</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> description</pre>
+<div class="block">The description</div>
+</li>
+<li class="block-list">
+<h5>disabled</h5>
+<pre>boolean disabled</pre>
+<div class="block">The disabled</div>
+</li>
+<li class="block-list">
+<h5>downloadsCreated</h5>
+<pre>boolean downloadsCreated</pre>
+<div class="block">The flag that represents whether the issue download or not</div>
+</li>
+<li class="block-list">
+<h5>downloadsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> downloadsUrl</pre>
+<div class="block">The downloads url</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>fork</h5>
+<pre>boolean fork</pre>
+<div class="block">The fork</div>
+</li>
+<li class="block-list">
+<h5>forks</h5>
+<pre>int forks</pre>
+<div class="block">The forks</div>
+</li>
+<li class="block-list">
+<h5>forksCount</h5>
+<pre>int forksCount</pre>
+<div class="block">The forks count</div>
+</li>
+<li class="block-list">
+<h5>forksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> forksUrl</pre>
+<div class="block">The forks url</div>
+</li>
+<li class="block-list">
+<h5>fullName</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> fullName</pre>
+<div class="block">The full name</div>
+</li>
+<li class="block-list">
+<h5>gitCommitsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitCommitsUrl</pre>
+<div class="block">The git commits url</div>
+</li>
+<li class="block-list">
+<h5>gitRefsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitRefsUrl</pre>
+<div class="block">The git refs url</div>
+</li>
+<li class="block-list">
+<h5>gitTagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitTagsUrl</pre>
+<div class="block">The git tags url</div>
+</li>
+<li class="block-list">
+<h5>gitUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gitUrl</pre>
+<div class="block">The git url</div>
+</li>
+<li class="block-list">
+<h5>homepage</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> homepage</pre>
+<div class="block">The homepage</div>
+</li>
+<li class="block-list">
+<h5>hooksUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> hooksUrl</pre>
+<div class="block">The hooks url</div>
+</li>
+<li class="block-list">
+<h5>htmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> htmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The id</div>
+</li>
+<li class="block-list">
+<h5>issueCommentUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueCommentUrl</pre>
+<div class="block">The issue comment url</div>
+</li>
+<li class="block-list">
+<h5>issueEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issueEventsUrl</pre>
+<div class="block">The issue event url</div>
+</li>
+<li class="block-list">
+<h5>issuesCreated</h5>
+<pre>boolean issuesCreated</pre>
+<div class="block">The flag that represents whether the issue exists or not</div>
+</li>
+<li class="block-list">
+<h5>issuesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> issuesUrl</pre>
+<div class="block">The issue url</div>
+</li>
+<li class="block-list">
+<h5>keysUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> keysUrl</pre>
+<div class="block">The keys url</div>
+</li>
+<li class="block-list">
+<h5>labelsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> labelsUrl</pre>
+<div class="block">The labels url</div>
+</li>
+<li class="block-list">
+<h5>language</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> language</pre>
+<div class="block">The language</div>
+</li>
+<li class="block-list">
+<h5>languagesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> languagesUrl</pre>
+<div class="block">The language url</div>
+</li>
+<li class="block-list">
+<h5>license</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionLicense.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">SubscriptionLicense</a> license</pre>
+<div class="block">The lisence</div>
+</li>
+<li class="block-list">
+<h5>mergesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mergesUrl</pre>
+<div class="block">The merges url</div>
+</li>
+<li class="block-list">
+<h5>milestonesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> milestonesUrl</pre>
+<div class="block">The milestones url</div>
+</li>
+<li class="block-list">
+<h5>mirrorUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> mirrorUrl</pre>
+<div class="block">The mirror url</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>notificationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> notificationsUrl</pre>
+<div class="block">The notifications url</div>
+</li>
+<li class="block-list">
+<h5>openIssues</h5>
+<pre>int openIssues</pre>
+<div class="block">The open issues</div>
+</li>
+<li class="block-list">
+<h5>openIssuesCount</h5>
+<pre>int openIssuesCount</pre>
+<div class="block">The open issues count</div>
+</li>
+<li class="block-list">
+<h5>owner</h5>
+<pre><a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionOwner.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">SubscriptionOwner</a> owner</pre>
+<div class="block">The owner</div>
+</li>
+<li class="block-list">
+<h5>pagesCreated</h5>
+<pre>boolean pagesCreated</pre>
+<div class="block">The flag that represents whether the page exists or not</div>
+</li>
+<li class="block-list">
+<h5>privateSubscription</h5>
+<pre>boolean privateSubscription</pre>
+<div class="block">The flag that represents whether the subscription is private or not</div>
+</li>
+<li class="block-list">
+<h5>projectsCreated</h5>
+<pre>boolean projectsCreated</pre>
+<div class="block">The flag that represents whether the project exists or not</div>
+</li>
+<li class="block-list">
+<h5>pullsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pullsUrl</pre>
+<div class="block">The pulls url</div>
+</li>
+<li class="block-list">
+<h5>pushedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> pushedAt</pre>
+<div class="block">The pushed datetime</div>
+</li>
+<li class="block-list">
+<h5>releasesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> releasesUrl</pre>
+<div class="block">The releases url</div>
+</li>
+<li class="block-list">
+<h5>size</h5>
+<pre>int size</pre>
+<div class="block">The size</div>
+</li>
+<li class="block-list">
+<h5>sshUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> sshUrl</pre>
+<div class="block">The ssh url</div>
+</li>
+<li class="block-list">
+<h5>stargazersCount</h5>
+<pre>int stargazersCount</pre>
+<div class="block">The stargazers count</div>
+</li>
+<li class="block-list">
+<h5>stargazersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> stargazersUrl</pre>
+<div class="block">The stargazers url</div>
+</li>
+<li class="block-list">
+<h5>statusesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> statusesUrl</pre>
+<div class="block">The statuses url</div>
+</li>
+<li class="block-list">
+<h5>subscribersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscribersUrl</pre>
+<div class="block">The subscribers url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionUrl</pre>
+<div class="block">The subscriptions url</div>
+</li>
+<li class="block-list">
+<h5>svnUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> svnUrl</pre>
+<div class="block">The svn url</div>
+</li>
+<li class="block-list">
+<h5>tagsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> tagsUrl</pre>
+<div class="block">The tags url</div>
+</li>
+<li class="block-list">
+<h5>teamsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> teamsUrl</pre>
+<div class="block">The teams url</div>
+</li>
+<li class="block-list">
+<h5>treesUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> treesUrl</pre>
+<div class="block">The trees url</div>
+</li>
+<li class="block-list">
+<h5>updatedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> updatedAt</pre>
+<div class="block">The updated datetime</div>
+</li>
+<li class="block-list">
+<h5>watchers</h5>
+<pre>int watchers</pre>
+<div class="block">The watchers</div>
+</li>
+<li class="block-list">
+<h5>watchersCount</h5>
+<pre>int watchersCount</pre>
+<div class="block">The watchers count</div>
+</li>
+<li class="block-list">
+<h5>wikiCreated</h5>
+<pre>boolean wikiCreated</pre>
+<div class="block">The flag that represents whether the wiki exists or not</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.response.user</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.response.user.User">
+<h3>Class <a href="org/thinkit/api/gateway/github/response/user/User.html" title="org.thinkit.api.gateway.github.response.user内のクラス">org.thinkit.api.gateway.github.response.user.User</a> extends com.google.api.client.util.GenericData implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>987094486199214324L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>avaterUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> avaterUrl</pre>
+<div class="block">The avater url</div>
+</li>
+<li class="block-list">
+<h5>bio</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> bio</pre>
+<div class="block">The bio</div>
+</li>
+<li class="block-list">
+<h5>blog</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> blog</pre>
+<div class="block">The blog</div>
+</li>
+<li class="block-list">
+<h5>company</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> company</pre>
+<div class="block">The company</div>
+</li>
+<li class="block-list">
+<h5>createdAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> createdAt</pre>
+<div class="block">The created datetime</div>
+</li>
+<li class="block-list">
+<h5>email</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> email</pre>
+<div class="block">The email</div>
+</li>
+<li class="block-list">
+<h5>eventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> eventsUrl</pre>
+<div class="block">The events url</div>
+</li>
+<li class="block-list">
+<h5>followers</h5>
+<pre>int followers</pre>
+<div class="block">The count of followers</div>
+</li>
+<li class="block-list">
+<h5>followersUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followersUrl</pre>
+<div class="block">The followers url</div>
+</li>
+<li class="block-list">
+<h5>following</h5>
+<pre>int following</pre>
+<div class="block">The count of following</div>
+</li>
+<li class="block-list">
+<h5>followingUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> followingUrl</pre>
+<div class="block">The following url</div>
+</li>
+<li class="block-list">
+<h5>gistsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gistsUrl</pre>
+<div class="block">The gists url</div>
+</li>
+<li class="block-list">
+<h5>gravatarId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> gravatarId</pre>
+<div class="block">The gravater id</div>
+</li>
+<li class="block-list">
+<h5>hireable</h5>
+<pre>boolean hireable</pre>
+<div class="block">The hireable</div>
+</li>
+<li class="block-list">
+<h5>hrmlUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> hrmlUrl</pre>
+<div class="block">The html url</div>
+</li>
+<li class="block-list">
+<h5>id</h5>
+<pre>int id</pre>
+<div class="block">The user id</div>
+</li>
+<li class="block-list">
+<h5>location</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> location</pre>
+<div class="block">The location</div>
+</li>
+<li class="block-list">
+<h5>login</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> login</pre>
+<div class="block">The login name</div>
+</li>
+<li class="block-list">
+<h5>name</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> name</pre>
+<div class="block">The user name</div>
+</li>
+<li class="block-list">
+<h5>nodeId</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> nodeId</pre>
+<div class="block">The node id</div>
+</li>
+<li class="block-list">
+<h5>organizationsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> organizationsUrl</pre>
+<div class="block">The organizations url</div>
+</li>
+<li class="block-list">
+<h5>publicGists</h5>
+<pre>int publicGists</pre>
+<div class="block">The count of public gists</div>
+</li>
+<li class="block-list">
+<h5>publicRepos</h5>
+<pre>int publicRepos</pre>
+<div class="block">The count of public repos</div>
+</li>
+<li class="block-list">
+<h5>receivedEventsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> receivedEventsUrl</pre>
+<div class="block">The received events url</div>
+</li>
+<li class="block-list">
+<h5>reposUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> reposUrl</pre>
+<div class="block">The repos url</div>
+</li>
+<li class="block-list">
+<h5>siteAdmin</h5>
+<pre>boolean siteAdmin</pre>
+<div class="block">The site admin</div>
+</li>
+<li class="block-list">
+<h5>starredUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> starredUrl</pre>
+<div class="block">The starred url</div>
+</li>
+<li class="block-list">
+<h5>subscriptionsUrl</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> subscriptionsUrl</pre>
+<div class="block">The sbscriptions url</div>
+</li>
+<li class="block-list">
+<h5>twitterUsername</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> twitterUsername</pre>
+<div class="block">The twitter user name</div>
+</li>
+<li class="block-list">
+<h5>type</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> type</pre>
+<div class="block">The type</div>
+</li>
+<li class="block-list">
+<h5>updatedAt</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> updatedAt</pre>
+<div class="block">The updated datetime</div>
+</li>
+<li class="block-list">
+<h5>url</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> url</pre>
+<div class="block">The url</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
+<li>
+<section class="serialized-package-container">
 <h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.user</h2>
 <ul class="block-list">
 <li>
@@ -225,6 +2228,29 @@ loadScripts(document, 'script');</script>
 </ul>
 </section>
 </li>
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.user.OAuthConfig">
+<h3>Class <a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">org.thinkit.api.gateway.github.user.OAuthConfig</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>-2587545485889639857L</dd>
+</dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>accessToken</h5>
+<pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> accessToken</pre>
+<div class="block">The access token</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
+</section>
+</li>
 </ul>
 </section>
 </li>
@@ -239,6 +2265,20 @@ loadScripts(document, 'script');</script>
 <dt>serialVersionUID:</dt>
 <dd>294272078327803469L</dd>
 </dl>
+<ul class="block-list">
+<li>
+<section class="detail">
+<h4>直列化されたフィールド</h4>
+<ul class="block-list">
+<li class="block-list">
+<h5>oAuthConfig</h5>
+<pre><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a> oAuthConfig</pre>
+<div class="block">The OAuth config</div>
+</li>
+</ul>
+</section>
+</li>
+</ul>
 </section>
 </li>
 </ul>

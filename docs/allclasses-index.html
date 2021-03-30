@@ -15,7 +15,7 @@
 <script type="text/javascript" src="script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="all-classes-index-page">
-<script type="text/javascript">var data = {"i0":2,"i1":2,"i2":1,"i3":4,"i4":2,"i5":2,"i6":2};
+<script type="text/javascript">var data = {"i0":2,"i1":2,"i2":4,"i3":2,"i4":2,"i5":2,"i6":2,"i7":1,"i8":4,"i9":2,"i10":2,"i11":2,"i12":2,"i13":2,"i14":2,"i15":4,"i16":4,"i17":2,"i18":2,"i19":2,"i20":2,"i21":4,"i22":2,"i23":2,"i24":2,"i25":2,"i26":2,"i27":2,"i28":2};
 var tabs = {65535:["t0","\u3059\u3079\u3066\u306E\u30AF\u30E9\u30B9"],1:["t1","\u30A4\u30F3\u30BF\u30D5\u30A7\u30FC\u30B9\u306E\u6982\u8981"],2:["t2","\u30AF\u30E9\u30B9\u306E\u6982\u8981"],4:["t3","\u5217\u6319\u578B\u306E\u6982\u8981"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -70,36 +70,177 @@ loadScripts(document, 'script');</script>
 </thead>
 <tbody>
 <tr class="alt-color" id="i0">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a>&lt;<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="CommunicationResolver内の型パラメータ">T</a> extends <a href="org/thinkit/api/gateway/github/response/GithubApiResponse.html" title="org.thinkit.api.gateway.github.response内のインタフェース">GithubApiResponse</a>&gt;</td>
-<th class="col-last" scope="row">&nbsp;</th>
+<td class="col-first"><a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></td>
+<th class="col-last" scope="row">
+<div class="block">The abstract class that defines the generic processing for implementing the
+ GitHub API gateway.</div>
+</th>
 </tr>
 <tr class="row-color" id="i1">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></td>
-<th class="col-last" scope="row">&nbsp;</th>
+<td class="col-first"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></td>
+<th class="col-last" scope="row">
+<div class="block">The class that provides general-purpose processing for HTTP communication.</div>
+</th>
 </tr>
 <tr class="alt-color" id="i2">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/response/GithubApiResponse.html" title="org.thinkit.api.gateway.github.response内のインタフェース">GithubApiResponse</a></td>
+<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/Delimiter.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">Delimiter</a></td>
 <th class="col-last" scope="row">
-<div class="block">The interface that abstracts the response returned by the API.</div>
+<div class="block">The catalog that manages delimiter.</div>
 </th>
 </tr>
 <tr class="row-color" id="i3">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/GithubApiUri.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApiUri</a></td>
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/receivedevents/EventActor.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventActor</a></td>
 <th class="col-last" scope="row">
-<div class="block">The catalog that manages API URI of GitHub.</div>
+<div class="block">The entity that manages the event actor.</div>
 </th>
 </tr>
 <tr class="alt-color" id="i4">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a></td>
-<th class="col-last" scope="row">&nbsp;</th>
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/receivedevents/EventPayload.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventPayload</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the event payload.</div>
+</th>
 </tr>
 <tr class="row-color" id="i5">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/receivedevents/EventRepository.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">EventRepository</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the event repository.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i6">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">FollowingUser</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the following user of the specific user.</div>
+</th>
+</tr>
+<tr class="row-color" id="i7">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></td>
+<th class="col-last" scope="row">
+<div class="block">The interface that abstracts the gateway.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i8">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a></td>
+<th class="col-last" scope="row">
+<div class="block">The catalog that manages API of GitHub.</div>
+</th>
+</tr>
+<tr class="row-color" id="i9">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></td>
+<th class="col-last" scope="row">
+<div class="block">It provides a gateway for intuitive and easy access to the GitHub API.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i10">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a></td>
+<th class="col-last" scope="row">
+<div class="block">The class that represents a GitHub user.</div>
+</th>
+</tr>
+<tr class="row-color" id="i11">
 <td class="col-first"><a href="org/thinkit/api/gateway/github/user/GithubUser.GithubUserBuilder.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser.GithubUserBuilder</a></td>
 <th class="col-last" scope="row">&nbsp;</th>
 </tr>
-<tr class="alt-color" id="i6">
-<td class="col-first"><a href="org/thinkit/api/gateway/github/response/UserFollower.html" title="org.thinkit.api.gateway.github.response内のクラス">UserFollower</a></td>
+<tr class="alt-color" id="i12">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">ListGenericResolver</a>&lt;<a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html" title="ListGenericResolver内の型パラメータ">T</a>&gt;</td>
+<th class="col-last" scope="row">
+<div class="block">Type information such as <code>&lt;T&gt;</code> and <code>T</code> and etc will be erased at
+ build time (Type erasure).</div>
+</th>
+</tr>
+<tr class="row-color" id="i13">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></td>
+<th class="col-last" scope="row">
+<div class="block">TThis data class manages the settings for user authentication when using the
+ GitHub API.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i14">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.OAuthConfigBuilder.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig.OAuthConfigBuilder</a></td>
 <th class="col-last" scope="row">&nbsp;</th>
+</tr>
+<tr class="row-color" id="i15">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/QueryKey.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QueryKey</a></td>
+<th class="col-last" scope="row">
+<div class="block">The catalog that manages query key.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i16">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/QuerySymbol.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QuerySymbol</a></td>
+<th class="col-last" scope="row">
+<div class="block">The catalog that manages query symbol.</div>
+</th>
+</tr>
+<tr class="row-color" id="i17">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/receivedevents/ReceivedEvent.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">ReceivedEvent</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the received event.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i18">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/repos/Repository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">Repository</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the repository information.</div>
+</th>
+</tr>
+<tr class="row-color" id="i19">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/repos/RepositoryLicense.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryLicense</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the license information of the repository.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i20">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/repos/RepositoryOwner.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">RepositoryOwner</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the owner information of the repository.</div>
+</th>
+</tr>
+<tr class="row-color" id="i21">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/catalog/SecurityScheme.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">SecurityScheme</a></td>
+<th class="col-last" scope="row">
+<div class="block">The catalog that manages security scheme.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i22">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionLicense.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">SubscriptionLicense</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the license information of the subscription.</div>
+</th>
+</tr>
+<tr class="row-color" id="i23">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/subscriptions/SubscriptionOwner.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">SubscriptionOwner</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the owner information of the subscription.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i24">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/util/UrlResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">UrlResolver</a></td>
+<th class="col-last" scope="row">
+<div class="block">The class that provides the URL generation process.</div>
+</th>
+</tr>
+<tr class="row-color" id="i25">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/user/User.html" title="org.thinkit.api.gateway.github.response.user内のクラス">User</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the user information.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i26">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">UserFollower</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the follower of the specific user.</div>
+</th>
+</tr>
+<tr class="row-color" id="i27">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/repos/UserRepository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">UserRepository</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the specific user's repository information.</div>
+</th>
+</tr>
+<tr class="alt-color" id="i28">
+<td class="col-first"><a href="org/thinkit/api/gateway/github/response/subscriptions/UserSubscription.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">UserSubscription</a></td>
+<th class="col-last" scope="row">
+<div class="block">The entity that manages the specific user's subscription.</div>
+</th>
 </tr>
 </tbody>
 </table>

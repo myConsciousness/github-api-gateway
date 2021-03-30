@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":10,"i3":10,"i4":10};
+<script type="text/javascript">var data = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
 var tabs = {65535:["t0","\u3059\u3079\u3066\u306E\u30E1\u30BD\u30C3\u30C9"],1:["t1","static\u30E1\u30BD\u30C3\u30C9"],2:["t2","\u30A4\u30F3\u30B9\u30BF\u30F3\u30B9\u30FB\u30E1\u30BD\u30C3\u30C9"],8:["t4","concrete\u30E1\u30BD\u30C3\u30C9"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -76,18 +76,42 @@ loadScripts(document, 'script');</script>
 <h1 title="クラス GithubApiGateway" class="title">クラス GithubApiGateway</h1>
 </div>
 <div class="inheritance" title="継承ツリー"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">java.lang.Object</a>
+<div class="inheritance"><a href="ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.ApiGateway</a>
 <div class="inheritance">org.thinkit.api.gateway.github.GithubApiGateway</div>
+</div>
 </div>
 <section class="description">
 <dl class="notes">
 <dt>すべての実装されたインタフェース:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/io/Serializable.html" title="java.io内のクラスまたはインタフェース" class="external-link">Serializable</a></code></dd>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/io/Serializable.html" title="java.io内のクラスまたはインタフェース" class="external-link">Serializable</a></code>, <code><a href="Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></code></dd>
 </dl>
 <hr>
 <pre>public final class <span class="type-name-label">GithubApiGateway</span>
-extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>
-implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/io/Serializable.html" title="java.io内のクラスまたはインタフェース" class="external-link">Serializable</a></pre>
+extends <a href="ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></pre>
+<div class="block">It provides a gateway for intuitive and easy access to the GitHub API.
+
+ <p>
+ If you have an API that you want to use with the GitHub API, you can use this
+ interface without having to be aware of the various implementations and
+ mechanisms required for communication. As a user, all you need to be aware of
+ is to call each method defined in this class and use the returned object. The
+ object returned from methods of this class has the same structure and items
+ as the JSON data returned from each GitHub API.
+
+ <p>
+ For example, if you want to get the follower information associated with a
+ particular user, you can call <a href="#getUserFollowers()"><code>getUserFollowers()</code></a> like below.
+
+ <pre>
+ <code>
+ final GithubUser githubUser = GithubUser.builder().userName("username").build();
+ final Gateway gateway = GithubApiGateway.from(githubUser);
+ final List&lt;UserFollowers&gt; userFollowers = gateway.getUserFollowers();
+ </code>
+ </pre></div>
 <dl class="notes">
+<dt>導入されたバージョン:</dt>
+<dd>1.0.0</dd>
 <dt>関連項目:</dt>
 <dd><a href="../../../../../serialized-form.html#org.thinkit.api.gateway.github.GithubApiGateway">直列化された形式</a></dd>
 </dl>
@@ -116,21 +140,98 @@ implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base
 <td class="col-last">&nbsp;</td>
 </tr>
 <tr class="row-color" id="i1">
-<td class="col-first"><code>static <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></code></td>
+<td class="col-first"><code>static <a href="Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#from(org.thinkit.api.gateway.github.user.GithubUser)">from</a></span>&#8203;(@NonNull <a href="user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a>&nbsp;githubUser)</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-last">
+<div class="block">Returns the new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a> based on the argument.</div>
+</td>
 </tr>
 <tr class="alt-color" id="i2">
-<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/UserFollower.html" title="org.thinkit.api.gateway.github.response内のクラス">UserFollower</a>&gt;</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getFollowers()">getFollowers</a></span>()</code></th>
-<td class="col-last">&nbsp;</td>
+<td class="col-first"><code>static <a href="Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#from(org.thinkit.api.gateway.github.user.GithubUser,org.thinkit.api.gateway.github.user.OAuthConfig)">from</a></span>&#8203;(@NonNull <a href="user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a>&nbsp;githubUser,
+@NonNull <a href="user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a>&nbsp;oAuthConfig)</code></th>
+<td class="col-last">
+<div class="block">Returns the new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a> based on the argument.</div>
+</td>
 </tr>
 <tr class="row-color" id="i3">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">FollowingUser</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getFollowingUsers()">getFollowingUsers</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's following information through the GitHub API
+ <code>https://api.github.com/users/username/following</code>.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i4">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">FollowingUser</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getFollowingUsers(int)">getFollowingUsers</a></span>&#8203;(int&nbsp;perPage)</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's following information through the GitHub API
+ <code>https://api.github.com/users/username/following?per_page=xxx</code>.</div>
+</td>
+</tr>
+<tr class="row-color" id="i5">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/receivedevents/ReceivedEvent.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">ReceivedEvent</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getReceivedEvents()">getReceivedEvents</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific received events information through the GitHub API
+ <code>https://api.github.com/users/username/received_events</code>.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i6">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/repos/Repository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">Repository</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getRepositories(java.lang.String)">getRepositories</a></span>&#8203;(@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;repositoryDomain)</code></th>
+<td class="col-last">
+<div class="block">Returns the repository information through the GitHub API
+ <code>https://api.github.com/repos/loginName/repositoryName</code>.</div>
+</td>
+</tr>
+<tr class="row-color" id="i7">
+<td class="col-first"><code><a href="response/user/User.html" title="org.thinkit.api.gateway.github.response.user内のクラス">User</a></code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUser()">getUser</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user information through the GitHub API <code>
+ https://api.github.com/users/username</code>.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i8">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">UserFollower</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUserFollowers()">getUserFollowers</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's follower information through the GitHub API
+ <code>https://api.github.com/users/username/follower</code>.</div>
+</td>
+</tr>
+<tr class="row-color" id="i9">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">UserFollower</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUserFollowers(int)">getUserFollowers</a></span>&#8203;(int&nbsp;perPage)</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's follower information through the GitHub API
+ <code>https://api.github.com/users/username/follower?per_page=xxx</code>.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i10">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/repos/UserRepository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">UserRepository</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUserRepositories()">getUserRepositories</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's repository information through the GitHub API
+ <code>https://api.github.com/users/username/repos</code>.</div>
+</td>
+</tr>
+<tr class="row-color" id="i11">
+<td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/subscriptions/UserSubscription.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">UserSubscription</a>&gt;</code></td>
+<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#getUserSubscriptions()">getUserSubscriptions</a></span>()</code></th>
+<td class="col-last">
+<div class="block">Returns the specific user's subscription information through the GitHub API
+ <code>https://api.github.com/users/username/subscriptions</code>.</div>
+</td>
+</tr>
+<tr class="alt-color" id="i12">
 <td class="col-first"><code>int</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#hashCode()">hashCode</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
 </tr>
-<tr class="alt-color" id="i4">
+<tr class="row-color" id="i13">
 <td class="col-first"><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a></code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#toString()">toString</a></span>()</code></th>
 <td class="col-last">&nbsp;</td>
@@ -154,9 +255,163 @@ implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base
 <h2>メソッドの詳細</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="getFollowers()">
-<h3>getFollowers</h3>
-<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/UserFollower.html" title="org.thinkit.api.gateway.github.response内のクラス">UserFollower</a>&gt;</span>&nbsp;<span class="member-name">getFollowers</span>()</div>
+<section class="detail" id="from(org.thinkit.api.gateway.github.user.GithubUser)">
+<h3>from</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></span>&nbsp;<span class="member-name">from</span>&#8203;(<span class="parameters">@NonNull
+@NonNull <a href="user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a>&nbsp;githubUser)</span></div>
+<div class="block">Returns the new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a> based on the argument.</div>
+<dl class="notes">
+<dt>パラメータ:</dt>
+<dd><code>githubUser</code> - The GitHub user</dd>
+<dt>戻り値:</dt>
+<dd>The new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a></dd>
+<dt>例外:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/NullPointerException.html" title="java.lang内のクラスまたはインタフェース" class="external-link">NullPointerException</a></code> - If <code>null</code> is passed as an argument</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="from(org.thinkit.api.gateway.github.user.GithubUser,org.thinkit.api.gateway.github.user.OAuthConfig)">
+<h3>from</h3>
+<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></span>&nbsp;<span class="member-name">from</span>&#8203;(<span class="parameters">@NonNull
+@NonNull <a href="user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a>&nbsp;githubUser,
+@NonNull
+@NonNull <a href="user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a>&nbsp;oAuthConfig)</span></div>
+<div class="block">Returns the new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a> based on the argument.</div>
+<dl class="notes">
+<dt>パラメータ:</dt>
+<dd><code>githubUser</code> - The GitHub user</dd>
+<dd><code>oAuthConfig</code> - The OAuth config</dd>
+<dt>戻り値:</dt>
+<dd>The new instance of <a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a></dd>
+<dt>例外:</dt>
+<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/NullPointerException.html" title="java.lang内のクラスまたはインタフェース" class="external-link">NullPointerException</a></code> - If <code>null</code> is passed as an argument</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUser()">
+<h3>getUser</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="response/user/User.html" title="org.thinkit.api.gateway.github.response.user内のクラス">User</a></span>&nbsp;<span class="member-name">getUser</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getUser()">Gateway</a></code></span></div>
+<div class="block">Returns the specific user information through the GitHub API <code>
+ https://api.github.com/users/username</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The user information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFollowingUsers()">
+<h3>getFollowingUsers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">FollowingUser</a>&gt;</span>&nbsp;<span class="member-name">getFollowingUsers</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getFollowingUsers()">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's following information through the GitHub API
+ <code>https://api.github.com/users/username/following</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The user's following information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getFollowingUsers(int)">
+<h3>getFollowingUsers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/following/FollowingUser.html" title="org.thinkit.api.gateway.github.response.following内のクラス">FollowingUser</a>&gt;</span>&nbsp;<span class="member-name">getFollowingUsers</span>&#8203;(<span class="parameters">int&nbsp;perPage)</span></div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getFollowingUsers(int)">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's following information through the GitHub API
+ <code>https://api.github.com/users/username/following?per_page=xxx</code>.</div>
+<dl class="notes">
+<dt>パラメータ:</dt>
+<dd><code>perPage</code> - The page count</dd>
+<dt>戻り値:</dt>
+<dd>The specified number of user's following information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserFollowers()">
+<h3>getUserFollowers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">UserFollower</a>&gt;</span>&nbsp;<span class="member-name">getUserFollowers</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getUserFollowers()">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's follower information through the GitHub API
+ <code>https://api.github.com/users/username/follower</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The user's follower information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserFollowers(int)">
+<h3>getUserFollowers</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/followers/UserFollower.html" title="org.thinkit.api.gateway.github.response.followers内のクラス">UserFollower</a>&gt;</span>&nbsp;<span class="member-name">getUserFollowers</span>&#8203;(<span class="parameters">int&nbsp;perPage)</span></div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getUserFollowers(int)">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's follower information through the GitHub API
+ <code>https://api.github.com/users/username/follower?per_page=xxx</code>.</div>
+<dl class="notes">
+<dt>パラメータ:</dt>
+<dd><code>perPage</code> - The page count</dd>
+<dt>戻り値:</dt>
+<dd>The specified number of user's follower information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserRepositories()">
+<h3>getUserRepositories</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/repos/UserRepository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">UserRepository</a>&gt;</span>&nbsp;<span class="member-name">getUserRepositories</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getUserRepositories()">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's repository information through the GitHub API
+ <code>https://api.github.com/users/username/repos</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The user's repository information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getReceivedEvents()">
+<h3>getReceivedEvents</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/receivedevents/ReceivedEvent.html" title="org.thinkit.api.gateway.github.response.receivedevents内のクラス">ReceivedEvent</a>&gt;</span>&nbsp;<span class="member-name">getReceivedEvents</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getReceivedEvents()">Gateway</a></code></span></div>
+<div class="block">Returns the specific received events information through the GitHub API
+ <code>https://api.github.com/users/username/received_events</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The received events information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getUserSubscriptions()">
+<h3>getUserSubscriptions</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/subscriptions/UserSubscription.html" title="org.thinkit.api.gateway.github.response.subscriptions内のクラス">UserSubscription</a>&gt;</span>&nbsp;<span class="member-name">getUserSubscriptions</span>()</div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getUserSubscriptions()">Gateway</a></code></span></div>
+<div class="block">Returns the specific user's subscription information through the GitHub API
+ <code>https://api.github.com/users/username/subscriptions</code>.</div>
+<dl class="notes">
+<dt>戻り値:</dt>
+<dd>The specific user's subscription information</dd>
+</dl>
+</section>
+</li>
+<li>
+<section class="detail" id="getRepositories(java.lang.String)">
+<h3>getRepositories</h3>
+<div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="response/repos/Repository.html" title="org.thinkit.api.gateway.github.response.repos内のクラス">Repository</a>&gt;</span>&nbsp;<span class="member-name">getRepositories</span>&#8203;(<span class="parameters">@NonNull
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&nbsp;repositoryDomain)</span></div>
+<div class="block"><span class="descfrm-type-label">インタフェースからコピーされた説明:&nbsp;<code><a href="Gateway.html#getRepositories(java.lang.String)">Gateway</a></code></span></div>
+<div class="block">Returns the repository information through the GitHub API
+ <code>https://api.github.com/repos/loginName/repositoryName</code>.</div>
+<dl class="notes">
+<dt>パラメータ:</dt>
+<dd><code>repositoryDomain</code> - The repository domain with the format
+                         <code>"loginName/repositoryName"</code></dd>
+<dt>戻り値:</dt>
+<dd>The repository information</dd>
+</dl>
 </section>
 </li>
 <li>
@@ -165,7 +420,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a></span>&nbsp;<span class="member-name">toString</span>()</div>
 <dl class="notes">
 <dt>オーバーライド:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html#toString()" title="java.lang内のクラスまたはインタフェース" class="external-link">toString</a></code>&nbsp;クラス内&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a></code></dd>
+<dd><code><a href="ApiGateway.html#toString()">toString</a></code>&nbsp;クラス内&nbsp;<code><a href="ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></code></dd>
 </dl>
 </section>
 </li>
@@ -175,7 +430,7 @@ implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">boolean</span>&nbsp;<span class="member-name">equals</span>&#8203;(<span class="parameters"><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&nbsp;o)</span></div>
 <dl class="notes">
 <dt>オーバーライド:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html#equals(java.lang.Object)" title="java.lang内のクラスまたはインタフェース" class="external-link">equals</a></code>&nbsp;クラス内&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a></code></dd>
+<dd><code><a href="ApiGateway.html#equals(java.lang.Object)">equals</a></code>&nbsp;クラス内&nbsp;<code><a href="ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></code></dd>
 </dl>
 </section>
 </li>
@@ -185,15 +440,8 @@ implements <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base
 <div class="member-signature"><span class="modifiers">public</span>&nbsp;<span class="return-type">int</span>&nbsp;<span class="member-name">hashCode</span>()</div>
 <dl class="notes">
 <dt>オーバーライド:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html#hashCode()" title="java.lang内のクラスまたはインタフェース" class="external-link">hashCode</a></code>&nbsp;クラス内&nbsp;<code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a></code></dd>
+<dd><code><a href="ApiGateway.html#hashCode()">hashCode</a></code>&nbsp;クラス内&nbsp;<code><a href="ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></code></dd>
 </dl>
-</section>
-</li>
-<li>
-<section class="detail" id="from(org.thinkit.api.gateway.github.user.GithubUser)">
-<h3>from</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type"><a href="GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></span>&nbsp;<span class="member-name">from</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a>&nbsp;githubUser)</span></div>
 </section>
 </li>
 </ul>
