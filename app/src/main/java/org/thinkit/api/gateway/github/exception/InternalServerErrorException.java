@@ -15,7 +15,7 @@
 package org.thinkit.api.gateway.github.exception;
 
 /**
- * Thrown to indicate that an error has occurred when parsing the content file.
+ * Thrown to indicate that the internal server error was happened.
  *
  * @author Kato Shinya
  * @since 1.0.0

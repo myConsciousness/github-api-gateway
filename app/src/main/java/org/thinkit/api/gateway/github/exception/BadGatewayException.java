@@ -15,7 +15,7 @@
 package org.thinkit.api.gateway.github.exception;
 
 /**
- * Thrown to indicate that an error has occurred when parsing the content file.
+ * Thrown to indicate that accessed the bad gateway.
  *
  * @author Kato Shinya
  * @since 1.0.0
