@@ -71,6 +71,7 @@ dependencies {
 
     implementation 'com.google.http-client:google-http-client:1.39.1'
     implementation group: 'com.google.http-client', name: 'google-http-client-gson', version: '1.39.1'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
 
     implementation 'org.thinkit.common:precondition-validator:v1.1.0'
     implementation 'org.thinkit.api.catalog:catalog-api:v1.0.2'

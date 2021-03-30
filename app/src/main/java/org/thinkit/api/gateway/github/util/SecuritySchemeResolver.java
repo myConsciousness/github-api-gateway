@@ -16,12 +16,12 @@ package org.thinkit.api.gateway.github.util;
 
 import java.util.StringJoiner;
 
+import org.apache.commons.lang3.StringUtils;
 import org.thinkit.api.gateway.github.catalog.Delimiter;
 import org.thinkit.api.gateway.github.catalog.SecurityScheme;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 /**
  *
@@ -36,10 +36,12 @@ final class SecuritySchemeResolver {
      *
      * @param token The token
      * @return The token with bearer scheme
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public static String bearer(@NonNull final String token) {
+    public static String bearer(final String token) {
+
+        if (StringUtils.isEmpty(token)) {
+            return "";
+        }
 
         final StringJoiner tokenJoiner = new StringJoiner(Delimiter.SPACE.getTag());
         tokenJoiner.add(SecurityScheme.BEARER.getTag());
