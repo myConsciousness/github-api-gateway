@@ -5,6 +5,7 @@ org.thinkit.api.gateway.github.content.entity
 org.thinkit.api.gateway.github.exception
 org.thinkit.api.gateway.github.response.followers
 org.thinkit.api.gateway.github.response.following
+org.thinkit.api.gateway.github.response.issues
 org.thinkit.api.gateway.github.response.receivedevents
 org.thinkit.api.gateway.github.response.repos
 org.thinkit.api.gateway.github.response.subscriptions
