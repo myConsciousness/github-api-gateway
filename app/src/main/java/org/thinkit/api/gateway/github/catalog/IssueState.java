@@ -20,28 +20,28 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 /**
- * The catalog that manages query key.
+ * The catalog that manages issue state.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @RequiredArgsConstructor
-public enum QueryKey implements BiCatalog<QueryKey, String> {
+public enum IssueState implements BiCatalog<IssueState, String> {
 
     /**
-     * {@code "per_page=xxx"}
+     * The open state
      */
-    PER_PAGE(0, "per_page"),
+    OPEN(0, "open"),
 
     /**
-     * {@code "state=xxx"}
+     * The closed state
      */
-    STATE(1, "state"),
+    CLOSED(1, "closed"),
 
     /**
-     * {@code "labels"}
+     * The all state
      */
-    LABELS(2, "labels");
+    ALL(2, "all");
 
     /**
      * The code
@@ -50,7 +50,7 @@ public enum QueryKey implements BiCatalog<QueryKey, String> {
     private final int code;
 
     /**
-     * The rag
+     * The tag
      */
     @Getter
     private final String tag;
