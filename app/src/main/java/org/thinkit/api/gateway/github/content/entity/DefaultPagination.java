@@ -41,5 +41,5 @@ public final class DefaultPagination implements ContentEntity, Serializable {
      * The count per page
      */
     @Getter
-    private String perPage;
+    private int perPage;
 }

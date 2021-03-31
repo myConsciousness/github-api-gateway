@@ -78,7 +78,7 @@ public abstract class ApiGateway implements Gateway, Serializable {
         this.githubUser = githubUser;
 
         DefaultPaginationMapper.newInstance().scan().forEach(defaultPagination -> {
-            this.defaultPerPage = Integer.parseInt(defaultPagination.getPerPage());
+            this.defaultPerPage = defaultPagination.getPerPage();
         });
     }
 

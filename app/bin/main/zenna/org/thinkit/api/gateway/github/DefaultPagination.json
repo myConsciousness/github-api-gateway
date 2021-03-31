@@ -9,7 +9,7 @@
         {
             "node": {
                 "conditionId": "",
-                "perPage": "100"
+                "perPage": 100
             }
         }
     ],
