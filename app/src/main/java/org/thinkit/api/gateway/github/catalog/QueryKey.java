@@ -34,14 +34,19 @@ public enum QueryKey implements BiCatalog<QueryKey, String> {
     PER_PAGE(0, "per_page"),
 
     /**
-     * {@code "state=xxx"}
+     * {@code "page=xxx"}
      */
-    STATE(1, "state"),
+    PAGE(1, "page"),
 
     /**
-     * {@code "labels"}
+     * {@code "state=xxx"}
      */
-    LABELS(2, "labels");
+    STATE(2, "state"),
+
+    /**
+     * {@code "labels=xxx"}
+     */
+    LABELS(3, "labels");
 
     /**
      * The code
