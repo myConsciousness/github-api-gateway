@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.subscriptions;
+package org.thinkit.api.gateway.github.response.user.receivedevents;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the license information of the subscription.
+ * The entity that manages the received event.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,40 +32,52 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class SubscriptionLicense extends GenericJson implements Serializable {
+public final class ReceivedEvent extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -585816998664202969L;
+    private static final long serialVersionUID = 858133184525397902L;
 
     /**
-     * The key
+     * The id
      */
     @Key
-    private String key;
+    private String id;
 
     /**
-     * The name
+     * The type
      */
     @Key
-    private String name;
+    private String type;
 
     /**
-     * The spdx (software package data exchange) id
-     */
-    @Key("spdx_id")
-    private String spdxId;
-
-    /**
-     * The url
+     * The actor
      */
     @Key
-    private String url;
+    private EventActor actor;
 
     /**
-     * The node id
+     * The repository
      */
-    @Key("node_id")
-    private String nodeId;
+    @Key("repo")
+    private EventRepository repository;
+
+    /**
+     * The payload
+     */
+    @Key
+    private EventPayload payload;
+
+    /**
+     * The flag whether the event has been published
+     */
+    @Key("public")
+    private boolean publicEvent;
+
+    /**
+     * The created datetime
+     */
+    @Key("created_at")
+    private String createdAt;
 }

@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.receivedevents;
+package org.thinkit.api.gateway.github.response.user.receivedevents;
 
 import java.io.Serializable;
 

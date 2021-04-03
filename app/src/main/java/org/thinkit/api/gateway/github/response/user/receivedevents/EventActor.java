@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.receivedevents;
+package org.thinkit.api.gateway.github.response.user.receivedevents;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the received event.
+ * The entity that manages the event actor.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,52 +32,46 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class ReceivedEvent extends GenericJson implements Serializable {
+public final class EventActor extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 858133184525397902L;
+    private static final long serialVersionUID = 5479308695952018960L;
 
     /**
      * The id
      */
     @Key
-    private String id;
+    private int id;
 
     /**
-     * The type
+     * The login name
      */
     @Key
-    private String type;
+    private String login;
 
     /**
-     * The actor
+     * The display login name
+     */
+    @Key("display_login")
+    private String displayLogin;
+
+    /**
+     * The gravater id
+     */
+    @Key("gravater_id")
+    private String gravaterId;
+
+    /**
+     * The url
      */
     @Key
-    private EventActor actor;
+    private String url;
 
     /**
-     * The repository
+     * The avater url
      */
-    @Key("repo")
-    private EventRepository repository;
-
-    /**
-     * The payload
-     */
-    @Key
-    private EventPayload payload;
-
-    /**
-     * The flag whether the event has been published
-     */
-    @Key("public")
-    private boolean publicEvent;
-
-    /**
-     * The created datetime
-     */
-    @Key("created_at")
-    private String createdAt;
+    @Key("avater_url")
+    private String avaterUrl;
 }

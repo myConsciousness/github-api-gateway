@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.receivedevents;
+package org.thinkit.api.gateway.github.response.user.subscriptions;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the event actor.
+ * The entity that manages the license information of the subscription.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,36 +32,30 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class EventActor extends GenericJson implements Serializable {
+public final class SubscriptionLicense extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 5479308695952018960L;
+    private static final long serialVersionUID = -585816998664202969L;
 
     /**
-     * The id
+     * The key
      */
     @Key
-    private int id;
+    private String key;
 
     /**
-     * The login name
+     * The name
      */
     @Key
-    private String login;
+    private String name;
 
     /**
-     * The display login name
+     * The spdx (software package data exchange) id
      */
-    @Key("display_login")
-    private String displayLogin;
-
-    /**
-     * The gravater id
-     */
-    @Key("gravater_id")
-    private String gravaterId;
+    @Key("spdx_id")
+    private String spdxId;
 
     /**
      * The url
@@ -70,8 +64,8 @@ public final class EventActor extends GenericJson implements Serializable {
     private String url;
 
     /**
-     * The avater url
+     * The node id
      */
-    @Key("avater_url")
-    private String avaterUrl;
+    @Key("node_id")
+    private String nodeId;
 }

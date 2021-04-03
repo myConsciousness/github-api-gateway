@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.following;
+package org.thinkit.api.gateway.github.response.user.followers;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the following user of the specific user.
+ * The entity that manages the follower of the specific user.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +32,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class FollowingUser extends GenericJson implements Serializable {
+public final class UserFollower extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -4563127151074973279L;
+    private static final long serialVersionUID = 2510321939698218285L;
 
     /**
      * The login name

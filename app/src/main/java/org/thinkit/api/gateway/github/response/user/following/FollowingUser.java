@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.subscriptions;
+package org.thinkit.api.gateway.github.response.user.following;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the owner information of the subscription.
+ * The entity that manages the following user of the specific user.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +32,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class SubscriptionOwner extends GenericJson implements Serializable {
+public final class FollowingUser extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -2048632843464762864L;
+    private static final long serialVersionUID = -4563127151074973279L;
 
     /**
      * The login name
@@ -64,25 +64,25 @@ public final class SubscriptionOwner extends GenericJson implements Serializable
     private String avaterUrl;
 
     /**
-     * The gravater url
+     * The gravater id
      */
     @Key("gravater_id")
     private String gravaterId;
 
     /**
-     * The url
+     * The user url
      */
     @Key
     private String url;
 
     /**
-     * The html url
+     * The user url (html)
      */
     @Key("html_url")
     private String htmlUrl;
 
     /**
-     * The followers url
+     * The follower url
      */
     @Key("followers_url")
     private String followersUrl;
@@ -94,7 +94,7 @@ public final class SubscriptionOwner extends GenericJson implements Serializable
     private String followingUrl;
 
     /**
-     * The gists url
+     * The gist url
      */
     @Key("gists_url")
     private String gistsUrl;
@@ -106,13 +106,13 @@ public final class SubscriptionOwner extends GenericJson implements Serializable
     private String starredUrl;
 
     /**
-     * The subscriptions url
+     * The subscription url
      */
     @Key("subscriptions_url")
     private String subscriptionsUrl;
 
     /**
-     * The organizations url
+     * The organization url
      */
     @Key("organizations_url")
     private String organizationsUrl;
@@ -124,19 +124,19 @@ public final class SubscriptionOwner extends GenericJson implements Serializable
     private String reposUrl;
 
     /**
-     * The events url
+     * The event url
      */
     @Key("events_url")
     private String eventsUrl;
 
     /**
-     * The received events url
+     * The received event url
      */
-    @Key("received_events_url")
+    @Key("received_event_url")
     private String receivedEventsUrl;
 
     /**
-     * The type
+     * The user type
      */
     @Key
     private String type;

@@ -16,13 +16,13 @@ package org.thinkit.api.gateway.github;
 
 import java.util.List;
 
-import org.thinkit.api.gateway.github.response.followers.UserFollower;
-import org.thinkit.api.gateway.github.response.following.FollowingUser;
-import org.thinkit.api.gateway.github.response.receivedevents.ReceivedEvent;
 import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.response.repos.UserRepository;
-import org.thinkit.api.gateway.github.response.subscriptions.UserSubscription;
 import org.thinkit.api.gateway.github.response.user.User;
+import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
+import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.user.receivedevents.ReceivedEvent;
+import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscription;
 
 import lombok.NonNull;
 
