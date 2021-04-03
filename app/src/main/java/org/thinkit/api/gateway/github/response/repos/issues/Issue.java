@@ -20,6 +20,8 @@ import java.util.List;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
+import org.thinkit.api.gateway.github.response.common.Creator;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -61,7 +63,7 @@ public final class Issue extends GenericJson implements Serializable {
     private String title;
 
     @Key("user")
-    private Issuer issuer;
+    private Creator issuer;
 
     private List<IssueLabel> labels;
 
@@ -69,9 +71,9 @@ public final class Issue extends GenericJson implements Serializable {
 
     private boolean locked;
 
-    private IssueAssignee assignee;
+    private Creator assignee;
 
-    private List<IssueAssignee> assignees;
+    private List<Creator> assignees;
 
     private IssueMilestone milestone;
 
@@ -89,5 +91,5 @@ public final class Issue extends GenericJson implements Serializable {
 
     private String body;
 
-    private IssueClosedUser closedBy;
+    private Creator closedBy;
 }

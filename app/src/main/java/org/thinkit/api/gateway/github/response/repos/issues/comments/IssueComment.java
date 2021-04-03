@@ -18,6 +18,8 @@ import java.io.Serializable;
 
 import com.google.api.client.util.Key;
 
+import org.thinkit.api.gateway.github.response.common.Creator;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -69,10 +71,10 @@ public final class IssueComment implements Serializable {
     private String nodeId;
 
     /**
-     * The user
+     * The comment owner
      */
     @Key("user")
-    private CommentOwner owner;
+    private Creator owner;
 
     /**
      * The created datetime

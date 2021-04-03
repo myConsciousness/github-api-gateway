@@ -19,6 +19,8 @@ import java.io.Serializable;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
+import org.thinkit.api.gateway.github.response.common.Creator;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -91,7 +93,7 @@ public final class IssueMilestone extends GenericJson implements Serializable {
      * The creator
      */
     @Key
-    private MilestoneCreator creator;
+    private Creator creator;
 
     /**
      * The open issues

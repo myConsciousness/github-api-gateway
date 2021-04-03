@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.user.subscriptions;
+package org.thinkit.api.gateway.github.response.common;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the license information of the subscription.
+ * The entity that manages the license.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,7 +32,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class SubscriptionLicense extends GenericJson implements Serializable {
+public final class License extends GenericJson implements Serializable {
 
     /**
      * The serial version UID

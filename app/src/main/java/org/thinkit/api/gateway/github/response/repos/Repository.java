@@ -19,8 +19,8 @@ import java.io.Serializable;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
-import org.thinkit.api.gateway.github.response.user.repos.RepositoryLicense;
-import org.thinkit.api.gateway.github.response.user.repos.RepositoryOwner;
+import org.thinkit.api.gateway.github.response.common.Creator;
+import org.thinkit.api.gateway.github.response.common.License;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -74,11 +74,9 @@ public final class Repository extends GenericJson implements Serializable {
 
     /**
      * The owner
-     *
-     * @see RepositoryOwner
      */
     @Key
-    private RepositoryOwner owner;
+    private Creator owner;
 
     /**
      * The html url
@@ -454,11 +452,9 @@ public final class Repository extends GenericJson implements Serializable {
 
     /**
      * The license
-     *
-     * @see RepositoryLicense
      */
     @Key
-    private RepositoryLicense license;
+    private License license;
 
     /**
      * The forks
