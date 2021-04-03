@@ -42,54 +42,153 @@ public final class Issue extends GenericJson implements Serializable {
      */
     private static final long serialVersionUID = -4777671516268321438L;
 
+    /**
+     * The url
+     */
+    @Key
     private String url;
 
+    /**
+     * The repository url
+     */
+    @Key
     private String repositoryUrl;
 
+    /**
+     * The labels url
+     */
+    @Key("labels_url")
     private String labelsUrl;
 
+    /**
+     * The comments url
+     */
+    @Key("comments_url")
     private String commentsUrl;
 
+    /**
+     * The events url
+     */
+    @Key("events_url")
     private String eventsUrl;
 
+    /**
+     * The html url
+     */
+    @Key("html_url")
     private String htmlUrl;
 
+    /**
+     * The id
+     */
+    @Key
     private int id;
 
+    /**
+     * The node id
+     */
+    @Key("node_id")
     private String nodeId;
 
+    /**
+     * The number
+     */
+    @Key
     private int number;
 
+    /**
+     * The title
+     */
+    @Key
     private String title;
 
+    /**
+     * The issuer
+     */
     @Key("user")
     private Creator issuer;
 
+    /**
+     * The labels
+     */
+    @Key
     private List<IssueLabel> labels;
 
+    /**
+     * The state
+     */
+    @Key
     private String state;
 
+    /**
+     * The locked
+     */
+    @Key
     private boolean locked;
 
+    /**
+     * The assignee
+     */
+    @Key
     private Creator assignee;
 
+    /**
+     * The assignees
+     */
+    @Key
     private List<Creator> assignees;
 
+    /**
+     * The milestone
+     */
+    @Key
     private IssueMilestone milestone;
 
+    /**
+     * The comments
+     */
+    @Key
     private int comments;
 
+    /**
+     * The created datetime
+     */
+    @Key("created_at")
     private String createdAt;
 
+    /**
+     * The update datetime
+     */
+    @Key("updated_at")
     private String updatedAt;
 
+    /**
+     * The closed datetime
+     */
+    @Key("closed_at")
     private String closedAt;
 
+    /**
+     * The author association
+     */
+    @Key("author_association")
     private String auhtorAssociation;
 
+    /**
+     * The active lock reason
+     */
+    @Key("active_lock_reason")
     private String activeLockReason;
 
+    /**
+     * The body
+     */
+    @Key
     private String body;
 
+    /**
+     * The closed user
+     */
+    @Key("closed_by")
     private Creator closedBy;
 }
