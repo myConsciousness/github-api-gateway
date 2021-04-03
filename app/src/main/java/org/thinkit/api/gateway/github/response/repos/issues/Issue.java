@@ -12,10 +12,12 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.comments;
+package org.thinkit.api.gateway.github.response.repos.issues;
 
 import java.io.Serializable;
+import java.util.List;
 
+import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
 import lombok.EqualsAndHashCode;
@@ -23,7 +25,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the issue comment.
+ * The entity that manages the issue.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -31,76 +33,61 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class IssueComment implements Serializable {
+public final class Issue extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 7399366416181994523L;
+    private static final long serialVersionUID = -4777671516268321438L;
 
-    /**
-     * The url
-     */
-    @Key
     private String url;
 
-    /**
-     * The html url
-     */
-    @Key("html_url")
+    private String repositoryUrl;
+
+    private String labelsUrl;
+
+    private String commentsUrl;
+
+    private String eventsUrl;
+
     private String htmlUrl;
 
-    /**
-     * The issue url
-     */
-    @Key("issue_url")
-    private String issueUrl;
-
-    /**
-     * The id
-     */
-    @Key
     private int id;
 
-    /**
-     * The node id
-     */
-    @Key("node_id")
     private String nodeId;
 
-    /**
-     * The user
-     */
-    @Key("user")
-    private CommentOwner owner;
+    private int number;
 
-    /**
-     * The created datetime
-     */
-    @Key("created_at")
+    private String title;
+
+    @Key("user")
+    private Issuer issuer;
+
+    private List<IssueLabel> labels;
+
+    private String state;
+
+    private boolean locked;
+
+    private IssueAssignee assignee;
+
+    private List<IssueAssignee> assignees;
+
+    private IssueMilestone milestone;
+
+    private int comments;
+
     private String createdAt;
 
-    /**
-     * The updated datetime
-     */
-    @Key("updated_at")
     private String updatedAt;
 
-    /**
-     * The author association
-     */
-    @Key("author_association")
-    private String authorAssociation;
+    private String closedAt;
 
-    /**
-     * The body
-     */
-    @Key
+    private String auhtorAssociation;
+
+    private String activeLockReason;
+
     private String body;
 
-    /**
-     * The performed github app
-     */
-    @Key("performed_via_github_app")
-    private String performedViaGithubApp;
+    private IssueClosedUser closedBy;
 }

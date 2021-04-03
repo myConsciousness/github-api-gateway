@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.issues;
+package org.thinkit.api.gateway.github.response.repos.issues.comments;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the milestone creator.
+ * The entity that manages the comment owner.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,7 +32,7 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class MilestoneCreator extends GenericJson implements Serializable {
+public final class CommentOwner extends GenericJson implements Serializable {
 
     /**
      * The serial version UID

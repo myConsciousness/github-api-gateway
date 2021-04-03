@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.issues;
+package org.thinkit.api.gateway.github.response.repos.issues;
 
 import java.io.Serializable;
 

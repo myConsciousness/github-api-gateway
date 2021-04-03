@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.issues;
+package org.thinkit.api.gateway.github.response.repos.issues;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the issue closed user.
+ * The entity that manages the milestone creator.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +32,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class IssueClosedUser extends GenericJson implements Serializable {
+public final class MilestoneCreator extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -4269897304053489147L;
+    private static final long serialVersionUID = -6916142588082719298L;
 
     /**
      * The login name

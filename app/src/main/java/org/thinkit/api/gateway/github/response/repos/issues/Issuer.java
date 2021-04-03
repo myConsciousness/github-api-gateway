@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.issues;
+package org.thinkit.api.gateway.github.response.repos.issues;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the issue assignee.
+ * The entity that manages the issuer.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +32,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class IssueAssignee extends GenericJson implements Serializable {
+public final class Issuer extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -4193895482349235127L;
+    private static final long serialVersionUID = -1614527767850215442L;
 
     /**
      * The login name

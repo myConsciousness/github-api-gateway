@@ -12,11 +12,10 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.issues;
+package org.thinkit.api.gateway.github.response.repos.issues.comments;
 
 import java.io.Serializable;
 
-import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
 import lombok.EqualsAndHashCode;
@@ -24,7 +23,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the issue label.
+ * The entity that manages the issue comment.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +31,30 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class IssueLabel extends GenericJson implements Serializable {
+public final class IssueComment implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 8034918349916767530L;
+    private static final long serialVersionUID = 7399366416181994523L;
+
+    /**
+     * The url
+     */
+    @Key
+    private String url;
+
+    /**
+     * The html url
+     */
+    @Key("html_url")
+    private String htmlUrl;
+
+    /**
+     * The issue url
+     */
+    @Key("issue_url")
+    private String issueUrl;
 
     /**
      * The id
@@ -52,32 +69,38 @@ public final class IssueLabel extends GenericJson implements Serializable {
     private String nodeId;
 
     /**
-     * The url
+     * The user
      */
-    @Key
-    private String url;
+    @Key("user")
+    private CommentOwner owner;
 
     /**
-     * The name
+     * The created datetime
      */
-    @Key
-    private String name;
+    @Key("created_at")
+    private String createdAt;
 
     /**
-     * The color
+     * The updated datetime
      */
-    @Key
-    private String color;
+    @Key("updated_at")
+    private String updatedAt;
 
     /**
-     * The default flag
+     * The author association
      */
-    @Key("default")
-    private boolean defaultLabel;
+    @Key("author_association")
+    private String authorAssociation;
 
     /**
-     * The description
+     * The body
      */
     @Key
-    private String description;
+    private String body;
+
+    /**
+     * The performed github app
+     */
+    @Key("performed_via_github_app")
+    private String performedViaGithubApp;
 }

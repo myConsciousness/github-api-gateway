@@ -19,6 +19,9 @@ import java.io.Serializable;
 import com.google.api.client.json.GenericJson;
 import com.google.api.client.util.Key;
 
+import org.thinkit.api.gateway.github.response.user.repos.RepositoryLicense;
+import org.thinkit.api.gateway.github.response.user.repos.RepositoryOwner;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;

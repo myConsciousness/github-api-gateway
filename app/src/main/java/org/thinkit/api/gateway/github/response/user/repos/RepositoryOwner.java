@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.response.comments;
+package org.thinkit.api.gateway.github.response.user.repos;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the comment owner.
+ * The entity that manages the owner information of the repository.
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -32,12 +32,12 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public final class CommentOwner extends GenericJson implements Serializable {
+public final class RepositoryOwner extends GenericJson implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = -6916142588082719298L;
+    private static final long serialVersionUID = -4073046151965055062L;
 
     /**
      * The login name
@@ -46,7 +46,7 @@ public final class CommentOwner extends GenericJson implements Serializable {
     private String login;
 
     /**
-     * The id
+     * The user id
      */
     @Key
     private int id;
@@ -118,7 +118,7 @@ public final class CommentOwner extends GenericJson implements Serializable {
     private String organizationsUrl;
 
     /**
-     * The repos url
+     * The repository url
      */
     @Key("repos_url")
     private String reposUrl;
