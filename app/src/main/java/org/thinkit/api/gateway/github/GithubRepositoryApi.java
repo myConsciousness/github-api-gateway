@@ -17,54 +17,37 @@ package org.thinkit.api.gateway.github;
 import java.util.List;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.communication.CommunicationResolver;
+import org.thinkit.api.gateway.github.communication.Communicator;
+import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.user.GithubUser;
-import org.thinkit.api.gateway.github.user.OAuthConfig;
 
+import lombok.EqualsAndHashCode;
 import lombok.NonNull;
+import lombok.ToString;
 
+@ToString
+@EqualsAndHashCode(callSuper = false)
 final class GithubRepositoryApi extends AbstractApi implements RepositoryApi {
 
     /**
-     * The communicate resolver
+     * The serial version UID
      */
-    private CommunicationResolver communicationResolver;
+    private static final long serialVersionUID = -4821784961746219516L;
 
-    /**
-     * The defalut per page
-     */
-    private int defaultPerPage;
-
-    /**
-     * The constructor. This constructor does configure OAuth authentication.
-     *
-     * @param githubUser  The GitHub user
-     * @param oAuthConfig The OAuth config
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    private GithubRepositoryApi(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
-        super(githubUser);
-        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
+    private GithubRepositoryApi(@NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
+        super(githubUser, defaultQueryParameter, communicator);
     }
 
-    /**
-     * Returns the new instance of {@link GithubApiGateway} based on the argument.
-     *
-     * @param githubUser  The GitHub user
-     * @param oAuthConfig The OAuth config
-     * @return The new instance of {@link GithubApiGateway}
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    public static RepositoryApi from(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
-        return new GithubRepositoryApi(githubUser, oAuthConfig);
+    public static RepositoryApi from(@NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
+        return new GithubRepositoryApi(githubUser, defaultQueryParameter, communicator);
     }
 
     @Override
     public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
                 Repository.class);
     }
 }

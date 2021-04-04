@@ -14,6 +14,7 @@
 
 package org.thinkit.api.gateway.github;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,12 +24,15 @@ import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
+import org.thinkit.api.gateway.github.communication.Communicator;
+import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
@@ -37,12 +41,30 @@ import lombok.ToString;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-abstract class AbstractApi {
+abstract class AbstractApi implements Serializable {
+
+    /**
+     * The serial version UID
+     */
+    private static final long serialVersionUID = 4065304436158915168L;
 
     /**
      * The GitHub user
      */
+    @Getter(AccessLevel.PROTECTED)
     private GithubUser githubUser;
+
+    /**
+     * The default query parameter
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private DefaultQueryParameter defaultQueryParameter;
+
+    /**
+     * The http communicator
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private Communicator communicator;
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as

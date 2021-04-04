@@ -19,7 +19,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.communication.CommunicationResolver;
+import org.thinkit.api.gateway.github.communication.Communicator;
+import org.thinkit.api.gateway.github.communication.HttpCommunicator;
 import org.thinkit.api.gateway.github.content.DefaultQueryParameterMapper;
 import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.api.gateway.github.user.GithubUser;
@@ -73,20 +74,20 @@ public abstract class AbstractApiGateway implements Gateway, Serializable {
     private DefaultQueryParameter defaultQueryParameter;
 
     /**
-     * The communicate resolver
+     * The http communicator
      */
     @Getter(AccessLevel.PROTECTED)
-    private CommunicationResolver communicationResolver;
+    private Communicator communicator;
 
     protected AbstractApiGateway(@NonNull final GithubUser githubUser) {
         this.githubUser = githubUser;
         this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);
-        this.communicationResolver = CommunicationResolver.from(OAuthConfig.noneOf());
+        this.communicator = HttpCommunicator.from(OAuthConfig.noneOf());
     }
 
     protected AbstractApiGateway(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
         this.githubUser = githubUser;
         this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);
-        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
+        this.communicator = HttpCommunicator.from(oAuthConfig);
     }
 }

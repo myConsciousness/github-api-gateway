@@ -106,11 +106,12 @@ public final class GithubApiGateway extends AbstractApiGateway {
 
     @Override
     public UsersApi getUsersApi() {
-        return GithubUsersApi.from(super.getGithubUser());
+        return GithubUsersApi.from(super.getGithubUser(), super.getDefaultQueryParameter(), super.getCommunicator());
     }
 
     @Override
     public RepositoryApi getRepositoryApi() {
-        return GithubRepositoryApi.from(super.getGithubUser(), null);
+        return GithubRepositoryApi.from(super.getGithubUser(), super.getDefaultQueryParameter(),
+                super.getCommunicator());
     }
 }
