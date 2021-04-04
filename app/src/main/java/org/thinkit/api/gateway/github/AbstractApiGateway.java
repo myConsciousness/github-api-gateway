@@ -19,9 +19,11 @@ import java.util.List;
 import java.util.Map;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.communication.CommunicationResolver;
 import org.thinkit.api.gateway.github.content.DefaultQueryParameterMapper;
 import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.user.OAuthConfig;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -62,19 +64,29 @@ public abstract class AbstractApiGateway implements Gateway, Serializable {
      * The GitHub user
      */
     @Getter(AccessLevel.PROTECTED)
-    protected GithubUser githubUser;
+    private GithubUser githubUser;
 
     /**
      * The default query parameter
      */
     @Getter(AccessLevel.PROTECTED)
-    protected DefaultQueryParameter defaultQueryParameter;
+    private DefaultQueryParameter defaultQueryParameter;
+
+    /**
+     * The communicate resolver
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private CommunicationResolver communicationResolver;
 
     protected AbstractApiGateway(@NonNull final GithubUser githubUser) {
         this.githubUser = githubUser;
+        this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);
+        this.communicationResolver = CommunicationResolver.from(OAuthConfig.noneOf());
+    }
 
-        DefaultQueryParameterMapper.newInstance().scan().forEach(defaultQueryParameter -> {
-            this.defaultQueryParameter = defaultQueryParameter;
-        });
+    protected AbstractApiGateway(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
+        this.githubUser = githubUser;
+        this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);
+        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
     }
 }

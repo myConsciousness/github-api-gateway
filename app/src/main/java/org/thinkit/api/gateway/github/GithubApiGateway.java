@@ -16,7 +16,6 @@ package org.thinkit.api.gateway.github;
 
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.user.OAuthConfig;
-import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.EqualsAndHashCode;
 import lombok.NonNull;
@@ -58,11 +57,6 @@ public final class GithubApiGateway extends AbstractApiGateway {
     private static final long serialVersionUID = -2391992718333265549L;
 
     /**
-     * The communicate resolver
-     */
-    private CommunicationResolver communicationResolver;
-
-    /**
      * The constructor. This constructor does not configure OAuth authentication.
      *
      * @param githubUser The GitHub user
@@ -71,7 +65,6 @@ public final class GithubApiGateway extends AbstractApiGateway {
      */
     private GithubApiGateway(@NonNull final GithubUser githubUser) {
         super(githubUser);
-        this.communicationResolver = CommunicationResolver.from(OAuthConfig.builder().build());
     }
 
     /**
@@ -95,8 +88,7 @@ public final class GithubApiGateway extends AbstractApiGateway {
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     private GithubApiGateway(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
-        super(githubUser);
-        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
+        super(githubUser, oAuthConfig);
     }
 
     /**
@@ -119,6 +111,6 @@ public final class GithubApiGateway extends AbstractApiGateway {
 
     @Override
     public RepositoryApi getRepositoryApi() {
-        return GithubRepositoryApi.from(githubUser, null);
+        return GithubRepositoryApi.from(super.getGithubUser(), null);
     }
 }

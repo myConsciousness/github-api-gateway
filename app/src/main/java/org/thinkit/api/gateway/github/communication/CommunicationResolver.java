@@ -12,7 +12,7 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.util;
+package org.thinkit.api.gateway.github.communication;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -38,6 +38,8 @@ import org.thinkit.api.gateway.github.exception.NotFoundException;
 import org.thinkit.api.gateway.github.exception.ServiceUnavailableException;
 import org.thinkit.api.gateway.github.exception.UserUnauthorizedException;
 import org.thinkit.api.gateway.github.user.OAuthConfig;
+import org.thinkit.api.gateway.github.util.ListGenericResolver;
+import org.thinkit.api.gateway.github.util.SecuritySchemeResolver;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

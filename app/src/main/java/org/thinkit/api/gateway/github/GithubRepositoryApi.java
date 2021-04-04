@@ -17,10 +17,10 @@ package org.thinkit.api.gateway.github;
 import java.util.List;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.communication.CommunicationResolver;
 import org.thinkit.api.gateway.github.response.repos.Repository;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.user.OAuthConfig;
-import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.NonNull;
 

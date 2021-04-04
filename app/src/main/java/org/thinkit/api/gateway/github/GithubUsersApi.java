@@ -19,6 +19,7 @@ import java.util.Map;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
+import org.thinkit.api.gateway.github.communication.CommunicationResolver;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
@@ -26,7 +27,6 @@ import org.thinkit.api.gateway.github.response.user.receivedevents.ReceivedEvent
 import org.thinkit.api.gateway.github.response.user.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscription;
 import org.thinkit.api.gateway.github.user.GithubUser;
-import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.NonNull;
 

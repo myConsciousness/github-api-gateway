@@ -35,7 +35,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-@NoArgsConstructor(access = AccessLevel.PRIVATE, force = true)
+@NoArgsConstructor(staticName = "noneOf")
 public final class OAuthConfig implements Serializable {
 
     /**

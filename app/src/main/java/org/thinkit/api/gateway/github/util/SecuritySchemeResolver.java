@@ -31,7 +31,7 @@ import lombok.NoArgsConstructor;
  * @since 1.0.0
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-final class SecuritySchemeResolver {
+public final class SecuritySchemeResolver {
 
     /**
      * Returns the token passed as an argument in the format with the bearer schema.
