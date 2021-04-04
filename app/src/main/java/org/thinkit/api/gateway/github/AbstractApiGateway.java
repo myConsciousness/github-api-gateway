@@ -62,6 +62,12 @@ public abstract class AbstractApiGateway implements Gateway, Serializable {
     private static final long serialVersionUID = 5408959112740655553L;
 
     /**
+     * The http communicator
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private Communicator communicator;
+
+    /**
      * The GitHub user
      */
     @Getter(AccessLevel.PROTECTED)
@@ -72,12 +78,6 @@ public abstract class AbstractApiGateway implements Gateway, Serializable {
      */
     @Getter(AccessLevel.PROTECTED)
     private DefaultQueryParameter defaultQueryParameter;
-
-    /**
-     * The http communicator
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private Communicator communicator;
 
     protected AbstractApiGateway(@NonNull final GithubUser githubUser) {
         this.githubUser = githubUser;

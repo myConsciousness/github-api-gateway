@@ -35,14 +35,14 @@ final class GithubRepositoryApi extends AbstractApi implements RepositoryApi {
      */
     private static final long serialVersionUID = -4821784961746219516L;
 
-    private GithubRepositoryApi(@NonNull final GithubUser githubUser,
-            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
-        super(githubUser, defaultQueryParameter, communicator);
+    private GithubRepositoryApi(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter) {
+        super(communicator, githubUser, defaultQueryParameter);
     }
 
-    public static RepositoryApi from(@NonNull final GithubUser githubUser,
-            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
-        return new GithubRepositoryApi(githubUser, defaultQueryParameter, communicator);
+    public static RepositoryApi from(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter) {
+        return new GithubRepositoryApi(communicator, githubUser, defaultQueryParameter);
     }
 
     @Override

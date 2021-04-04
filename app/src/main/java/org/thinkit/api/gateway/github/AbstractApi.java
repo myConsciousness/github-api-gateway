@@ -49,6 +49,12 @@ abstract class AbstractApi implements Serializable {
     private static final long serialVersionUID = 4065304436158915168L;
 
     /**
+     * The http communicator
+     */
+    @Getter(AccessLevel.PROTECTED)
+    private Communicator communicator;
+
+    /**
      * The GitHub user
      */
     @Getter(AccessLevel.PROTECTED)
@@ -57,14 +63,7 @@ abstract class AbstractApi implements Serializable {
     /**
      * The default query parameter
      */
-    @Getter(AccessLevel.PROTECTED)
     private DefaultQueryParameter defaultQueryParameter;
-
-    /**
-     * The http communicator
-     */
-    @Getter(AccessLevel.PROTECTED)
-    private Communicator communicator;
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as
@@ -121,6 +120,33 @@ abstract class AbstractApi implements Serializable {
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries,
             @NonNull final List<String> binds) {
         return UrlResolver.createUrl(githubApi, queries, this.mergeBinds(binds));
+    }
+
+    /**
+     * Returns the default per page.
+     *
+     * @return The default per page
+     */
+    protected int getDefaultPerPage() {
+        return this.defaultQueryParameter.getPerPage();
+    }
+
+    /**
+     * Returns the default page.
+     *
+     * @return The default page
+     */
+    protected int getDefaultPage() {
+        return this.defaultQueryParameter.getPage();
+    }
+
+    /**
+     * Returns the default issue state.
+     *
+     * @return The default issue state
+     */
+    protected String getDefaultIssueState() {
+        return this.defaultQueryParameter.getIssueState();
     }
 
     /**

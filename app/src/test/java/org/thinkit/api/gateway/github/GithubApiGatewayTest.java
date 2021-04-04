@@ -14,8 +14,12 @@
 
 package org.thinkit.api.gateway.github;
 
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
+import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.user.OAuthConfig;
 
@@ -44,8 +48,8 @@ public final class GithubApiGatewayTest {
 
         @Test
         void testResponseItems() {
-            // final User user = assertDoesNotThrow(() -> GATEWAY.getUser());
-            // assertNotNull(user);
+            final User user = assertDoesNotThrow(() -> GATEWAY.getUsersApi().getUser());
+            assertNotNull(user);
         }
     }
 }

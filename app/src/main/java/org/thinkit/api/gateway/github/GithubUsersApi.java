@@ -42,14 +42,14 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
      */
     private static final long serialVersionUID = 4444555790420425260L;
 
-    private GithubUsersApi(@NonNull final GithubUser githubUser,
-            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
-        super(githubUser, defaultQueryParameter, communicator);
+    private GithubUsersApi(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter) {
+        super(communicator, githubUser, defaultQueryParameter);
     }
 
-    public static UsersApi from(@NonNull final GithubUser githubUser,
-            @NonNull final DefaultQueryParameter defaultQueryParameter, @NonNull final Communicator communicator) {
-        return new GithubUsersApi(githubUser, defaultQueryParameter, communicator);
+    public static UsersApi from(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
+            @NonNull final DefaultQueryParameter defaultQueryParameter) {
+        return new GithubUsersApi(communicator, githubUser, defaultQueryParameter);
     }
 
     @Override
@@ -59,7 +59,7 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
 
     @Override
     public List<FollowingUser> getFollowingUsers() {
-        return this.getFollowingUsers(100);
+        return this.getFollowingUsers(super.getDefaultPerPage());
     }
 
     @Override
@@ -70,7 +70,7 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
 
     @Override
     public List<UserFollower> getUserFollowers() {
-        return this.getUserFollowers(100);
+        return this.getUserFollowers(super.getDefaultPerPage());
     }
 
     @Override
