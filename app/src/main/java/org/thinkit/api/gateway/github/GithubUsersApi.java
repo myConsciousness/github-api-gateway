@@ -30,7 +30,7 @@ import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.NonNull;
 
-final class GithubUsersApi extends BaseApi implements UsersApi {
+final class GithubUsersApi extends AbstractApi implements UsersApi {
 
     /**
      * The communicate resolver

@@ -24,7 +24,7 @@ import org.thinkit.api.gateway.github.util.CommunicationResolver;
 
 import lombok.NonNull;
 
-final class GithubRepositoryApi extends BaseApi implements RepositoryApi {
+final class GithubRepositoryApi extends AbstractApi implements RepositoryApi {
 
     /**
      * The communicate resolver

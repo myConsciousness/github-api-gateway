@@ -43,4 +43,7 @@ package org.thinkit.api.gateway.github;
  */
 public interface Gateway {
 
+    public UsersApi getUsersApi();
+
+    public RepositoryApi getRepositoryApi();
 }

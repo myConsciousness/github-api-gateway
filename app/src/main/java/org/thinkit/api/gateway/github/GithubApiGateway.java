@@ -50,7 +50,7 @@ import lombok.ToString;
  */
 @ToString
 @EqualsAndHashCode(callSuper = false)
-public final class GithubApiGateway extends ApiGateway {
+public final class GithubApiGateway extends AbstractApiGateway {
 
     /**
      * The serial version UID
@@ -112,4 +112,13 @@ public final class GithubApiGateway extends ApiGateway {
         return new GithubApiGateway(githubUser, oAuthConfig);
     }
 
+    @Override
+    public UsersApi getUsersApi() {
+        return GithubUsersApi.from(super.getGithubUser());
+    }
+
+    @Override
+    public RepositoryApi getRepositoryApi() {
+        return GithubRepositoryApi.from(githubUser, null);
+    }
 }

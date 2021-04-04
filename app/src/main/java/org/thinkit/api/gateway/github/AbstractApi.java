@@ -37,7 +37,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor
-abstract class BaseApi {
+abstract class AbstractApi {
 
     /**
      * The GitHub user
