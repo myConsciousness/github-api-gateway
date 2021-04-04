@@ -14,6 +14,82 @@
 
 package org.thinkit.api.gateway.github;
 
+import java.util.List;
+
+import org.thinkit.api.gateway.github.response.user.User;
+import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
+import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
+import org.thinkit.api.gateway.github.response.user.receivedevents.ReceivedEvent;
+import org.thinkit.api.gateway.github.response.user.repos.UserRepository;
+import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscription;
+
 public interface UsersApi {
 
+    /**
+     * Returns the specific user information through the GitHub API {@code
+     * https://api.github.com/users/username}.
+     *
+     * @return The user information
+     */
+    public User getUser();
+
+    /**
+     * Returns the specific user's following information through the GitHub API
+     * {@code https://api.github.com/users/username/following}.
+     *
+     * @return The user's following information
+     */
+    public List<FollowingUser> getFollowingUsers();
+
+    /**
+     * Returns the specific user's following information through the GitHub API
+     * {@code https://api.github.com/users/username/following?per_page=xxx}.
+     *
+     * @param perPage The page count
+     * @return The specified number of user's following information
+     */
+    public List<FollowingUser> getFollowingUsers(final int perPage);
+
+    /**
+     * Returns the specific user's follower information through the GitHub API
+     * {@code https://api.github.com/users/username/follower}.
+     *
+     * @return The user's follower information
+     */
+    public List<UserFollower> getUserFollowers();
+
+    /**
+     * Returns the specific user's follower information through the GitHub API
+     * {@code https://api.github.com/users/username/follower?per_page=xxx}.
+     *
+     * @param perPage The page count
+     * @return The specified number of user's follower information
+     */
+    public List<UserFollower> getUserFollowers(final int perPage);
+
+    /**
+     * Returns the specific user's repository information through the GitHub API
+     * {@code https://api.github.com/users/username/repos}.
+     *
+     * @return The user's repository information
+     */
+    public List<UserRepository> getUserRepositories();
+
+    /**
+     * Returns the specific received events information through the GitHub API
+     * {@code https://api.github.com/users/username/received_events}.
+     *
+     * @return The received events information
+     */
+    public List<ReceivedEvent> getReceivedEvents();
+
+    /**
+     * Returns the specific user's subscription information through the GitHub API
+     * {@code https://api.github.com/users/username/subscriptions}.
+     *
+     * @return The specific user's subscription information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<UserSubscription> getUserSubscriptions();
 }

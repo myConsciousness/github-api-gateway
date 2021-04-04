@@ -14,6 +14,57 @@
 
 package org.thinkit.api.gateway.github;
 
-final class GithubRepositoryApi implements RepositoryApi {
+import java.util.List;
 
+import org.thinkit.api.gateway.github.catalog.GithubApi;
+import org.thinkit.api.gateway.github.response.repos.Repository;
+import org.thinkit.api.gateway.github.user.GithubUser;
+import org.thinkit.api.gateway.github.user.OAuthConfig;
+import org.thinkit.api.gateway.github.util.CommunicationResolver;
+
+import lombok.NonNull;
+
+final class GithubRepositoryApi extends BaseApi implements RepositoryApi {
+
+    /**
+     * The communicate resolver
+     */
+    private CommunicationResolver communicationResolver;
+
+    /**
+     * The defalut per page
+     */
+    private int defaultPerPage;
+
+    /**
+     * The constructor. This constructor does configure OAuth authentication.
+     *
+     * @param githubUser  The GitHub user
+     * @param oAuthConfig The OAuth config
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    private GithubRepositoryApi(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
+        super(githubUser);
+        this.communicationResolver = CommunicationResolver.from(oAuthConfig);
+    }
+
+    /**
+     * Returns the new instance of {@link GithubApiGateway} based on the argument.
+     *
+     * @param githubUser  The GitHub user
+     * @param oAuthConfig The OAuth config
+     * @return The new instance of {@link GithubApiGateway}
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public static RepositoryApi from(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
+        return new GithubRepositoryApi(githubUser, oAuthConfig);
+    }
+
+    @Override
+    public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
+        return this.communicationResolver.getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
+                Repository.class);
+    }
 }

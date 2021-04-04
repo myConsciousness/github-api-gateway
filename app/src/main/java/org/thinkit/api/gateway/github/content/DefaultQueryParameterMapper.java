@@ -14,7 +14,7 @@
 
 package org.thinkit.api.gateway.github.content;
 
-import org.thinkit.api.gateway.github.content.entity.DefaultPagination;
+import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.zenna.mapper.ContentMapper;
 
 import lombok.EqualsAndHashCode;
@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * The mapper of the content {@code "DefaultPagination"} .
+ * The mapper of the content {@code "DefaultQueryParameter"} .
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -30,5 +30,5 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor(staticName = "newInstance")
-public final class DefaultPaginationMapper extends ContentMapper<DefaultPagination> {
+public final class DefaultQueryParameterMapper extends ContentMapper<DefaultQueryParameter> {
 }

@@ -14,18 +14,6 @@
 
 package org.thinkit.api.gateway.github;
 
-import java.util.List;
-import java.util.Map;
-
-import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.catalog.QueryKey;
-import org.thinkit.api.gateway.github.response.repos.Repository;
-import org.thinkit.api.gateway.github.response.user.User;
-import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
-import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
-import org.thinkit.api.gateway.github.response.user.receivedevents.ReceivedEvent;
-import org.thinkit.api.gateway.github.response.user.repos.UserRepository;
-import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscription;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.user.OAuthConfig;
 import org.thinkit.api.gateway.github.util.CommunicationResolver;
@@ -124,52 +112,4 @@ public final class GithubApiGateway extends ApiGateway {
         return new GithubApiGateway(githubUser, oAuthConfig);
     }
 
-    @Override
-    public User getUser() {
-        return this.communicationResolver.get(super.createUrl(GithubApi.USER), User.class);
-    }
-
-    @Override
-    public List<FollowingUser> getFollowingUsers() {
-        return this.getFollowingUsers(super.getDefaultPerPage());
-    }
-
-    @Override
-    public List<FollowingUser> getFollowingUsers(final int perPage) {
-        return this.communicationResolver.getAsList(
-                super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)), FollowingUser.class);
-    }
-
-    @Override
-    public List<UserFollower> getUserFollowers() {
-        return this.getUserFollowers(super.getDefaultPerPage());
-    }
-
-    @Override
-    public List<UserFollower> getUserFollowers(final int perPage) {
-        return this.communicationResolver.getAsList(
-                super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)), UserFollower.class);
-    }
-
-    @Override
-    public List<UserRepository> getUserRepositories() {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_REPOSITORY), UserRepository.class);
-    }
-
-    @Override
-    public List<ReceivedEvent> getReceivedEvents() {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS), ReceivedEvent.class);
-    }
-
-    @Override
-    public List<UserSubscription> getUserSubscriptions() {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.USER_SUBSCRIPTIONS),
-                UserSubscription.class);
-    }
-
-    @Override
-    public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
-        return this.communicationResolver.getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
-                Repository.class);
-    }
 }

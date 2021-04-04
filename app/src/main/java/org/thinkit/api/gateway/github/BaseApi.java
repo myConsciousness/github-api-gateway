@@ -14,7 +14,6 @@
 
 package org.thinkit.api.gateway.github;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,65 +23,26 @@ import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.catalog.QueryKey;
-import org.thinkit.api.gateway.github.content.DefaultQueryParameterMapper;
-import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
-/**
- * The abstract class that defines the generic processing for implementing the
- * GitHub API gateway.
- *
- * <p>
- * The {@link GithubUser} object must be set with the user information required
- * to call the API; if the user information required to call the API is not set,
- * the API call will fail or an exception will be thrown at runtime.
- *
- * <p>
- * It provides {@link #createUrl(GithubApi)} ,
- * {@link #createUrl(GithubApi, Map)} , {@link #createUrl(GithubApi, List)} and
- * {@link #createUrl(GithubApi, Map, List)} methods to easily generate URLs for
- * calling the API.
- *
- * @author Kato Shinya
- * @since 1.0.0
- */
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public abstract class ApiGateway implements Gateway, Serializable {
-
-    /**
-     * The serial version UID
-     */
-    private static final long serialVersionUID = 5408959112740655553L;
-
-    /**
-     * The default query parameter
-     */
-    @Getter(AccessLevel.PROTECTED)
-    protected DefaultQueryParameter defaultQueryParameter;
+@AllArgsConstructor
+abstract class BaseApi {
 
     /**
      * The GitHub user
      */
-    @Getter(AccessLevel.PROTECTED)
-    protected GithubUser githubUser;
-
-    protected ApiGateway(@NonNull final GithubUser githubUser) {
-        this.githubUser = githubUser;
-
-        DefaultQueryParameterMapper.newInstance().scan().forEach(defaultQueryParameter -> {
-            this.defaultQueryParameter = defaultQueryParameter;
-        });
-    }
+    private GithubUser githubUser;
 
     /**
      * Generate the API URL based on the Enum element of {@link GithubApi} passed as

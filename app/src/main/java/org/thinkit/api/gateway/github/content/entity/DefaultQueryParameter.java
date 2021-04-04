@@ -23,14 +23,14 @@ import lombok.Getter;
 import lombok.ToString;
 
 /**
- * The entity that manages the content {@code "DefaultPagination"} .
+ * The entity that manages the content {@code "DefaultQueryParameter"} .
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
-public final class DefaultPagination implements ContentEntity, Serializable {
+public final class DefaultQueryParameter implements ContentEntity, Serializable {
 
     /**
      * The serial version UID
@@ -42,4 +42,16 @@ public final class DefaultPagination implements ContentEntity, Serializable {
      */
     @Getter
     private int perPage;
+
+    /**
+     * The page
+     */
+    @Getter
+    private int page;
+
+    /**
+     * The issue state
+     */
+    @Getter
+    private String issueState;
 }

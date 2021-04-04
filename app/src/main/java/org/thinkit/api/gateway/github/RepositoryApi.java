@@ -14,6 +14,23 @@
 
 package org.thinkit.api.gateway.github;
 
+import java.util.List;
+
+import org.thinkit.api.gateway.github.response.repos.Repository;
+
+import lombok.NonNull;
+
 public interface RepositoryApi {
 
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName}.
+     *
+     * @param repositoryDomain The repository domain with the format
+     *                         {@code "loginName/repositoryName"}
+     * @return The repository information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<Repository> getRepositories(@NonNull final String repositoryDomain);
 }

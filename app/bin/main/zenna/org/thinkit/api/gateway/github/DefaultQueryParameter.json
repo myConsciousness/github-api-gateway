@@ -1,0 +1,19 @@
+{
+    "meta": {
+        "author": "Kato Shinya",
+        "encoding": "UTF-8",
+        "description": "The content that manages the default query parameter.",
+        "resultType": "org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter"
+    },
+    "selectionNodes": [
+        {
+            "node": {
+                "conditionId": "",
+                "perPage": 100,
+                "page": 1,
+                "issueState": "all"
+            }
+        }
+    ],
+    "conditionNodes": []
+}
