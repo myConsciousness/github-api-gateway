@@ -58,7 +58,7 @@ import lombok.ToString;
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @AllArgsConstructor(staticName = "from")
-public final class CommunicationResolver implements Serializable {
+public final class HttpCommunicator implements Communicator, Serializable {
 
     /**
      * The serial version UID
@@ -80,20 +80,7 @@ public final class CommunicationResolver implements Serializable {
      */
     private OAuthConfig oAuthConfig;
 
-    /**
-     * Sends a Get request to the request URL.
-     *
-     * <p>
-     * The response will be parsed into the response type specified as the second
-     * argument and returned.
-     *
-     * @param <T>           The response type
-     * @param genericUrl    The request url object
-     * @param responseClass The response class
-     * @return The JSON response
-     *
-     * @exception NullPointerException if {@code null} is passed as an argument
-     */
+    @Override
     public <T> T get(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
             return this.parseAs(this.sendGetRequest(genericUrl), responseClass);
@@ -102,20 +89,7 @@ public final class CommunicationResolver implements Serializable {
         }
     }
 
-    /**
-     * Sends a Get request to the request URL.
-     *
-     * <p>
-     * The response will be parsed into the list of response type specified as the
-     * second argument and returned.
-     *
-     * @param <T>           The response type
-     * @param genericUrl    The request url object
-     * @param responseClass The response class
-     * @return The JSON responses as list
-     *
-     * @exception NullPointerException if {@code null} is passed as an argument
-     */
+    @Override
     public <T> List<T> getAsList(@NonNull final GenericUrl genericUrl, @NonNull final Class<T> responseClass) {
         try {
             return this.parseAsList(this.sendGetRequest(genericUrl), ListGenericResolver.of(responseClass));
