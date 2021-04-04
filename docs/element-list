@@ -1,5 +1,6 @@
 org.thinkit.api.gateway.github
 org.thinkit.api.gateway.github.catalog
+org.thinkit.api.gateway.github.communication
 org.thinkit.api.gateway.github.content
 org.thinkit.api.gateway.github.content.entity
 org.thinkit.api.gateway.github.exception

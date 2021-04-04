@@ -58,8 +58,8 @@ loadScripts(document, 'script');</script>
 <h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github</h2>
 <ul class="block-list">
 <li>
-<section class="serialized-class-details" id="org.thinkit.api.gateway.github.ApiGateway">
-<h3>Class <a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.ApiGateway</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.AbstractApiGateway">
+<h3>Class <a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.AbstractApiGateway</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
 <dl class="name-value">
 <dt>serialVersionUID:</dt>
 <dd>5408959112740655553L</dd>
@@ -70,9 +70,14 @@ loadScripts(document, 'script');</script>
 <h4>直列化されたフィールド</h4>
 <ul class="block-list">
 <li class="block-list">
-<h5>defaultPerPage</h5>
-<pre>int defaultPerPage</pre>
-<div class="block">The default per page</div>
+<h5>communicator</h5>
+<pre><a href="org/thinkit/api/gateway/github/communication/Communicator.html" title="org.thinkit.api.gateway.github.communication内のインタフェース">Communicator</a> communicator</pre>
+<div class="block">The http communicator</div>
+</li>
+<li class="block-list">
+<h5>defaultQueryParameter</h5>
+<pre><a href="org/thinkit/api/gateway/github/content/entity/DefaultQueryParameter.html" title="org.thinkit.api.gateway.github.content.entity内のクラス">DefaultQueryParameter</a> defaultQueryParameter</pre>
+<div class="block">The default query parameter</div>
 </li>
 <li class="block-list">
 <h5>githubUser</h5>
@@ -87,25 +92,27 @@ loadScripts(document, 'script');</script>
 </li>
 <li>
 <section class="serialized-class-details" id="org.thinkit.api.gateway.github.GithubApiGateway">
-<h3>Class <a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.GithubApiGateway</a> extends <a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a> implements Serializable</h3>
+<h3>Class <a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">org.thinkit.api.gateway.github.GithubApiGateway</a> extends <a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">AbstractApiGateway</a> implements Serializable</h3>
 <dl class="name-value">
 <dt>serialVersionUID:</dt>
 <dd>-2391992718333265549L</dd>
 </dl>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>直列化されたフィールド</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>communicationResolver</h5>
-<pre><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a> communicationResolver</pre>
-<div class="block">The communicate resolver</div>
+</section>
 </li>
 </ul>
 </section>
 </li>
-</ul>
+<li>
+<section class="serialized-package-container">
+<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.communication</h2>
+<ul class="block-list">
+<li>
+<section class="serialized-class-details" id="org.thinkit.api.gateway.github.communication.HttpCommunicator">
+<h3>Class <a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">org.thinkit.api.gateway.github.communication.HttpCommunicator</a> extends <a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">AbstractHttpCommunicator</a> implements Serializable</h3>
+<dl class="name-value">
+<dt>serialVersionUID:</dt>
+<dd>294272078327803469L</dd>
+</dl>
 </section>
 </li>
 </ul>
@@ -2596,36 +2603,6 @@ loadScripts(document, 'script');</script>
 <h5>accessToken</h5>
 <pre><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a> accessToken</pre>
 <div class="block">The access token</div>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</section>
-</li>
-</ul>
-</section>
-</li>
-<li>
-<section class="serialized-package-container">
-<h2 title="パッケージ">パッケージ&nbsp;org.thinkit.api.gateway.github.util</h2>
-<ul class="block-list">
-<li>
-<section class="serialized-class-details" id="org.thinkit.api.gateway.github.util.CommunicationResolver">
-<h3>Class <a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">org.thinkit.api.gateway.github.util.CommunicationResolver</a> extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a> implements Serializable</h3>
-<dl class="name-value">
-<dt>serialVersionUID:</dt>
-<dd>294272078327803469L</dd>
-</dl>
-<ul class="block-list">
-<li>
-<section class="detail">
-<h4>直列化されたフィールド</h4>
-<ul class="block-list">
-<li class="block-list">
-<h5>oAuthConfig</h5>
-<pre><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a> oAuthConfig</pre>
-<div class="block">The OAuth config</div>
 </li>
 </ul>
 </section>

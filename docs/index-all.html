@@ -55,6 +55,15 @@ loadScripts(document, 'script');</script>
 <a href="#I:A">A</a>&nbsp;<a href="#I:B">B</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:H">H</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:L">L</a>&nbsp;<a href="#I:N">N</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:P">P</a>&nbsp;<a href="#I:Q">Q</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:T">T</a>&nbsp;<a href="#I:U">U</a>&nbsp;<a href="#I:V">V</a>&nbsp;<br><a href="allclasses-index.html">すべてのクラス</a><span class="vertical-separator">|</span><a href="allpackages-index.html">すべてのパッケージ</a>
 <h2 class="title" id="I:A">A</h2>
 <dl class="index">
+<dt><a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><span class="type-name-link">AbstractApiGateway</span></a> - <a href="org/thinkit/api/gateway/github/package-summary.html">org.thinkit.api.gateway.github</a>のクラス</dt>
+<dd>
+<div class="block">The abstract class that defines the generic processing for implementing the
+ GitHub API gateway.</div>
+</dd>
+<dt><a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス"><span class="type-name-link">AbstractHttpCommunicator</span></a> - <a href="org/thinkit/api/gateway/github/communication/package-summary.html">org.thinkit.api.gateway.github.communication</a>のクラス</dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html#%3Cinit%3E(org.thinkit.api.gateway.github.user.OAuthConfig)">AbstractHttpCommunicator(OAuthConfig)</a></span> - クラス のコンストラクタorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">AbstractHttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/thinkit/api/gateway/github/exception/AccessForbiddenException.html" title="org.thinkit.api.gateway.github.exception内のクラス"><span class="type-name-link">AccessForbiddenException</span></a> - <a href="org/thinkit/api/gateway/github/exception/package-summary.html">org.thinkit.api.gateway.github.exception</a>の例外</dt>
 <dd>
 <div class="block">Thrown to indicate that the access is forbidden.</div>
@@ -88,11 +97,6 @@ loadScripts(document, 'script');</script>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/catalog/QuerySymbol.html#AMPERSAND">AMPERSAND</a></span> - org.thinkit.api.gateway.github.catalog.<a href="org/thinkit/api/gateway/github/catalog/QuerySymbol.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QuerySymbol</a></dt>
 <dd>
 <div class="block"><code>"&amp;"</code></div>
-</dd>
-<dt><a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><span class="type-name-link">ApiGateway</span></a> - <a href="org/thinkit/api/gateway/github/package-summary.html">org.thinkit.api.gateway.github</a>のクラス</dt>
-<dd>
-<div class="block">The abstract class that defines the generic processing for implementing the
- GitHub API gateway.</div>
 </dd>
 </dl>
 <h2 class="title" id="I:B">B</h2>
@@ -149,6 +153,10 @@ loadScripts(document, 'script');</script>
 <div class="block">Constructs a new exception with the specified cause and a detail message of
  (cause==null ?</div>
 </dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/SecuritySchemeResolver.html#bearer(java.lang.String)">bearer(String)</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/SecuritySchemeResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">SecuritySchemeResolver</a></dt>
+<dd>
+<div class="block">Returns the token passed as an argument in the format with the bearer schema.</div>
+</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/catalog/SecurityScheme.html#BEARER">BEARER</a></span> - org.thinkit.api.gateway.github.catalog.<a href="org/thinkit/api/gateway/github/catalog/SecurityScheme.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">SecurityScheme</a></dt>
 <dd>
 <div class="block">The <code>"bearer"</code> scheme</div>
@@ -172,10 +180,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The API that retrieves specific issue comment information</div>
 </dd>
-<dt><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス"><span class="type-name-link">CommunicationResolver</span></a> - <a href="org/thinkit/api/gateway/github/util/package-summary.html">org.thinkit.api.gateway.github.util</a>のクラス</dt>
-<dd>
-<div class="block">The class that provides general-purpose processing for HTTP communication.</div>
-</dd>
+<dt><a href="org/thinkit/api/gateway/github/communication/Communicator.html" title="org.thinkit.api.gateway.github.communication内のインタフェース"><span class="type-name-link">Communicator</span></a> - <a href="org/thinkit/api/gateway/github/communication/package-summary.html">org.thinkit.api.gateway.github.communication</a>のインタフェース</dt>
+<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/UrlResolver.html#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi)">createUrl(GithubApi)</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/UrlResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">UrlResolver</a></dt>
 <dd>
 <div class="block">Returns an API URL object based on the Enum element of <a href="org/thinkit/api/gateway/github/catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a>
@@ -226,7 +232,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block"><code>"="</code></div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/ApiGateway.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/AbstractApiGateway.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">AbstractApiGateway</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">AbstractHttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.content.<a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html" title="org.thinkit.api.gateway.github.content内のクラス">DefaultQueryParameterMapper</a></dt>
 <dd>&nbsp;</dd>
@@ -269,8 +279,6 @@ loadScripts(document, 'script');</script>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/GithubUser.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/GithubUser.html" title="org.thinkit.api.gateway.github.user内のクラス">GithubUser</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html#equals(java.lang.Object)">equals(Object)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">ListGenericResolver</a></dt>
 <dd>&nbsp;</dd>
@@ -321,7 +329,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the new instance of <a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス"><code>GithubApiGateway</code></a> based on the argument.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#from(org.thinkit.api.gateway.github.user.OAuthConfig)">from(OAuthConfig)</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#from(org.thinkit.api.gateway.github.user.OAuthConfig)">from(OAuthConfig)</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <h2 class="title" id="I:G">G</h2>
@@ -330,10 +338,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The interface that abstracts the gateway.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#get(com.google.api.client.http.GenericUrl,java.lang.Class)">get(GenericUrl, Class&lt;T&gt;)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/Communicator.html#get(com.google.api.client.http.GenericUrl,java.lang.Class)">get(GenericUrl, Class&lt;T&gt;)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/Communicator.html" title="org.thinkit.api.gateway.github.communication内のインタフェース">Communicator</a></dt>
 <dd>
 <div class="block">Sends a Get request to the request URL.</div>
 </dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#get(com.google.api.client.http.GenericUrl,java.lang.Class)">get(GenericUrl, Class&lt;T&gt;)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#getAccessToken()">getAccessToken()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
 <dd>
 <div class="block">The access token</div>
@@ -364,10 +374,12 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The archive url</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#getAsList(com.google.api.client.http.GenericUrl,java.lang.Class)">getAsList(GenericUrl, Class&lt;T&gt;)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/Communicator.html#getAsList(com.google.api.client.http.GenericUrl,java.lang.Class)">getAsList(GenericUrl, Class&lt;T&gt;)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/Communicator.html" title="org.thinkit.api.gateway.github.communication内のインタフェース">Communicator</a></dt>
 <dd>
 <div class="block">Sends a Get request to the request URL.</div>
 </dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#getAsList(com.google.api.client.http.GenericUrl,java.lang.Class)">getAsList(GenericUrl, Class&lt;T&gt;)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/response/repos/issues/Issue.html#getAssignee()">getAssignee()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.response.repos.issues.<a href="org/thinkit/api/gateway/github/response/repos/issues/Issue.html" title="org.thinkit.api.gateway.github.response.repos.issues内のクラス">Issue</a></dt>
 <dd>
 <div class="block">The assignee</div>
@@ -780,25 +792,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The following url</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getFollowingUsers()">getFollowingUsers()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's following information through the GitHub API
- <code>https://api.github.com/users/username/following</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getFollowingUsers()">getFollowingUsers()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getFollowingUsers()">getFollowingUsers()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user's following information through the GitHub API
  <code>https://api.github.com/users/username/following</code>.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getFollowingUsers(int)">getFollowingUsers(int)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's following information through the GitHub API
- <code>https://api.github.com/users/username/following?per_page=xxx</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getFollowingUsers(int)">getFollowingUsers(int)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getFollowingUsers(int)">getFollowingUsers(int)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user's following information through the GitHub API
@@ -1472,13 +1470,6 @@ loadScripts(document, 'script');</script>
 <div class="deprecation-comment">It always returns the <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/reflect/Type.html" title="java.lang.reflect内のクラスまたはインタフェース" class="external-link"><code>Type</code></a> object represents <code>Link</code></div>
 </div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getReceivedEvents()">getReceivedEvents()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific received events information through the GitHub API
- <code>https://api.github.com/users/username/received_events</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getReceivedEvents()">getReceivedEvents()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getReceivedEvents()">getReceivedEvents()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific received events information through the GitHub API
@@ -1520,17 +1511,19 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The releases url</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getRepositories(java.lang.String)">getRepositories(String)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/RepositoryApi.html#getRepositories(java.lang.String)">getRepositories(String)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/RepositoryApi.html" title="org.thinkit.api.gateway.github内のインタフェース">RepositoryApi</a></dt>
 <dd>
 <div class="block">Returns the repository information through the GitHub API
  <code>https://api.github.com/repos/loginName/repositoryName</code>.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getRepositories(java.lang.String)">getRepositories(String)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/response/user/receivedevents/ReceivedEvent.html#getRepository()">getRepository()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.response.user.receivedevents.<a href="org/thinkit/api/gateway/github/response/user/receivedevents/ReceivedEvent.html" title="org.thinkit.api.gateway.github.response.user.receivedevents内のクラス">ReceivedEvent</a></dt>
 <dd>
 <div class="block">The repository</div>
 </dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getRepositoryApi()">getRepositoryApi()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getRepositoryApi()">getRepositoryApi()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/response/repos/issues/Issue.html#getRepositoryUrl()">getRepositoryUrl()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.response.repos.issues.<a href="org/thinkit/api/gateway/github/response/repos/issues/Issue.html" title="org.thinkit.api.gateway.github.response.repos.issues内のクラス">Issue</a></dt>
 <dd>
 <div class="block">The repository url</div>
@@ -1875,37 +1868,16 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The url</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUser()">getUser()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user information through the GitHub API <code>
- https://api.github.com/users/username</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUser()">getUser()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getUser()">getUser()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user information through the GitHub API <code>
  https://api.github.com/users/username</code>.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUserFollowers()">getUserFollowers()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's follower information through the GitHub API
- <code>https://api.github.com/users/username/follower</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUserFollowers()">getUserFollowers()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getUserFollowers()">getUserFollowers()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user's follower information through the GitHub API
  <code>https://api.github.com/users/username/follower</code>.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUserFollowers(int)">getUserFollowers(int)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's follower information through the GitHub API
- <code>https://api.github.com/users/username/follower?per_page=xxx</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUserFollowers(int)">getUserFollowers(int)</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getUserFollowers(int)">getUserFollowers(int)</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user's follower information through the GitHub API
@@ -1915,24 +1887,14 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The user name</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUserRepositories()">getUserRepositories()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's repository information through the GitHub API
- <code>https://api.github.com/users/username/repos</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUserRepositories()">getUserRepositories()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getUserRepositories()">getUserRepositories()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
 <div class="block">Returns the specific user's repository information through the GitHub API
  <code>https://api.github.com/users/username/repos</code>.</div>
 </dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUserSubscriptions()">getUserSubscriptions()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
-<dd>
-<div class="block">Returns the specific user's subscription information through the GitHub API
- <code>https://api.github.com/users/username/subscriptions</code>.</div>
-</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUserSubscriptions()">getUserSubscriptions()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/Gateway.html#getUsersApi()">getUsersApi()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/Gateway.html" title="org.thinkit.api.gateway.github内のインタフェース">Gateway</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/GithubApiGateway.html#getUsersApi()">getUsersApi()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/GithubApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">GithubApiGateway</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/UsersApi.html#getUserSubscriptions()">getUserSubscriptions()</a></span> - インタフェース のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/UsersApi.html" title="org.thinkit.api.gateway.github内のインタフェース">UsersApi</a></dt>
 <dd>
@@ -1980,7 +1942,11 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:H">H</h2>
 <dl class="index">
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/ApiGateway.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/AbstractApiGateway.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">AbstractApiGateway</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">AbstractHttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.content.<a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html" title="org.thinkit.api.gateway.github.content内のクラス">DefaultQueryParameterMapper</a></dt>
 <dd>&nbsp;</dd>
@@ -2024,10 +1990,12 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html#hashCode()">hashCode()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">ListGenericResolver</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス"><span class="type-name-link">HttpCommunicator</span></a> - <a href="org/thinkit/api/gateway/github/communication/package-summary.html">org.thinkit.api.gateway.github.communication</a>のクラス</dt>
+<dd>
+<div class="block">The class that provides general-purpose processing for HTTP communication.</div>
+</dd>
 </dl>
 <h2 class="title" id="I:I">I</h2>
 <dl class="index">
@@ -2253,6 +2221,8 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html#newInstance()">newInstance()</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.content.<a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html" title="org.thinkit.api.gateway.github.content内のクラス">DefaultQueryParameterMapper</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#noneOf()">noneOf()</a></span> - クラス のstaticメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/catalog/ErrorHttpStatus.html#NOT_ACCEPTABLE">NOT_ACCEPTABLE</a></span> - org.thinkit.api.gateway.github.catalog.<a href="org/thinkit/api/gateway/github/catalog/ErrorHttpStatus.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">ErrorHttpStatus</a></dt>
 <dd>
 <div class="block">Not acceptable</div>
@@ -2333,6 +2303,8 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The package that manages catalogs.</div>
 </dd>
+<dt><a href="org/thinkit/api/gateway/github/communication/package-summary.html">org.thinkit.api.gateway.github.communication</a> - パッケージ org.thinkit.api.gateway.github.communication</dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/thinkit/api/gateway/github/content/package-summary.html">org.thinkit.api.gateway.github.content</a> - パッケージ org.thinkit.api.gateway.github.content</dt>
 <dd>
 <div class="block">The package that manages content mapper.</div>
@@ -2458,6 +2430,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">The catalog that manages security scheme.</div>
 </dd>
+<dt><a href="org/thinkit/api/gateway/github/util/SecuritySchemeResolver.html" title="org.thinkit.api.gateway.github.util内のクラス"><span class="type-name-link">SecuritySchemeResolver</span></a> - <a href="org/thinkit/api/gateway/github/util/package-summary.html">org.thinkit.api.gateway.github.util</a>のクラス</dt>
+<dd>
+<div class="block">The class that provides the feature to resolve the security scheme name for
+ tokens.</div>
+</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/catalog/ErrorHttpStatus.html#SERVICE_UNAVAILABLE">SERVICE_UNAVAILABLE</a></span> - org.thinkit.api.gateway.github.catalog.<a href="org/thinkit/api/gateway/github/catalog/ErrorHttpStatus.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">ErrorHttpStatus</a></dt>
 <dd>
 <div class="block">Service unavailable</div>
@@ -2500,7 +2477,11 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#toBuilder()">toBuilder()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/ApiGateway.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/ApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">ApiGateway</a></dt>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/AbstractApiGateway.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.<a href="org/thinkit/api/gateway/github/AbstractApiGateway.html" title="org.thinkit.api.gateway.github内のクラス">AbstractApiGateway</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/AbstractHttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">AbstractHttpCommunicator</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.communication.<a href="org/thinkit/api/gateway/github/communication/HttpCommunicator.html" title="org.thinkit.api.gateway.github.communication内のクラス">HttpCommunicator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.content.<a href="org/thinkit/api/gateway/github/content/DefaultQueryParameterMapper.html" title="org.thinkit.api.gateway.github.content内のクラス">DefaultQueryParameterMapper</a></dt>
 <dd>&nbsp;</dd>
@@ -2547,8 +2528,6 @@ loadScripts(document, 'script');</script>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.OAuthConfigBuilder.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.OAuthConfigBuilder.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig.OAuthConfigBuilder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/user/OAuthConfig.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.user.<a href="org/thinkit/api/gateway/github/user/OAuthConfig.html" title="org.thinkit.api.gateway.github.user内のクラス">OAuthConfig</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/CommunicationResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">CommunicationResolver</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="member-name-link"><a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html#toString()">toString()</a></span> - クラス のメソッドorg.thinkit.api.gateway.github.util.<a href="org/thinkit/api/gateway/github/util/ListGenericResolver.html" title="org.thinkit.api.gateway.github.util内のクラス">ListGenericResolver</a></dt>
 <dd>&nbsp;</dd>
