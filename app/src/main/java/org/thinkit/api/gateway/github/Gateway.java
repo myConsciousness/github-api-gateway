@@ -28,13 +28,13 @@ package org.thinkit.api.gateway.github;
  *
  * <p>
  * For example, if you want to get the follower information associated with a
- * particular user, you can call {@link #getUserFollowers()} like below.
+ * particular user, you can call method like below.
  *
  * <pre>
  * <code>
  * final GithubUser githubUser = GithubUser.builder().userName("username").build();
  * final Gateway gateway = GithubApiGateway.from(githubUser);
- * final List&lt;UserFollowers&gt; userFollowers = gateway.getUserFollowers();
+ * final List&lt;UserFollowers&gt; userFollowers = gateway.getUsersApi().getUserFollowers();
  * </code>
  * </pre>
  *

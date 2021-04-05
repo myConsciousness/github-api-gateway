@@ -38,6 +38,15 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
+ * The class that abstracts the API. The class that implements the API
+ * processing must extend this abstract class.
+ *
+ * <p>
+ * This abstract class provides a common process to generate URLs for APIs that
+ * perform HTTP communication, such as {@link #createUrl(GithubApi)} ,
+ * {@link #createUrl(GithubApi, QueryParameter)} ,
+ * {@link #createUrl(GithubApi, List)}
+ * {@link #createUrl(GithubApi, QueryParameter, List)} .
  *
  * @author Kato Shinya
  * @since 1.0.0
@@ -136,7 +145,7 @@ abstract class AbstractApi implements Serializable {
      *
      * @return The default per page
      */
-    protected int getDefaultPerPage() {
+    private int getDefaultPerPage() {
         return this.defaultQueryParameter.getPerPage();
     }
 
@@ -145,7 +154,7 @@ abstract class AbstractApi implements Serializable {
      *
      * @return The default page
      */
-    protected int getDefaultPage() {
+    private int getDefaultPage() {
         return this.defaultQueryParameter.getPage();
     }
 

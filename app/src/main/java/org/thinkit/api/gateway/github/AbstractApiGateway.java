@@ -15,10 +15,7 @@
 package org.thinkit.api.gateway.github;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
 
-import org.thinkit.api.gateway.github.catalog.GithubApi;
 import org.thinkit.api.gateway.github.communication.Communicator;
 import org.thinkit.api.gateway.github.communication.HttpCommunicator;
 import org.thinkit.api.gateway.github.content.DefaultQueryParameterMapper;
@@ -34,19 +31,13 @@ import lombok.NonNull;
 import lombok.ToString;
 
 /**
- * The abstract class that defines the generic processing for implementing the
+ * The abstract class that defines the common processing for implementing the
  * GitHub API gateway.
  *
  * <p>
  * The {@link GithubUser} object must be set with the user information required
  * to call the API; if the user information required to call the API is not set,
  * the API call will fail or an exception will be thrown at runtime.
- *
- * <p>
- * It provides {@link #createUrl(GithubApi)} ,
- * {@link #createUrl(GithubApi, Map)} , {@link #createUrl(GithubApi, List)} and
- * {@link #createUrl(GithubApi, Map, List)} methods to easily generate URLs for
- * calling the API.
  *
  * @author Kato Shinya
  * @since 1.0.0
