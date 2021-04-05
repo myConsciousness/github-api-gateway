@@ -12,51 +12,42 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.catalog;
+package org.thinkit.api.gateway.github.query;
 
-import org.thinkit.api.catalog.BiCatalog;
+import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
- * The catalog that manages query key.
+ * The entity that manages pagination.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
-@RequiredArgsConstructor
-public enum QueryKey implements BiCatalog<QueryKey, String> {
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor(staticName = "newInstance")
+@AllArgsConstructor(staticName = "from")
+public final class Pagination implements Serializable {
 
     /**
-     * {@code "per_page=xxx"}
+     * The serial version UID
      */
-    PER_PAGE(0, "per_page"),
+    private static final long serialVersionUID = 4745695773334006182L;
 
     /**
-     * {@code "page=xxx"}
-     */
-    PAGE(1, "page"),
-
-    /**
-     * {@code "state=xxx"}
-     */
-    STATE(2, "state"),
-
-    /**
-     * {@code "labels=xxx"}
-     */
-    LABELS(3, "labels");
-
-    /**
-     * The code
+     * The per page
      */
     @Getter
-    private final int code;
+    private int perPage;
 
     /**
-     * The rag
+     * The page
      */
     @Getter
-    private final String tag;
+    private int page;
 }

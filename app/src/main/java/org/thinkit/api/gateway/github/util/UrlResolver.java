@@ -14,8 +14,6 @@
 
 package org.thinkit.api.gateway.github.util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
@@ -23,7 +21,6 @@ import java.util.StringJoiner;
 import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.catalog.QuerySymbol;
 
 import lombok.AccessLevel;
@@ -53,57 +50,6 @@ import lombok.NonNull;
 public final class UrlResolver {
 
     /**
-     * Returns an API URL object based on the Enum element of {@link GithubApi}
-     * passed as an argument.
-     *
-     * @param githubApi The GitHub API
-     * @return The API URL
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    public static GenericUrl createUrl(@NonNull final GithubApi githubApi) {
-        return createUrl(githubApi, new HashMap<>(0), new ArrayList<>(0));
-    }
-
-    /**
-     * Returns an API URL object based on the Enum element of {@link GithubApi} and
-     * bind data passed as arguments.
-     *
-     * <p>
-     * The bind data passed as an argument will be replaced with the string defined
-     * as {@code "%s"} in the API URL using {@link String#format(String, Object...)}
-     * .
-     *
-     * @param githubApi The GitHub API
-     * @param binds     The bind data
-     * @return The API URL
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    public static GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final List<String> binds) {
-        return createUrl(githubApi, new HashMap<>(0), binds);
-    }
-
-    /**
-     * Returns an API URL object based on the Enum element of {@link GithubApi} and
-     * query data passed as arguments.
-     *
-     * <p>
-     * The query data defined in the Map will be generated in the format
-     * {@code ?key1=value1&key2=value2&...} .
-     *
-     * @param githubApi The GitHub API
-     * @param queries   The query data
-     * @return The API URL
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    public static GenericUrl createUrl(@NonNull final GithubApi githubApi,
-            @NonNull final Map<QueryKey, Object> queries) {
-        return createUrl(githubApi, queries, new ArrayList<>(0));
-    }
-
-    /**
      * Returns an API URL object based on the Enum element of {@link GithubApi} and
      * query data and bind data passed as arguments.
      *
@@ -123,7 +69,7 @@ public final class UrlResolver {
      *
      * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public static GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries,
+    public static GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<String, Object> queries,
             @NonNull final List<String> binds) {
 
         if (queries.isEmpty()) {
@@ -135,7 +81,7 @@ public final class UrlResolver {
 
         queries.forEach((key, value) -> {
             final StringBuilder query = new StringBuilder();
-            query.append(key.getTag()).append(equal).append(value);
+            query.append(key).append(equal).append(value);
             queryJoiner.add(query.toString());
         });
 

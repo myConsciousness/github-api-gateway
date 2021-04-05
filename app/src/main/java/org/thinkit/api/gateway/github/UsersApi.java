@@ -16,12 +16,15 @@ package org.thinkit.api.gateway.github;
 
 import java.util.List;
 
+import org.thinkit.api.gateway.github.query.QueryParameter;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
 import org.thinkit.api.gateway.github.response.user.receivedevents.ReceivedEvent;
 import org.thinkit.api.gateway.github.response.user.repos.UserRepository;
 import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscription;
+
+import lombok.NonNull;
 
 public interface UsersApi {
 
@@ -34,6 +37,17 @@ public interface UsersApi {
     public User getUser();
 
     /**
+     * Returns the specific user information through the GitHub API {@code
+     * https://api.github.com/users/username}.
+     *
+     * @param queryParameter The query parameter
+     * @return The user information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public User getUser(@NonNull final QueryParameter queryParameter);
+
+    /**
      * Returns the specific user's following information through the GitHub API
      * {@code https://api.github.com/users/username/following}.
      *
@@ -43,12 +57,14 @@ public interface UsersApi {
 
     /**
      * Returns the specific user's following information through the GitHub API
-     * {@code https://api.github.com/users/username/following?per_page=xxx}.
+     * {@code https://api.github.com/users/username/following}.
      *
-     * @param perPage The page count
-     * @return The specified number of user's following information
+     * @param queryParameter The query parameter
+     * @return The specified user's following information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public List<FollowingUser> getFollowingUsers(final int perPage);
+    public List<FollowingUser> getFollowingUsers(@NonNull final QueryParameter queryParameter);
 
     /**
      * Returns the specific user's follower information through the GitHub API
@@ -62,10 +78,12 @@ public interface UsersApi {
      * Returns the specific user's follower information through the GitHub API
      * {@code https://api.github.com/users/username/follower?per_page=xxx}.
      *
-     * @param perPage The page count
-     * @return The specified number of user's follower information
+     * @param queryParameter The query parameter
+     * @return The specified user's follower information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public List<UserFollower> getUserFollowers(final int perPage);
+    public List<UserFollower> getUserFollowers(@NonNull final QueryParameter queryParameter);
 
     /**
      * Returns the specific user's repository information through the GitHub API
@@ -76,6 +94,17 @@ public interface UsersApi {
     public List<UserRepository> getUserRepositories();
 
     /**
+     * Returns the specific user's repository information through the GitHub API
+     * {@code https://api.github.com/users/username/repos}.
+     *
+     * @param queryParameter The query parameter
+     * @return The user's repository information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<UserRepository> getUserRepositories(@NonNull final QueryParameter queryParameter);
+
+    /**
      * Returns the specific received events information through the GitHub API
      * {@code https://api.github.com/users/username/received_events}.
      *
@@ -84,12 +113,32 @@ public interface UsersApi {
     public List<ReceivedEvent> getReceivedEvents();
 
     /**
+     * Returns the specific received events information through the GitHub API
+     * {@code https://api.github.com/users/username/received_events}.
+     *
+     * @param queryParameter The query parameter
+     * @return The received events information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<ReceivedEvent> getReceivedEvents(@NonNull final QueryParameter queryParameter);
+
+    /**
      * Returns the specific user's subscription information through the GitHub API
      * {@code https://api.github.com/users/username/subscriptions}.
      *
      * @return The specific user's subscription information
+     */
+    public List<UserSubscription> getUserSubscriptions();
+
+    /**
+     * Returns the specific user's subscription information through the GitHub API
+     * {@code https://api.github.com/users/username/subscriptions}.
+     *
+     * @param queryParameter The query parameter
+     * @return The specific user's subscription information
      *
      * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public List<UserSubscription> getUserSubscriptions();
+    public List<UserSubscription> getUserSubscriptions(@NonNull final QueryParameter queryParameter);
 }

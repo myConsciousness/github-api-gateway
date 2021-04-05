@@ -12,40 +12,44 @@
  * the License.
  */
 
-package org.thinkit.api.gateway.github.content.entity;
+package org.thinkit.api.gateway.github.query;
 
 import java.io.Serializable;
+import java.util.Map;
 
-import org.thinkit.zenna.entity.ContentEntity;
-
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * The entity that manages the content {@code "DefaultQueryParameter"} .
+ * The entity that manages query parameter.
  *
  * @author Kato Shinya
  * @since 1.0.0
  */
 @ToString
 @EqualsAndHashCode
-public final class DefaultQueryParameter implements ContentEntity, Serializable {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+@AllArgsConstructor(staticName = "from")
+public final class QueryParameter implements Serializable {
 
     /**
      * The serial version UID
      */
-    private static final long serialVersionUID = 7250532340565365536L;
+    private static final long serialVersionUID = -2895699164061965865L;
 
     /**
-     * The count per page
+     * The pagination
      */
     @Getter
-    private int perPage;
+    private Pagination pagination;
 
     /**
-     * The page
+     * The queries
      */
     @Getter
-    private int page;
+    private Map<String, Object> queries;
 }

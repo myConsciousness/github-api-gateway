@@ -46,8 +46,8 @@ final class GithubRepositoryApi extends AbstractApi implements RepositoryApi {
     }
 
     @Override
-    public List<Repository> getRepositories(@NonNull final String repositoryDomain) {
-        return super.getCommunicator().getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryDomain)),
+    public List<Repository> getRepositories(@NonNull final String repositoryName) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.REPOSITORY, List.of(repositoryName)),
                 Repository.class);
     }
 }

@@ -15,12 +15,11 @@
 package org.thinkit.api.gateway.github;
 
 import java.util.List;
-import java.util.Map;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.communication.Communicator;
 import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
+import org.thinkit.api.gateway.github.query.QueryParameter;
 import org.thinkit.api.gateway.github.response.user.User;
 import org.thinkit.api.gateway.github.response.user.followers.UserFollower;
 import org.thinkit.api.gateway.github.response.user.following.FollowingUser;
@@ -42,11 +41,30 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
      */
     private static final long serialVersionUID = 4444555790420425260L;
 
+    /**
+     * The constructor.
+     *
+     * @param communicator          The http communicator
+     * @param githubUser            The GitHub user
+     * @param defaultQueryParameter The default query parameter
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     private GithubUsersApi(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
             @NonNull final DefaultQueryParameter defaultQueryParameter) {
         super(communicator, githubUser, defaultQueryParameter);
     }
 
+    /**
+     * Returns the new instance of {@link GithubUsersApi} based on the arguments.
+     *
+     * @param communicator          The http communicator
+     * @param githubUser            The GitHub user
+     * @param defaultQueryParameter The default query parameter
+     * @return The new instance of {@link GithubUsersApi}
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     public static UsersApi from(@NonNull final Communicator communicator, @NonNull final GithubUser githubUser,
             @NonNull final DefaultQueryParameter defaultQueryParameter) {
         return new GithubUsersApi(communicator, githubUser, defaultQueryParameter);
@@ -58,25 +76,30 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
     }
 
     @Override
-    public List<FollowingUser> getFollowingUsers() {
-        return this.getFollowingUsers(super.getDefaultPerPage());
+    public User getUser(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().get(super.createUrl(GithubApi.USER, queryParameter), User.class);
     }
 
     @Override
-    public List<FollowingUser> getFollowingUsers(final int perPage) {
-        return super.getCommunicator().getAsList(
-                super.createUrl(GithubApi.FOLLOWING_USER, Map.of(QueryKey.PER_PAGE, perPage)), FollowingUser.class);
+    public List<FollowingUser> getFollowingUsers() {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.FOLLOWING_USER), FollowingUser.class);
+    }
+
+    @Override
+    public List<FollowingUser> getFollowingUsers(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.FOLLOWING_USER, queryParameter),
+                FollowingUser.class);
     }
 
     @Override
     public List<UserFollower> getUserFollowers() {
-        return this.getUserFollowers(super.getDefaultPerPage());
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS), UserFollower.class);
     }
 
     @Override
-    public List<UserFollower> getUserFollowers(final int perPage) {
-        return super.getCommunicator().getAsList(
-                super.createUrl(GithubApi.USER_FOLLOWERS, Map.of(QueryKey.PER_PAGE, perPage)), UserFollower.class);
+    public List<UserFollower> getUserFollowers(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.USER_FOLLOWERS, queryParameter),
+                UserFollower.class);
     }
 
     @Override
@@ -85,12 +108,30 @@ final class GithubUsersApi extends AbstractApi implements UsersApi {
     }
 
     @Override
+    public List<UserRepository> getUserRepositories(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.USER_REPOSITORY, queryParameter),
+                UserRepository.class);
+    }
+
+    @Override
     public List<ReceivedEvent> getReceivedEvents() {
         return super.getCommunicator().getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS), ReceivedEvent.class);
     }
 
     @Override
+    public List<ReceivedEvent> getReceivedEvents(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.RECEIVED_EVENTS, queryParameter),
+                ReceivedEvent.class);
+    }
+
+    @Override
     public List<UserSubscription> getUserSubscriptions() {
         return super.getCommunicator().getAsList(super.createUrl(GithubApi.USER_SUBSCRIPTIONS), UserSubscription.class);
+    }
+
+    @Override
+    public List<UserSubscription> getUserSubscriptions(@NonNull final QueryParameter queryParameter) {
+        return super.getCommunicator().getAsList(super.createUrl(GithubApi.USER_SUBSCRIPTIONS, queryParameter),
+                UserSubscription.class);
     }
 }

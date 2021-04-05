@@ -18,14 +18,14 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.google.api.client.http.GenericUrl;
 
 import org.thinkit.api.gateway.github.catalog.GithubApi;
-import org.thinkit.api.gateway.github.catalog.QueryKey;
 import org.thinkit.api.gateway.github.communication.Communicator;
 import org.thinkit.api.gateway.github.content.entity.DefaultQueryParameter;
+import org.thinkit.api.gateway.github.query.Pagination;
+import org.thinkit.api.gateway.github.query.QueryParameter;
 import org.thinkit.api.gateway.github.user.GithubUser;
 import org.thinkit.api.gateway.github.util.UrlResolver;
 
@@ -75,51 +75,24 @@ abstract class AbstractApi implements Serializable {
      * @exception NullPointerException If {@code null} is passed as an argument
      */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi) {
-        return this.createUrl(githubApi, new HashMap<>(0), new ArrayList<>(0));
+        return this.createUrl(githubApi,
+                QueryParameter.from(Pagination.from(this.getDefaultPerPage(), this.getDefaultPage()), new HashMap<>(0)),
+                new ArrayList<>(0));
     }
 
-    /**
-     * Generate the API URL based on the Enum element of {@link GithubApi} and
-     * request queries passed as arguments.
-     *
-     * @param githubApi The GitHub API
-     * @param queries   The queries
-     * @return The GitHub API
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries) {
-        return this.createUrl(githubApi, queries, new ArrayList<>(0));
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final QueryParameter queryParameter) {
+        return this.createUrl(githubApi, queryParameter, new ArrayList<>(0));
     }
 
-    /**
-     * Generate the API URL based on the Enum element of {@link GithubApi} and bind
-     * items passed as arguments.
-     *
-     * @param githubApi The GitHub API
-     * @param binds     The bind items
-     * @return The API URL
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final List<String> binds) {
-        return this.createUrl(githubApi, new HashMap<>(0), binds);
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final List<String> bindItems) {
+        return this.createUrl(githubApi,
+                QueryParameter.from(Pagination.from(this.getDefaultPerPage(), this.getDefaultPage()), new HashMap<>(0)),
+                bindItems);
     }
 
-    /**
-     * Generate the API URL based on the Enum element of {@link GithubApi} , request
-     * queries and bind items passed as arguments.
-     *
-     * @param githubApi The GitHub API
-     * @param queries   The request queries
-     * @param binds     The bind items
-     * @return The API URL
-     *
-     * @exception NullPointerException If {@code null} is passed as an argument
-     */
-    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final Map<QueryKey, Object> queries,
-            @NonNull final List<String> binds) {
-        return UrlResolver.createUrl(githubApi, queries, this.mergeBinds(binds));
+    protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final QueryParameter queryParameter,
+            @NonNull final List<String> bindItems) {
+        return UrlResolver.createUrl(githubApi, queryParameter.getQueries(), this.mergeBindItems(bindItems));
     }
 
     /**
@@ -141,23 +114,14 @@ abstract class AbstractApi implements Serializable {
     }
 
     /**
-     * Returns the default issue state.
-     *
-     * @return The default issue state
-     */
-    protected String getDefaultIssueState() {
-        return this.defaultQueryParameter.getIssueState();
-    }
-
-    /**
      * Merges the bind list passed as an argument with the GitHub user information.
      *
      * @param binds The original bind items
-     * @return The merged binds
+     * @return The merged bind items
      *
      * @exception NullPointerException If {@code null} is passed as an argument
      */
-    private List<String> mergeBinds(@NonNull final List<String> binds) {
+    private List<String> mergeBindItems(@NonNull final List<String> binds) {
 
         final List<String> mergedBinds = new ArrayList<>(0);
         mergedBinds.add(this.githubUser.getUserName());

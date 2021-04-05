@@ -10,8 +10,7 @@
             "node": {
                 "conditionId": "",
                 "perPage": 100,
-                "page": 1,
-                "issueState": "all"
+                "page": 1
             }
         }
     ],
