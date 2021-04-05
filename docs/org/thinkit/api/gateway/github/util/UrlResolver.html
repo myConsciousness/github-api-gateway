@@ -15,7 +15,7 @@
 <script type="text/javascript" src="../../../../../../script-dir/jquery-ui.min.js"></script>
 </head>
 <body class="class-declaration-page">
-<script type="text/javascript">var data = {"i0":9,"i1":9,"i2":9,"i3":9};
+<script type="text/javascript">var data = {"i0":9};
 var tabs = {65535:["t0","\u3059\u3079\u3066\u306E\u30E1\u30BD\u30C3\u30C9"],1:["t1","static\u30E1\u30BD\u30C3\u30C9"],8:["t4","concrete\u30E1\u30BD\u30C3\u30C9"]};
 var altColor = "alt-color";
 var rowColor = "row-color";
@@ -87,13 +87,13 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
  <p>
  It provides methods for several patterns in generating URLs. For example, if
  you do not need to bind specific information to the API URL or specify a
- query string, you can simply call <a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi)"><code>createUrl(GithubApi)</code></a> to get the
+ query string, you can simply call <code>#createUrl(GithubApi)</code> to get the
  URL object for calling the API.
 
  <p>
  If you need to bind specific information to an API URL, call
- <a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.List)"><code>createUrl(GithubApi, List)</code></a> , or if you need to specify a query
- string for an API URL, call <a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map)"><code>createUrl(GithubApi, Map)</code></a> . If you want
+ <code>#createUrl(GithubApi, List)</code> , or if you need to specify a query
+ string for an API URL, call <code>#createUrl(GithubApi, Map)</code> . If you want
  to bind specific information to the URL and also specify a query string, call
  <a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map,java.util.List)"><code>createUrl(GithubApi, Map, List)</code></a> .</div>
 <dl class="notes">
@@ -121,34 +121,8 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 <tbody>
 <tr class="alt-color" id="i0">
 <td class="col-first"><code>static com.google.api.client.http.GenericUrl</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi)">createUrl</a></span>&#8203;(@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi)</code></th>
-<td class="col-last">
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a>
- passed as an argument.</div>
-</td>
-</tr>
-<tr class="row-color" id="i1">
-<td class="col-first"><code>static com.google.api.client.http.GenericUrl</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.List)">createUrl</a></span>&#8203;(@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&gt;&nbsp;binds)</code></th>
-<td class="col-last">
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and
- bind data passed as arguments.</div>
-</td>
-</tr>
-<tr class="alt-color" id="i2">
-<td class="col-first"><code>static com.google.api.client.http.GenericUrl</code></td>
-<th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map)">createUrl</a></span>&#8203;(@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="../catalog/QueryKey.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QueryKey</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries)</code></th>
-<td class="col-last">
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and
- query data passed as arguments.</div>
-</td>
-</tr>
-<tr class="row-color" id="i3">
-<td class="col-first"><code>static com.google.api.client.http.GenericUrl</code></td>
 <th class="col-second" scope="row"><code><span class="member-name-link"><a href="#createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map,java.util.List)">createUrl</a></span>&#8203;(@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="../catalog/QueryKey.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QueryKey</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries,
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries,
 @NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&gt;&nbsp;binds)</code></th>
 <td class="col-last">
 <div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and
@@ -174,78 +148,12 @@ extends <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/ja
 <h2>メソッドの詳細</h2>
 <ul class="member-list">
 <li>
-<section class="detail" id="createUrl(org.thinkit.api.gateway.github.catalog.GithubApi)">
-<h3>createUrl</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.google.api.client.http.GenericUrl</span>&nbsp;<span class="member-name">createUrl</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi)</span></div>
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a>
- passed as an argument.</div>
-<dl class="notes">
-<dt>パラメータ:</dt>
-<dd><code>githubApi</code> - The GitHub API</dd>
-<dt>戻り値:</dt>
-<dd>The API URL</dd>
-<dt>例外:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/NullPointerException.html" title="java.lang内のクラスまたはインタフェース" class="external-link">NullPointerException</a></code> - If <code>null</code> is passed as an argument</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.List)">
-<h3>createUrl</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.google.api.client.http.GenericUrl</span>&nbsp;<span class="member-name">createUrl</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
-@NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&gt;&nbsp;binds)</span></div>
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and
- bind data passed as arguments.
-
- <p>
- The bind data passed as an argument will be replaced with the string defined
- as <code>"%s"</code> in the API URL using <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...)" title="java.lang内のクラスまたはインタフェース" class="external-link"><code>String.format(String, Object...)</code></a>
- .</div>
-<dl class="notes">
-<dt>パラメータ:</dt>
-<dd><code>githubApi</code> - The GitHub API</dd>
-<dd><code>binds</code> - The bind data</dd>
-<dt>戻り値:</dt>
-<dd>The API URL</dd>
-<dt>例外:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/NullPointerException.html" title="java.lang内のクラスまたはインタフェース" class="external-link">NullPointerException</a></code> - If <code>null</code> is passed as an argument</dd>
-</dl>
-</section>
-</li>
-<li>
-<section class="detail" id="createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map)">
-<h3>createUrl</h3>
-<div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.google.api.client.http.GenericUrl</span>&nbsp;<span class="member-name">createUrl</span>&#8203;(<span class="parameters">@NonNull
-@NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
-@NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="../catalog/QueryKey.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QueryKey</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries)</span></div>
-<div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and
- query data passed as arguments.
-
- <p>
- The query data defined in the Map will be generated in the format
- <code>?key1=value1&amp;key2=value2&amp;...</code> .</div>
-<dl class="notes">
-<dt>パラメータ:</dt>
-<dd><code>githubApi</code> - The GitHub API</dd>
-<dd><code>queries</code> - The query data</dd>
-<dt>戻り値:</dt>
-<dd>The API URL</dd>
-<dt>例外:</dt>
-<dd><code><a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/NullPointerException.html" title="java.lang内のクラスまたはインタフェース" class="external-link">NullPointerException</a></code> - If <code>null</code> is passed as an argument</dd>
-</dl>
-</section>
-</li>
-<li>
 <section class="detail" id="createUrl(org.thinkit.api.gateway.github.catalog.GithubApi,java.util.Map,java.util.List)">
 <h3>createUrl</h3>
 <div class="member-signature"><span class="modifiers">public static</span>&nbsp;<span class="return-type">com.google.api.client.http.GenericUrl</span>&nbsp;<span class="member-name">createUrl</span>&#8203;(<span class="parameters">@NonNull
 @NonNull <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">GithubApi</a>&nbsp;githubApi,
 @NonNull
-@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="../catalog/QueryKey.html" title="org.thinkit.api.gateway.github.catalog内の列挙型">QueryKey</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries,
+@NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Map.html" title="java.util内のクラスまたはインタフェース" class="external-link">Map</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>,&#8203;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Object.html" title="java.lang内のクラスまたはインタフェース" class="external-link">Object</a>&gt;&nbsp;queries,
 @NonNull
 @NonNull <a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/List.html" title="java.util内のクラスまたはインタフェース" class="external-link">List</a>&lt;<a href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html" title="java.lang内のクラスまたはインタフェース" class="external-link">String</a>&gt;&nbsp;binds)</span></div>
 <div class="block">Returns an API URL object based on the Enum element of <a href="../catalog/GithubApi.html" title="org.thinkit.api.gateway.github.catalog内の列挙型"><code>GithubApi</code></a> and

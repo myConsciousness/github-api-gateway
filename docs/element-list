@@ -4,6 +4,7 @@ org.thinkit.api.gateway.github.communication
 org.thinkit.api.gateway.github.content
 org.thinkit.api.gateway.github.content.entity
 org.thinkit.api.gateway.github.exception
+org.thinkit.api.gateway.github.query
 org.thinkit.api.gateway.github.response.common
 org.thinkit.api.gateway.github.response.repos
 org.thinkit.api.gateway.github.response.repos.issues
