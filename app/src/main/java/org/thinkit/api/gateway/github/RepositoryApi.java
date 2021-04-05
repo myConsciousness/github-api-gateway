@@ -16,7 +16,10 @@ package org.thinkit.api.gateway.github;
 
 import java.util.List;
 
+import org.thinkit.api.gateway.github.query.QueryParameter;
 import org.thinkit.api.gateway.github.response.repos.Repository;
+import org.thinkit.api.gateway.github.response.repos.issues.Issue;
+import org.thinkit.api.gateway.github.response.repos.issues.comments.IssueComment;
 
 import lombok.NonNull;
 
@@ -26,11 +29,70 @@ public interface RepositoryApi {
      * Returns the repository information through the GitHub API
      * {@code https://api.github.com/repos/loginName/repositoryName}.
      *
-     * @param repositoryDomain The repository domain with the format
-     *                         {@code "loginName/repositoryName"}
+     * @param repositoryName The repository name
      * @return The repository information
      *
      * @exception NullPointerException If {@code null} is passed as an argument
      */
-    public List<Repository> getRepositories(@NonNull final String repositoryDomain);
+    public List<Repository> getRepositories(@NonNull final String repositoryName);
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName}.
+     *
+     * @param repositoryName The repository name
+     * @param queyParameter  The query parameter
+     * @return The repository information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<Repository> getRepositories(@NonNull final String repositoryName,
+            @NonNull final QueryParameter queyParameter);
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName/issues}.
+     *
+     * @param repositoryName The repository name
+     * @return The issue information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<Issue> getIssues(@NonNull final String repositoryName);
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName/issues}.
+     *
+     * @param repositoryName The repository name
+     * @param queyParameter  The query parameter
+     * @return The issue information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<Issue> getIssues(@NonNull final String repositoryName, @NonNull final QueryParameter queyParameter);
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName/issues/comments}.
+     *
+     * @param repositoryName The repository name
+     * @return The issue comment information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<IssueComment> getIssuesComments(@NonNull final String repositoryName);
+
+    /**
+     * Returns the repository information through the GitHub API
+     * {@code https://api.github.com/repos/loginName/repositoryName/issues/comments}.
+     *
+     * @param repositoryName The repository name
+     * @param queyParameter  The query parameter
+     * @return The issue comment information
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
+    public List<IssueComment> getIssuesComments(@NonNull final String repositoryName,
+            @NonNull final QueryParameter queyParameter);
 }

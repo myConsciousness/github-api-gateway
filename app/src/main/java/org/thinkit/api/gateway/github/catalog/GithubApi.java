@@ -71,7 +71,7 @@ public enum GithubApi implements BiCatalog<GithubApi, String> {
     /**
      * The API that retrieves specific issue comment information
      */
-    COMMENTS(6, "https://api.github.com/repos/%s/issues/comments");
+    ISSUE_COMMENTS(6, "https://api.github.com/repos/%s/issues/comments");
 
     /**
      * The code
