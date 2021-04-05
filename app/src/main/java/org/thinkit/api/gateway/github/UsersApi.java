@@ -26,6 +26,11 @@ import org.thinkit.api.gateway.github.response.user.subscriptions.UserSubscripti
 
 import lombok.NonNull;
 
+/**
+ *
+ * @author Kato Shinya
+ * @since 1.0.0
+ */
 public interface UsersApi {
 
     /**

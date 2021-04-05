@@ -43,7 +43,17 @@ package org.thinkit.api.gateway.github;
  */
 public interface Gateway {
 
+    /**
+     * Returns the GitHub users API.
+     *
+     * @return The GitHub users API
+     */
     public UsersApi getUsersApi();
 
+    /**
+     * Returns the GitHub repository API.
+     *
+     * @return The GitHub repository API.
+     */
     public RepositoryApi getRepositoryApi();
 }

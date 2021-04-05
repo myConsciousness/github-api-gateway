@@ -79,12 +79,27 @@ public abstract class AbstractApiGateway implements Gateway, Serializable {
     @Getter(AccessLevel.PROTECTED)
     private DefaultQueryParameter defaultQueryParameter;
 
+    /**
+     * The constructor.
+     *
+     * @param githubUser The GitHub user
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected AbstractApiGateway(@NonNull final GithubUser githubUser) {
         this.githubUser = githubUser;
         this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);
         this.communicator = HttpCommunicator.from(OAuthConfig.noneOf());
     }
 
+    /**
+     * The constructor.
+     *
+     * @param githubUser  The GitHub user
+     * @param oAuthConfig The OAuth config
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected AbstractApiGateway(@NonNull final GithubUser githubUser, @NonNull final OAuthConfig oAuthConfig) {
         this.githubUser = githubUser;
         this.defaultQueryParameter = DefaultQueryParameterMapper.newInstance().scan().get(0);

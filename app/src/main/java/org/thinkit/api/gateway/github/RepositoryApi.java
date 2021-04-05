@@ -23,6 +23,11 @@ import org.thinkit.api.gateway.github.response.repos.issues.comments.IssueCommen
 
 import lombok.NonNull;
 
+/**
+ *
+ * @author Kato Shinya
+ * @since 1.0.0
+ */
 public interface RepositoryApi {
 
     /**

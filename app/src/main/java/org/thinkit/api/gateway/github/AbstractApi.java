@@ -37,6 +37,11 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
+/**
+ *
+ * @author Kato Shinya
+ * @since 1.0.0
+ */
 @ToString
 @EqualsAndHashCode
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -80,16 +85,47 @@ abstract class AbstractApi implements Serializable {
                 new ArrayList<>(0));
     }
 
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} and
+     * parameters passed as arguments.
+     *
+     * @param githubApi      The GitHub API
+     * @param queryParameter The query parameter
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final QueryParameter queryParameter) {
         return this.createUrl(githubApi, queryParameter, new ArrayList<>(0));
     }
 
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} and
+     * parameters passed as arguments.
+     *
+     * @param githubApi The GitHub API
+     * @param bindItems The bind items
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final List<String> bindItems) {
         return this.createUrl(githubApi,
                 QueryParameter.from(Pagination.from(this.getDefaultPerPage(), this.getDefaultPage()), new HashMap<>(0)),
                 bindItems);
     }
 
+    /**
+     * Generate the API URL based on the Enum element of {@link GithubApi} and
+     * parameters passed as arguments.
+     *
+     * @param githubApi      The GitHub API
+     * @param queryParameter The query parameter
+     * @param bindItems      The bind items
+     * @return The API URL
+     *
+     * @exception NullPointerException If {@code null} is passed as an argument
+     */
     protected GenericUrl createUrl(@NonNull final GithubApi githubApi, @NonNull final QueryParameter queryParameter,
             @NonNull final List<String> bindItems) {
         return UrlResolver.createUrl(githubApi, queryParameter.getQueries(), this.mergeBindItems(bindItems));
